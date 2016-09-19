@@ -66,6 +66,7 @@
                              <div id="search">
                     <asp:TextBox ID="txtSearchMaster" runat="server"></asp:TextBox>
                     <asp:Button ID="btnSearch" runat="server" text="Search" />
+                                 <div></div>
                 </div>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
