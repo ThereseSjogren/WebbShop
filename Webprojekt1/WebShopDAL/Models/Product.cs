@@ -22,7 +22,7 @@ namespace WebShopDAL.Models
         public Product(int productID,string productName,int priceUnit,string description, string color, string size, int stock, int categoryID)
         {
             this.ProductID = productID;
-            this.ProductName = ProductName;
+            this.ProductName = productName;
             this.PriceUnit = priceUnit;
             this.Description = description;
             this.Color = color;

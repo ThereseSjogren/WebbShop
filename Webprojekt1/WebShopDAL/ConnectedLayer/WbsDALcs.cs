@@ -72,16 +72,16 @@ namespace WebShopDAL.ConnectedLayer
                 SqlDataReader _sqlDtReader = cmd.ExecuteReader();
                 while (_sqlDtReader.Read())
                 {
-                    int ProductID = (int)_sqlDtReader["ProductID"];
-                    string ProductName = (string)_sqlDtReader["ProductName"];
-                    int PriceUnit = (int)_sqlDtReader["PriceUnit"];
-                    string Description = (string)_sqlDtReader["Description"];
-                    string Color = (string)_sqlDtReader["Color"];
-                    string Size = (string)_sqlDtReader["Size"];
-                    int Stock = (int)_sqlDtReader["Stock"];
-                    int CategoryID = (int)_sqlDtReader["CategoryID"];
+                    int productID = (int)_sqlDtReader["ProductID"];
+                    string productName = (string)_sqlDtReader["ProductName"];
+                    int priceUnit = (int)_sqlDtReader["PriceUnit"];
+                    string description = (string)_sqlDtReader["Description"];
+                    string color = (string)_sqlDtReader["Color"];
+                    string size = (string)_sqlDtReader["Size"];
+                    int stock = (int)_sqlDtReader["Stock"];
+                    int categoryID = (int)_sqlDtReader["CategoryID"];
 
-                    lsAllProduct.Add(new Product(ProductID, ProductName, PriceUnit, Description, Color, Size, Stock, CategoryID));
+                    lsAllProduct.Add(new Product(productID, productName, priceUnit, description, color, size, stock, categoryID));
                 }
                 _sqlDtReader.Close();
                
