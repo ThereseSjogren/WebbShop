@@ -10,7 +10,7 @@ p{
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'PT Sans', sans-serif;
-}
+}*/
 .navbar-text > a {
     color:inherit;
     text-decoration:none;
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus{
     background-color: black;
-    color:transparent;
+    color:Black;
 }
 .navbar-inverse .navbar-nav > .open > a, 
 .navbar-inverse .navbar-nav > .open > a:hover, 
@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-default{
     background-color:gray;
     border-color: white;
-}*/
+}
 /* NUGET: BEGIN LICENSE TEXT
  *
  * Microsoft grants you the right to use these script files for the sole
@@ -124,7 +124,11 @@ html {
 
 body {
     margin: 0;
-    background-image: url('../Pictures/backgroundIMG.jpg');
+    /*background-image: url('../Pictures/backgroundIMG.jpg');*/
+    /*background-image: url('../Pictures/BackgroundIMG2.jpg');*/
+    /*background-image: url('../Pictures/BackgroundIMG1.jpeg');*/
+    /*background-image: url('../Pictures/1085617.jpg');*/
+    background-image: url('../Pictures/oldwhite.jpg');
 }
 
 a:focus {
@@ -5477,10 +5481,49 @@ a.list-group-item:focus {
     border-radius: 5px;
     
 }
-#search{
-  
+.container-1 input#search{
+  width: 250px;
+  height: 50px;
+  background: #fff;
+  border: 1px;
+  border-style:solid;
+  border-color:#cccccc;
+  font-size: 10pt;
+  float: left;
+  color: #262626;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+ 
+   
+    -webkit-transition: background .55s ease;
+  -moz-transition: background .55s ease;
+  -o-transition: background .55s ease;
+  transition: background .55s ease;
 }
 
+.container-1 input#search:hover, 
+.container-1 input#search:focus, 
+.container-1 input#search:active{
+    outline:none;
+    background: #ddd;
+  }
+
+.home-thumb{
+    width:280px;
+}
+.home-thumb img:hover{
+    transform: scale(1.1);
+
+}
+.home-thumb img{
+    transition: all 0.3s ease 0s;
+    width:100%;
+}
+.home-thumb{
+    overflow:hidden;
+}
 .panel-footer {
   padding: 10px 15px;
   background-color: #ffffff;
@@ -6085,7 +6128,7 @@ body.modal-open,
   max-width:150%;
   border-radius: 10px;
   overflow: hidden;
-  
+  margin-top:20px;
 }
 
 .carousel-inner {
@@ -6179,7 +6222,7 @@ body.modal-open,
   background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#80000000', GradientType=1);
 }
 
 .carousel-control:hover,
