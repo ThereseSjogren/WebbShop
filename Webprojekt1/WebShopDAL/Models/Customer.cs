@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace WebShopDAL.Models
 {
-    class Customer
+    public class Customer
     {
         public int CustomerID { get; set; }
-        public string CustomerFName { get; set; }
-        public string CustomerLName { get; set; }
-        public bool logged { get; set; } //If logged apply discount
-        
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public bool Address { get; set; }
+        public string Email { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public int ZipCodeID { get; set; }
+        public int RabbatID { get; set; }
+
     }
 }
