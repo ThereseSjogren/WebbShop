@@ -124,7 +124,11 @@ html {
 
 body {
     margin: 0;
-    background-image: url('../Pictures/backgroundIMG.jpg');
+    /*background-image: url('../Pictures/backgroundIMG.jpg');*/
+    /*background-image: url('../Pictures/BackgroundIMG2.jpg');*/
+    /*background-image: url('../Pictures/BackgroundIMG1.jpeg');*/
+    /*background-image: url('../Pictures/1085617.jpg');*/
+    background-image: url('../Pictures/oldwhite.jpg');
 }
 
 a:focus {
@@ -5481,7 +5485,9 @@ a.list-group-item:focus {
   width: 250px;
   height: 50px;
   background: #fff;
-  border: none;
+  border: 1px;
+  border-style:solid;
+  border-color:#cccccc;
   font-size: 10pt;
   float: left;
   color: #262626;
@@ -5504,6 +5510,20 @@ a.list-group-item:focus {
     background: #ddd;
   }
 
+.home-thumb{
+    width:280px;
+}
+.home-thumb img:hover{
+    transform: scale(1.1);
+
+}
+.home-thumb img{
+    transition: all 0.3s ease 0s;
+    width:100%;
+}
+.home-thumb{
+    overflow:hidden;
+}
 .panel-footer {
   padding: 10px 15px;
   background-color: #ffffff;
@@ -6108,7 +6128,7 @@ body.modal-open,
   max-width:150%;
   border-radius: 10px;
   overflow: hidden;
-  
+  margin-top:20px;
 }
 
 .carousel-inner {
@@ -6202,7 +6222,7 @@ body.modal-open,
   background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#80000000', GradientType=1);
 }
 
 .carousel-control:hover,
