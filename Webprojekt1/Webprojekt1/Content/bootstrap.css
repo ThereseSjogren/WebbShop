@@ -5481,9 +5481,12 @@ a.list-group-item:focus {
     border-radius: 5px;
     
 }
+.box1{
+    margin:10px;
+}
 .container-1 input#search{
   width: 250px;
-  height: 50px;
+  height: 40px;
   background: #fff;
   border: 1px;
   border-style:solid;

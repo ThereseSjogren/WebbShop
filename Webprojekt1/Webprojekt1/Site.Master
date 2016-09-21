@@ -64,12 +64,13 @@
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
-                            <div class="box">
+                            <div class="box1">
                                 <div class="container-1">
                                     <input type="search" id="search" placeholder="Search..." />
                                 </div>
                             </div>
                         </AnonymousTemplate>
+
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>

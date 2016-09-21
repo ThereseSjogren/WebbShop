@@ -18,7 +18,9 @@
     padding: 0;
     list-style: none;
 }
-
+.col-lg-12{
+    color:black;
+}
     .sidebar-nav li {
         text-indent: 20px;
         line-height: 40px;
@@ -27,7 +29,8 @@
         .sidebar-nav li a {
             display: block;
             text-decoration: none;
-            color: rgba(255, 255, 255, 0.77);
+            color:#000000;
+            /*color: rgba(255, 255, 255, 0.77);*/
             font-size: large;
             font-weight: bold;
             margin: 30px;

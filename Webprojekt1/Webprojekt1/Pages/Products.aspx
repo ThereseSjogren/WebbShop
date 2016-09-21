@@ -35,7 +35,7 @@
                 <div class="col-lg-12">
                     <h1>Products</h1>
                 </div>
-                <div class="row1">
+                <div class="row">
                     <div class="col-md-3 box">
                         <div class="cover left">
                             <h2 class="title">Tommy Hilfiger</h2>
