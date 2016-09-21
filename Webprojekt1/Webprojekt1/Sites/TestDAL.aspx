@@ -9,10 +9,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
-    </div>
-        <h3 style="text-align:center"><strong>All Inventory (Products)</strong></h3>
-        <asp:GridView ID="_productGridView" runat="server" style="margin-left: 191px; margin-top: 82px" Width="690px" AutoGenerateColumns="False" ItemType="WebShopDAL.Models.Product" DataKeyFrames="ProductID" SelectMethod="GetAllProducts">
+         <h3 style="text-align:center"><strong>All Inventory (Products)</strong></h3>
+        <asp:GridView ID="_productGridView" runat="server" style="margin-left: 191px; margin-top: 82px" Width="60%" AutoGenerateColumns="False" ItemType="WebShopDAL.Models.Product" DataKeyFrames="ProductID" SelectMethod="GetAllProducts">
             <Columns>
                 <asp:BoundField DataField="ProductID" HeaderText="ProductID" InsertVisible="False" ReadOnly="True" SortExpression="ProductID" />
                 <asp:BoundField DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName" />
@@ -24,6 +22,7 @@
                 <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID" />
             </Columns>
         </asp:GridView>
+    </div>
         
     </form>
 </body>

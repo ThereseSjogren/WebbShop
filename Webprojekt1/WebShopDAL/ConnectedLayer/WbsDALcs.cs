@@ -23,15 +23,15 @@ namespace WebShopDAL.ConnectedLayer
             _sqlConnection.Close();
         }
 
-        //public void InsertProduct(Product p)
-        //{
-        //    string sql = $"Insert into Product (ProductID, ProductName, Category, Size) Values ('{p.ProductID}', '{p.ProductName}', '{p.PriceUnit}', '{p.Color}', '{p.Size}', '{p.Stock}', '{p.CategoryID}')";
+        public void InsertProduct(Product p)
+        {
+            string sql = $"Insert into tblProduct (ProductID, ProductName, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{p.ProductID}', '{p.ProductName}', '{p.Description}','{p.PriceUnit}', '{p.Color}', '{p.Size}', '{p.Stock}', '{p.CategoryID}')";
 
-        //    using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
-        //    {
-        //        cmd.ExecuteNonQuery();
-        //    }
-        //}
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         public void DeleteProduct(int id)
         {
