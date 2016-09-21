@@ -33,7 +33,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Products</h1>
+                    <h1>Trouses</h1>
                 </div>
                 <div class="row1">
                     <div class="col-md-3 box">
