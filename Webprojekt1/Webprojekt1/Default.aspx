@@ -82,7 +82,7 @@
             </p>
         </div>
         <div class="col-md-3">
-            <h2>Hats</h2>
+            <h2>Shoes</h2>
             <a href="pages/Products.aspx" class="thumbnail home-thumb">
                 <img src="Pictures/Shoes.jpg" alt="...." />
                     </a>
