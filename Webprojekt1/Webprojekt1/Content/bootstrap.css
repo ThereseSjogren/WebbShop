@@ -831,6 +831,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  height:55px;
 }
 
 .container:before,
