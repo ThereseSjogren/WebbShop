@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Sweatshirt.aspx.cs" Inherits="Webprojekt1.Products" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Tshirt.aspx.cs" Inherits="Webprojekt1.Products" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -10,7 +10,7 @@
                     <a href="#">Category
                     </a>
                 </li>
-                  <li>
+                 <li>
                     <a href="Tshirt.aspx">T-Shirt</a>
                 </li>
                 <li>
@@ -33,7 +33,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Sweatshirt</h1>
+                    <h1>T-shirt</h1>
                 </div>
                 <div class="row1">
                     <div class="col-md-3 box">

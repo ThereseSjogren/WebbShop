@@ -6381,6 +6381,17 @@ body.modal-open,
   position: fixed;
 }
 
+.fa{
+    color:rgba(14, 11, 11, 0.94);
+    float:right;
+   margin-right:25px;
+  
+}
+
+
+
+
+
 @-ms-viewport {
   width: device-width;
 }
