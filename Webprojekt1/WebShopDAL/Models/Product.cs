@@ -9,22 +9,22 @@ namespace WebShopDAL.Models
     public class Product
     {
         public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public int PriceUnit { get; set; }
-        public string Description { get; set; }
+        public string ProductBrand { get; set; }
+        public decimal PriceUnit { get; set; }
+        public string ProductDescription { get; set; }
         public string Color { get; set; }
         public string Size { get; set; }
-        public decimal Stock { get; set; }
+        public int Stock { get; set; }
 
         public int CategoryID { get; set; }
 
 
-        public Product(int productID,string productName,int priceUnit,string description, string color, string size, int stock, int categoryID)
+        public Product(int productID,string productBrand,decimal priceUnit,string description, string color, string size, int stock, int categoryID)
         {
             this.ProductID = productID;
-            this.ProductName = productName;
+            this.ProductBrand = productBrand;
             this.PriceUnit = priceUnit;
-            this.Description = description;
+            this.ProductDescription = description;
             this.Color = color;
             this.Size = size;
             this.Stock = stock;

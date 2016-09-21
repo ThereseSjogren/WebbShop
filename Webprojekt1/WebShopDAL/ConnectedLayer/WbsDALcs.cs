@@ -24,16 +24,16 @@ namespace WebShopDAL.ConnectedLayer
         }
         public void InsertCustomer(Customer c)
         {
-            string sql = $"Insert into tblCustomer (ProductName, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{c.FirstName}', '{c.LastName}','{c.Email}','{c.Address}','{c.UserName}', '{c.Password}',  '{c.ZipCodeID}','{c.RabbatID}')";
+            string sql = $"Insert into tblCustomer (FirstName, LastName, Email, Address, UserName, Password, RabbatID) Values ('{c.FirstName}', '{c.LastName}','{c.Email}','{c.Address}','{c.UserName}', '{c.Password}',  '{c.ZipCodeID}','{c.RabbatID}')";
 
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
                 cmd.ExecuteNonQuery();
             }
         }
-        public void UpdateCustomer(Customer c, int id)
+        public void UpdateCustomer( int id, string name)
         {
-            string sql = $"Update tblCustomer SET  FirstName = {c.FirstName}, LastName = {c.LastName} , Password = {c.Password}, ZipCodeID = {c.ZipCodeID}";
+            string sql = $"Update tblCustomer SET  FirstName = {name} Where CustomerID = {id}";
 
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
@@ -43,7 +43,7 @@ namespace WebShopDAL.ConnectedLayer
 
         public void InsertProductAdmin(Product p)
         {
-            string sql = $"Insert into tblProduct (ProductName, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{p.ProductID}', '{p.ProductName}', '{p.Description}','{p.PriceUnit}', '{p.Color}', '{p.Size}', '{p.Stock}', '{p.CategoryID}')";
+            string sql = $"Insert into tblProduct (ProductBrand, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{p.ProductBrand}', '{p.ProductDescription}','{p.PriceUnit}', '{p.Color}', '{p.Size}', '{p.Stock}', '{p.CategoryID}')";
 
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
@@ -59,9 +59,9 @@ namespace WebShopDAL.ConnectedLayer
                 cmd.ExecuteNonQuery();
             }
         }
-        public void UpdateProductAdmin(Product p)
+        public void UpdateProductAdmin(int id,string name)
         {
-            string sql = $"Update tblProduct SET  ProductName = {p.ProductName}, PriceUnit = {p.PriceUnit} , Description = {p.Description}, Color = {p.Color}, Size = {p.Size},Stock = {p.Stock}, CategodyID = {p.CategoryID} Where ProductID = {p.ProductID}";
+            string sql = $"Update tblProduct SET  ProductBrand = {name} Where ProductID = {id}";
           
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
@@ -118,6 +118,10 @@ namespace WebShopDAL.ConnectedLayer
             }
 
         }
+        public void CrateOrderXML()
+        {
+
+        }//TODO
            
         public List<Product> GetProducts()
         {
@@ -129,15 +133,15 @@ namespace WebShopDAL.ConnectedLayer
                 while (_sqlDtReader.Read())
                 {
                     int productID = (int)_sqlDtReader["ProductID"];
-                    string productName = (string)_sqlDtReader["ProductName"];
-                    int priceUnit = (int)_sqlDtReader["PriceUnit"];
-                    string description = (string)_sqlDtReader["Description"];
+                    string productBrand = (string)_sqlDtReader["ProductBrand"];
+                    decimal priceUnit = (decimal)_sqlDtReader["PriceUnit"];
+                    string productDescription = (string)_sqlDtReader["ProductDescription"];
                     string color = (string)_sqlDtReader["Color"];
                     string size = (string)_sqlDtReader["Size"];
                     int stock = (int)_sqlDtReader["Stock"];
                     int categoryID = (int)_sqlDtReader["CategoryID"];
 
-                    lsAllProduct.Add(new Product(productID, productName, priceUnit, description, color, size, stock, categoryID));
+                    lsAllProduct.Add(new Product(productID, productBrand, priceUnit, productDescription, color, size, stock, categoryID));
                 }
                 _sqlDtReader.Close();
                
