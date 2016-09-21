@@ -64,11 +64,11 @@
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
-                            <div class="box1">
+                           <%-- <div class="box1">
                                 <div class="container-1">
                                     <input type="search" id="search" placeholder="Search..." />
                                 </div>
-                            </div>
+                            </div>--%>
                         </AnonymousTemplate>
 
                         <LoggedInTemplate>
@@ -78,8 +78,14 @@
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
+
                         </LoggedInTemplate>
                     </asp:LoginView>
+                     <div class="box1">
+                                <div class="container-1">
+                                    <input type="search" id="search" placeholder="Search..." />
+                                </div>
+                            </div>
                 </div>
             </div>
         </div>
@@ -97,7 +103,6 @@
                     <a href="https://twitter.com/?lang=sv"><i class="fa fa-twitter fa-2x"></i></a>
                     <a href="https://www.youtube.com/"><i class="fa fa-youtube fa-2x"></i></a>
                 </div>
-
             </footer>
         </div>
     </form>
