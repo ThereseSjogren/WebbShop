@@ -25,7 +25,7 @@ namespace WebShopDAL.ConnectedLayer
 
         public void InsertProduct(Product p)
         {
-            string sql = $"Insert into tblProduct (ProductID, ProductName, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{p.ProductID}', '{p.ProductName}', '{p.Description}','{p.PriceUnit}', '{p.Color}', '{p.Size}', '{p.Stock}', '{p.CategoryID}')";
+            string sql = $"Insert into tblProduct (ProductName, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{p.ProductID}', '{p.ProductName}', '{p.Description}','{p.PriceUnit}', '{p.Color}', '{p.Size}', '{p.Stock}', '{p.CategoryID}')";
 
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
@@ -45,6 +45,24 @@ namespace WebShopDAL.ConnectedLayer
         {
             string sql = $"Update tblProduct SET  ProductName = {p.ProductName}, PriceUnit = {p.PriceUnit} , Description = {p.Description}, Color = {p.Color}, Size = {p.Size},Stock = {p.Stock}, CategodyID = {p.CategoryID} Where ProductID = {p.ProductID}";
           
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public void InsertCustomer(Customer c)
+        {
+            string sql = $"Insert into tblCustomer (ProductName, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{p.ProductID}', '{p.ProductName}', '{p.Description}','{p.PriceUnit}', '{p.Color}', '{p.Size}', '{p.Stock}', '{p.CategoryID}')";
+
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public void UpdateCustomer(Customer c, int id)
+        {
+            string sql = $"Update tblCustomer SET  FirstName = {c.FirstName}, LastName = {c.LastName} , Password = {c.Password}, ZipCodeID = {c.ZipCodeID}";
+
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
                 cmd.ExecuteNonQuery();
