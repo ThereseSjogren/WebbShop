@@ -50,48 +50,63 @@
             <a href="pages/Products.aspx" class="thumbnail home-thumb">
                 <img src="Pictures/fashionl.jpg"  alt="...." />
                     </a>
-            <p>
-                Enter text here
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
         </div>
         <div class="col-md-3">
             <h2>Winter clothing</h2>
             <a href="pages/Products.aspx" class="thumbnail home-thumb">
                 <img src="Pictures/Wintercloth.jpeg"  alt="...." />
                     </a>
-            <p>
-                Enter text here
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
         </div>
         <div class="col-md-3">
             <h2>Hats</h2>
             <a href="pages/Products.aspx" class="thumbnail home-thumb">
                 <img src="Pictures/WinterHats.jpeg" alt="...." />
                     </a>
-            <p>
-                Enter text here
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
         </div>
         <div class="col-md-3">
             <h2>Shoes</h2>
             <a href="pages/Products.aspx" class="thumbnail home-thumb">
                 <img src="Pictures/Shoes.jpg" alt="...." />
                     </a>
-            <p>
-                Enter text here
-            </p>
+            <%--<p>
+                Enter text here--%>
+            <%--</p>
             <p>
                 <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
+            </p>--%>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Fall clothing</h2>
+            <a href="pages/Products.aspx" class="thumbnail home-thumb">
+                <img src="Pictures/fashionl.jpg"  alt="...." />
+                    </a>
+        </div>
+        <div class="col-md-3">
+            <h2>Winter clothing</h2>
+            <a href="pages/Products.aspx" class="thumbnail home-thumb">
+                <img src="Pictures/Wintercloth.jpeg"  alt="...." />
+                    </a>
+        </div>
+        <div class="col-md-3">
+            <h2>Hats</h2>
+            <a href="pages/Products.aspx" class="thumbnail home-thumb">
+                <img src="Pictures/WinterHats.jpeg" alt="...." />
+                    </a>
+        </div>
+        <div class="col-md-3">
+            <h2>Shoes</h2>
+            <a href="pages/Products.aspx" class="thumbnail home-thumb">
+                <img src="Pictures/Shoes.jpg" alt="...." />
+                    </a>
+            <%--<p>
+                Enter text here--%>
+            <%--</p>
+            <p>
+                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+            </p>--%>
         </div>
     </div>
 
