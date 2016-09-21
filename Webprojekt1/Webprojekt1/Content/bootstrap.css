@@ -831,7 +831,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  height:55px;
+  
 }
 
 .container:before,
@@ -5499,6 +5499,7 @@ a.list-group-item:focus {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  margin-bottom:5px;
  
    
     -webkit-transition: background .55s ease;
