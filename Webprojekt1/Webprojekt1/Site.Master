@@ -11,7 +11,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="Content/font-awesome.css" rel="stylesheet" />
 </head>
@@ -48,7 +48,7 @@
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">WebShop</a>
                 </div>
-               
+
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
@@ -63,11 +63,11 @@
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
-                             <div id="search">
-                    <asp:TextBox ID="txtSearchMaster" runat="server"></asp:TextBox>
-                    <asp:Button ID="btnSearch" runat="server" text="Search" />
-                                 
-                </div>
+                            <div class="box">
+                                <div class="container-1">
+                                    <input type="search" id="search" placeholder="Search..." />
+                                </div>
+                            </div>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
@@ -84,19 +84,18 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            
+
             <footer id="Fotter">
-                <div> 
-                    
+                <div>
                 </div>
                 <p>&copy; <%: DateTime.Now.Year %> - WebShop</p>
 
-             <div class="navbar-text pull-right">
-                <a href="https://www.facebook.com"><i class="fa fa-facebook fa-2x"></i></a>
-                <a href="https://twitter.com/?lang=sv"><i class="fa fa-twitter fa-2x"></i></a>
-                <a href="https://www.youtube.com/"><i class="fa fa-youtube fa-2x"></i></a>
-            </div>
-                
+                <div class="navbar-text pull-right">
+                    <a href="https://www.facebook.com"><i class="fa fa-facebook fa-2x"></i></a>
+                    <a href="https://twitter.com/?lang=sv"><i class="fa fa-twitter fa-2x"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fa fa-youtube fa-2x"></i></a>
+                </div>
+
             </footer>
         </div>
     </form>

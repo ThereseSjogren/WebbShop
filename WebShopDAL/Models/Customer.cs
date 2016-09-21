@@ -11,26 +11,12 @@ namespace WebShopDAL.Models
         public int CustomerID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Address { get; set; }
+        public bool Address { get; set; }
         public string Email { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public int ZipCodeID { get; set; }
         public int RabbatID { get; set; }
-
-        public Customer(int customerID, string firstName, string lastName, string address, string email, string userName, string password, int zipcodeID, int rabbatID)
-        {
-            CustomerID = customerID;
-            FirstName = firstName;
-            LastName = lastName;
-            Address = address;
-            Email = email;
-            UserName = userName;
-            Password = password;
-            ZipCodeID = zipcodeID;
-            RabbatID = rabbatID;
-
-        }
 
     }
 }
