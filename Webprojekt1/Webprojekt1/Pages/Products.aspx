@@ -61,7 +61,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -89,7 +89,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -117,7 +117,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -145,7 +145,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -173,7 +173,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -201,7 +201,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -229,7 +229,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -257,7 +257,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -285,7 +285,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -313,7 +313,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -341,7 +341,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -369,7 +369,7 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Buy</a></div>
+                            <div class="btn"><a href="#">Add to Cart</a></div>
                         </div>
                     </div>
                 </div>
