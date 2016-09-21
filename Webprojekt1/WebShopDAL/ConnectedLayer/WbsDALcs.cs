@@ -35,34 +35,32 @@ namespace WebShopDAL.ConnectedLayer
 
         public void DeleteProduct(int id)
         {
-            string sql = $"Delete from Product where ProductID = {id}";
+            string sql = $"Delete from tblProduct where ProductID = {id}";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                cmd.ExecuteNonQuery();
+            }
         }
-        public void UpdateProduct()
+        public void UpdateProduct(Product p)
         {
-
-        }
-
-        public void InsertOrder()//TODO: Need more attributes from Order table
-        {
-            string sql = $"Insert into Order (OrderDate,DeliveryDate, CustomerID) Values ('????????')";//TODO
-
+            string sql = $"Update tblProduct SET  ProductName = {p.ProductName}, PriceUnit = {p.PriceUnit} , Description = {p.Description}, Color = {p.Color}, Size = {p.Size},Stock = {p.Stock}, CategodyID = {p.CategoryID} Where ProductID = {p.ProductID}";
+          
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
                 cmd.ExecuteNonQuery();
             }
         }
 
+        public void InsertOrder()//TODO: Need more attributes from Order table
+        {
+            //string sql = $"Insert into Order (OrderDate,DeliveryDate, CustomerID) Values ('')";//TODO
 
-        //public List<Product> AddToCustomerBasket(int id)
-        //{
-        //    string sql = $""
-        //    List<Product> ListOfCustomerBasket = new List<Product>();
-        //    using (resource)
-        //    {
-
-        //    }
-        //}
-
+            //using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            //{
+            //    cmd.ExecuteNonQuery();
+            //}
+        }
+           
         public List<Product> GetProducts()
         {
             List<Product> lsAllProduct = new List<Product>();
