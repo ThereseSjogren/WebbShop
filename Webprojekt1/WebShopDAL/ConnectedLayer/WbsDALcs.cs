@@ -52,7 +52,7 @@ namespace WebShopDAL.ConnectedLayer
         }
         public void InsertCustomer(Customer c)
         {
-            string sql = $"Insert into tblCustomer (ProductName, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{p.ProductID}', '{p.ProductName}', '{p.Description}','{p.PriceUnit}', '{p.Color}', '{p.Size}', '{p.Stock}', '{p.CategoryID}')";
+            string sql = $"Insert into tblCustomer (ProductName, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{c.FirstName}', '{c.LastName}','{c.Email}','{c.Address}','{c.UserName}', '{c.Password}',  '{c.ZipCodeID}','{c.RabbatID}')";
 
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
@@ -69,14 +69,11 @@ namespace WebShopDAL.ConnectedLayer
             }
         }
 
-        public void InsertOrder()//TODO: Need more attributes from Order table
+        public void InsertOrder()
         {
-            //string sql = $"Insert into Order (OrderDate,DeliveryDate, CustomerID) Values ('')";//TODO
+           //SqlCommand _cmd
 
-            //using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
-            //{
-            //    cmd.ExecuteNonQuery();
-            //}
+            
         }
            
         public List<Product> GetProducts()
