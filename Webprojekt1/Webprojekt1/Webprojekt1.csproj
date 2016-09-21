@@ -203,6 +203,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\ProductStyle.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -224,6 +225,19 @@
     <Content Include="Pictures\pexels-photo-24257-large.jpg" />
     <Content Include="Pictures\backgroundIMG.jpg" />
     <Content Include="Pictures\pexels-photo-63196-large.jpeg" />
+    <Content Include="Pictures\ProductsPictures\018390-0082.jpg" />
+    <Content Include="Pictures\ProductsPictures\129716-3138.jpg" />
+    <Content Include="Pictures\ProductsPictures\132322-6180.jpg" />
+    <Content Include="Pictures\ProductsPictures\172429-1131.jpg" />
+    <Content Include="Pictures\ProductsPictures\290872-0286.jpg" />
+    <Content Include="Pictures\ProductsPictures\340622-0286.jpg" />
+    <Content Include="Pictures\ProductsPictures\343116-9840_3.jpg" />
+    <Content Include="Pictures\ProductsPictures\343271-0912.jpg" />
+    <Content Include="Pictures\ProductsPictures\437505-5005.jpg" />
+    <Content Include="Pictures\ProductsPictures\801157-0989.jpg" />
+    <Content Include="Pictures\ProductsPictures\801190-3843.jpg" />
+    <Content Include="Pictures\ProductsPictures\804070-7767.jpg" />
+    <Content Include="Pictures\ProductsPictures\891185-0446.jpg" />
     <Content Include="Pictures\Shoes.jpg" />
     <Content Include="Pictures\Wintercloth.jpeg" />
     <Content Include="Pictures\WinterHats.jpeg" />
