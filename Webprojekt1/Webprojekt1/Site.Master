@@ -47,6 +47,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">WebShop</a>
+
                 </div>
 
                 <div class="navbar-collapse collapse">
@@ -55,16 +56,19 @@
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="Pages/Products.aspx">Products</a>
-                        
                     </ul>
+
 
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                         
                             </ul>
-                           <%-- <div class="box1">
+                               <a href="http://www.bestbuy.com/cart"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
+
+                            <%-- <div class="box1">
                                 <div class="container-1">
                                     <input type="search" id="search" placeholder="Search..." />
                                 </div>
@@ -81,11 +85,11 @@
 
                         </LoggedInTemplate>
                     </asp:LoginView>
-                     <div class="box1">
-                                <div class="container-1">
-                                    <input type="search" id="search" placeholder="Search..." />
-                                </div>
-                            </div>
+                    <div class="box1">
+                        <div class="container-1">
+                            <input type="search" id="search" placeholder="Search..." />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
