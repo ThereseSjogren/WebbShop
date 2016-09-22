@@ -124,10 +124,6 @@ html {
 
 body {
     margin: 0;
-    /*background-image: url('../Pictures/backgroundIMG.jpg');*/
-    /*background-image: url('../Pictures/BackgroundIMG2.jpg');*/
-    /*background-image: url('../Pictures/BackgroundIMG1.jpeg');*/
-    /*background-image: url('../Pictures/1085617.jpg');*/
     background-image: url('../Pictures/oldwhite.jpg');
 }
 
@@ -5476,8 +5472,11 @@ a.list-group-item:focus {
 .panel-title > a {
   color: inherit;
 }
+#conTa{
+    background-color: pink;
+}
 #Fotter{
-    background-color:#000000;
+    background-color:transparent;
     color:#ffffff;
     margin-top:40px;
     height: 200px;
