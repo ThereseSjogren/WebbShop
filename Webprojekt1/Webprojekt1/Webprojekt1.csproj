@@ -223,6 +223,7 @@
     <Content Include="Pages\Jackets.aspx" />
     <Content Include="Pages\Shoes.aspx" />
     <Content Include="Pages\Sweatshirt.aspx" />
+    <Content Include="Pages\TestSite.aspx" />
     <Content Include="Pages\Tshirt.aspx" />
     <Content Include="Pages\Trouses.aspx" />
     <Content Include="Pictures\fashion-person-woman-taking-photo-large.jpg" />
@@ -458,6 +459,13 @@
     </Compile>
     <Compile Include="Pages\Sweatshirt.aspx.designer.cs">
       <DependentUpon>Sweatshirt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestSite.aspx.cs">
+      <DependentUpon>TestSite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TestSite.aspx.designer.cs">
+      <DependentUpon>TestSite.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Tshirt.aspx.cs">
       <DependentUpon>Tshirt.aspx</DependentUpon>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="Webprojekt1.Products" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TestSite.aspx.cs" Inherits="Webprojekt1.Pages.TestSite" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -374,9 +374,26 @@
                         </div>
                     </div>
                     <hr />
-                    <%--<div style="margin-right: 5px; margin-top: 326px">
-                        
-                    </div>--%>
+                    <div style="margin-right: 5px; margin-top: 326px">
+                        <asp:DropDownList  ID="productsDropDownList" SelectMethod="GetBrands" AppendDataBoundItems="true" AutoPostBack="true" DataTextField="ProductBrand" runat="server" Height="118px" Width="264px">
+                            <asp:ListItem Value="" Text="(All)"></asp:ListItem>
+                        </asp:DropDownList> 
+                        <br />
+                        <asp:GridView ID="_invGridView" runat="server" AllowPaging="true" PagingSize="2" AllowSorting="True" DataKeyFrames="CarID" CellPadding="4" AutoGenerateColumns="false" ItemType="WebShopDAL.Models.Product" SelectMethod="GetAllProducts" DeleteMethod="DeleteProduct" UpdateMethod="UpdateProduct" EmptyDataText="There are no data records to display." ForeColor="blue">
+        
+                            <Columns>
+                                <asp:CommandField ShowDeleteButton="true" ShowEditButton="true" />
+                                <asp:BoundField DataField="ProductID" HeaderText="Product ID" ReadOnly="true" SortExpression="ProductID"/>
+                                <asp:BoundField DataField="ProductBrand" HeaderText="Product Brand"  SortExpression="ProductBrand"/>
+                                <asp:BoundField DataField="PriceUnit" HeaderText="PriceUnit"  SortExpression="PriceUnit"/>
+                                <asp:BoundField DataField="ProductDescription" HeaderText="Product Description"  SortExpression="ProductDescription"/>
+                                <asp:BoundField DataField="Color" HeaderText="Color" ReadOnly="true" SortExpression="ProductID"/>
+                                <asp:BoundField DataField="Size" HeaderText="Size"  SortExpression="Size"/>
+                                <asp:BoundField DataField="Stock" HeaderText="Stock"  SortExpression="Stock"/>
+                                <asp:BoundField DataField="CategoryID" HeaderText="CategoryID"  SortExpression="CategoryID"/>
+                            </Columns>
+                        </asp:GridView>
+                    </div>
                 </div>
 
             </div>
