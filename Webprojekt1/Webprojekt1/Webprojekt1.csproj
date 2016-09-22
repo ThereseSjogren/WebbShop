@@ -204,6 +204,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\ProductStyle.css" />
+    <Content Include="Content\ShoppingCartStyle.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -222,6 +223,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\Jackets.aspx" />
     <Content Include="Pages\Shoes.aspx" />
+    <Content Include="Pages\ShoppingCart.aspx" />
     <Content Include="Pages\Sweatshirt.aspx" />
     <Content Include="Pages\TestSite.aspx" />
     <Content Include="Pages\Tshirt.aspx" />
@@ -245,6 +247,7 @@
     <Content Include="Pictures\ProductPictures\804070-7767.jpg" />
     <Content Include="Pictures\ProductPictures\891185-0446.jpg" />
     <Content Include="Pictures\Shoes.jpg" />
+    <Content Include="Pictures\T-shirts\image1xxl[1].jpg" />
     <Content Include="Pictures\Wintercloth.jpeg" />
     <Content Include="Pictures\WinterHats.jpeg" />
     <Content Include="Pages\Products.aspx" />
@@ -452,6 +455,13 @@
     </Compile>
     <Compile Include="Pages\Shoes.aspx.designer.cs">
       <DependentUpon>Shoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Sweatshirt.aspx.cs">
       <DependentUpon>Sweatshirt.aspx</DependentUpon>
