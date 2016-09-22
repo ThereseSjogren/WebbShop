@@ -40,7 +40,7 @@
                         <div class="cover left">
                             <h2 class="title">Tommy Hilfiger</h2>
                             <p class="intro">
-                            
+                                <asp:Label ID="_lblProductDescription" runat="server" Text="Label"></asp:Label>
                                 Produktinformation
                                
                                 <br />
