@@ -5472,15 +5472,56 @@ a.list-group-item:focus {
 .panel-title > a {
   color: inherit;
 }
-#conTa{
-    background-color: pink;
+/*#cont{
+    margin-left: 350px;
+    background-color:transparent;
+}
+#cont .navbar-nav a{
+    background-color:transparent;
+    color:Black;
+    
+}
+#nav1{
+    background-color:transparent;;
+}*/
+
+.Box2{
+    background-color:pink;
+    width:280px;
+    height:50px;
+    border-style:solid;
+    border-color:black;
+    border-radius:5px;
+    text-align:center;
+    margin-left: 450px;
+}
+.Link{
+    background-color:pink;
+    width:280px;
+    height:50px;
+    border-style:solid;
+    border-color:black;
+    border-radius:5px;
+    text-align:center;
+    margin-left: 450px;
+}
+.Cont{
+    background-color:pink;
+    width:280px;
+    height:50px;
+    border-style:solid;
+    border-color:black;
+    border-radius:5px;
+    text-align:center;
+    margin-left: 450px;
 }
 #Fotter{
     background-color:transparent;
-    color:#ffffff;
+    color:#000000;
     margin-top:40px;
     height: 200px;
     border-radius: 5px;
+    
     
 }
 .box1{
