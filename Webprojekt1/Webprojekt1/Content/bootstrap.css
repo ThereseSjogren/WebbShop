@@ -124,10 +124,6 @@ html {
 
 body {
     margin: 0;
-    /*background-image: url('../Pictures/backgroundIMG.jpg');*/
-    /*background-image: url('../Pictures/BackgroundIMG2.jpg');*/
-    /*background-image: url('../Pictures/BackgroundIMG1.jpeg');*/
-    /*background-image: url('../Pictures/1085617.jpg');*/
     background-image: url('../Pictures/oldwhite.jpg');
 }
 
@@ -5476,12 +5472,59 @@ a.list-group-item:focus {
 .panel-title > a {
   color: inherit;
 }
+/*#cont{
+    margin-left: 350px;
+    background-color:transparent;
+}
+#cont .navbar-nav a{
+    background-color:transparent;
+    color:Black;
+    
+}
+#nav1{
+    background-color:transparent;;
+}*/
+
+.Box2{
+    background-color:transparent;
+    width:280px;
+    height:50px;
+    border-style:solid;
+    border-color:transparent;
+    border-radius:5px;
+    text-align:center;
+    margin-left: 450px;
+}
+.Link{
+    background-color:transparent;
+    width:380px;
+    height:50px;
+    border-style:solid;
+    border-color:transparent;
+    border-radius:5px;
+    text-align:center;
+    margin-left: 400px;
+}
+.Cont{
+    background-color:transparent;
+    width:180px;
+    height:50px;
+    border-style:solid;
+    border-color:transparent;
+    border-radius:5px;
+    text-align:center;
+    margin-left: 500px;
+}
+#nov{
+    text-decoration:underline;
+}
 #Fotter{
-    background-color:#000000;
-    color:#ffffff;
+    background-color:transparent;
+    color:#000000;
     margin-top:40px;
     height: 200px;
     border-radius: 5px;
+    
     
 }
 .box1{

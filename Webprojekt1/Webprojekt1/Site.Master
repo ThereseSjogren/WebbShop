@@ -9,7 +9,7 @@
     <title><%: Page.Title %> - My ASP.NET Application</title>
 
     <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
+        <%:Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -47,9 +47,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">WebShop</a>
-
                 </div>
-
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
@@ -58,24 +56,13 @@
                         <li><a runat="server" href="Pages/Products.aspx">Products</a>
                         <li><a runat="server" href="Pages/TestSite.aspx">Tests</a></li>
                     </ul>
-
-
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                         
                             </ul>
-                               <a href="http://www.bestbuy.com/cart"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
-
-                            <%-- <div class="box1">
-                                <div class="container-1">
-                                    <input type="search" id="search" placeholder="Search..." />
-                                </div>
-                            </div>--%>
                         </AnonymousTemplate>
-
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
@@ -83,7 +70,6 @@
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
-
                         </LoggedInTemplate>
                     </asp:LoginView>
                     <div class="box1">
@@ -97,17 +83,23 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-
             <footer id="Fotter">
-                <div>
+                <div class="Link">
+                     
                 </div>
-                <p>&copy; <%: DateTime.Now.Year %> - WebShop</p>
-
-                <div class="navbar-text pull-right">
-                    <a href="https://www.facebook.com"><i class="fa fa-facebook fa-2x"></i></a>
-                    <a href="https://twitter.com/?lang=sv"><i class="fa fa-twitter fa-2x"></i></a>
-                    <a href="https://www.youtube.com/"><i class="fa fa-youtube fa-2x"></i></a>
+                <div class="Box2">
+                    <a href="http://www.facebook.com"><i  class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
+                    <a href="http://www.twitter.com"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+                    <a href="http://www.youtube.com"><i class="fa fa-youtube-square fa-3x" aria-hidden="true"></i></a>
+                    <a href="http://www.github.com"><i class="fa fa-git fa-3x" aria-hidden="true"></i></a>
                 </div>
+                
+                <div class="Cont">
+                     <p>&copy; <%: DateTime.Now.Year %> - WebShop</p>
+                </div>
+                
+                
+                    
             </footer>
         </div>
     </form>
