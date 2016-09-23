@@ -84,16 +84,20 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <footer id="Fotter">
-
-                <div class="Box2">
-                    <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
-                    <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
-                    <i class="fa fa-youtube-square fa-3x" aria-hidden="true"></i>
-                    <i class="fa fa-git fa-3x" aria-hidden="true"></i>
+                <div class="Link">
+                     
                 </div>
-                <div id="Link"> </div>
-                <div id="Cont"></div>
-                <%--<p>&copy; <%: DateTime.Now.Year %> - WebShop</p>--%>
+                <div class="Box2">
+                    <a href="http://www.facebook.com"><i  class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
+                    <a href="http://www.twitter.com"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+                    <a href="http://www.youtube.com"><i class="fa fa-youtube-square fa-3x" aria-hidden="true"></i></a>
+                    <a href="http://www.github.com"><i class="fa fa-git fa-3x" aria-hidden="true"></i></a>
+                </div>
+                
+                <div class="Cont">
+                     <p>&copy; <%: DateTime.Now.Year %> - WebShop</p>
+                </div>
+                
                 
                     
             </footer>

@@ -5486,34 +5486,37 @@ a.list-group-item:focus {
 }*/
 
 .Box2{
-    background-color:pink;
+    background-color:transparent;
     width:280px;
     height:50px;
     border-style:solid;
-    border-color:black;
+    border-color:transparent;
     border-radius:5px;
     text-align:center;
     margin-left: 450px;
 }
 .Link{
-    background-color:pink;
-    width:280px;
+    background-color:transparent;
+    width:380px;
     height:50px;
     border-style:solid;
-    border-color:black;
+    border-color:transparent;
     border-radius:5px;
     text-align:center;
-    margin-left: 450px;
+    margin-left: 400px;
 }
 .Cont{
-    background-color:pink;
-    width:280px;
+    background-color:transparent;
+    width:180px;
     height:50px;
     border-style:solid;
-    border-color:black;
+    border-color:transparent;
     border-radius:5px;
     text-align:center;
-    margin-left: 450px;
+    margin-left: 500px;
+}
+#nov{
+    text-decoration:underline;
 }
 #Fotter{
     background-color:transparent;
