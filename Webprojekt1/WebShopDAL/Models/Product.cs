@@ -18,6 +18,17 @@ namespace WebShopDAL.Models
 
         public int CategoryID { get; set; }
 
+        public Product( string productBrand, decimal priceUnit, string description, string color, string size) //For every picture from products
+        {
+            
+            this.ProductBrand = productBrand;
+            this.PriceUnit = priceUnit;
+            this.ProductDescription = description;
+            this.Color = color;
+            this.Size = size;
+            
+
+        }
 
         public Product(int productID,string productBrand,decimal priceUnit,string description, string color, string size, int stock, int categoryID)
         {

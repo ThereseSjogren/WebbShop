@@ -122,7 +122,35 @@ namespace WebShopDAL.ConnectedLayer
         {
 
         }//TODO
-           
+        public List<Product> lsDescriptionProduct(int id)
+        {
+            List<Product> lsAllProduct = new List<Product>();
+            string sql = $"SELECT ProductBrand, PriceUnit, ProductDescription, Color, Size from tblProduct Where ProductID = {id} ";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader _sqlDtReader = cmd.ExecuteReader();
+                while (_sqlDtReader.Read())
+                {
+                    
+                    string productBrand = (string)_sqlDtReader["ProductBrand"];
+                    decimal priceUnit = (decimal)_sqlDtReader["PriceUnit"];
+                    string productDescription = (string)_sqlDtReader["ProductDescription"];
+                    string color = (string)_sqlDtReader["Color"];
+                    string size = (string)_sqlDtReader["Size"];
+                    
+                    
+
+                    lsAllProduct.Add(new Product( productBrand, priceUnit, productDescription, color, size));
+                }
+                _sqlDtReader.Close();
+
+            }
+            return lsAllProduct;
+
+
+
+        }
+
         public List<Product> GetProducts()
         {
             List<Product> lsAllProduct = new List<Product>();
@@ -148,6 +176,8 @@ namespace WebShopDAL.ConnectedLayer
             }
             return lsAllProduct;
         }
+
+        
 
 
     }

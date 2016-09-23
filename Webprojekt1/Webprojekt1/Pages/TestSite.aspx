@@ -40,7 +40,7 @@
                         <div class="cover left">
                             <h2 class="title">Tommy Hilfiger</h2>
                             <p class="intro">
-                                <asp:Label ID="_lblProductDescription" runat="server" Text="Label"></asp:Label>
+                                
                                 Produktinformation
                                
                                 <br />
@@ -379,11 +379,11 @@
                             <asp:ListItem Value="" Text="(All)"></asp:ListItem>
                         </asp:DropDownList> 
                         <br />
-                        <asp:GridView ID="_invGridView" runat="server" AllowPaging="true" PagingSize="2" AllowSorting="True" DataKeyFrames="CarID" CellPadding="4" AutoGenerateColumns="false" ItemType="WebShopDAL.Models.Product" SelectMethod="GetAllProducts" DeleteMethod="DeleteProduct" UpdateMethod="UpdateProduct" EmptyDataText="There are no data records to display." ForeColor="blue">
+                        <asp:GridView ID="_invGridView" runat="server" AllowPaging="true" PagingSize="2" AllowSorting="True" DataKeyFrames="CarID" CellPadding="4" AutoGenerateColumns="false" ItemType="WebShopDAL.Models.Product" SelectMethod="GetAllProducts" DeleteMethod="DeleteProduct" UpdateMethod="UpdateProduct" EmptyDataText="There are no data records to display."  BackColor="#66ccff">
         
                             <Columns>
                                 <asp:CommandField ShowDeleteButton="true" ShowEditButton="true" />
-                                <asp:BoundField DataField="ProductID" HeaderText="Product ID" ReadOnly="true" SortExpression="ProductID"/>
+                                <asp:BoundField DataField="ProductID" HeaderText="Reference" ReadOnly="true" SortExpression="ProductID"/>
                                 <asp:BoundField DataField="ProductBrand" HeaderText="Product Brand"  SortExpression="ProductBrand"/>
                                 <asp:BoundField DataField="PriceUnit" HeaderText="PriceUnit"  SortExpression="PriceUnit"/>
                                 <asp:BoundField DataField="ProductDescription" HeaderText="Product Description"  SortExpression="ProductDescription"/>
@@ -394,6 +394,25 @@
                             </Columns>
                         </asp:GridView>
                     </div>
+                    <%--<asp:GridView ID="_singleProductGridView" runat="server"  DataKeyFrames="ProductID"  AutoGenerateColumns="false" ItemType="WebShopDAL.Models.Product" SelectMethod="GetProductDetails" >
+                        <Columns>
+                             <asp:TemplateField>
+                                <itemtemplate>
+                                     <b>Brand :</b> <%# Eval("ProductBrand") %>
+                                     <br>
+                                     <b>Price :</b> <%# Eval("PriceUnit") %>
+                                     <br>
+                                     <b>Name   :</b> <%# Eval("ProductDescription")%>
+                                     <br>
+                                     <b>Color  :</b> <%# Eval("Color")%>
+                                     <br />
+                                     <b>Color  :</b> <%# Eval("Size")%>
+                                     <br>
+                                   <img src="../Pictures/ProductPictures/018390-0082.jpg" />
+                                 </itemtemplate>
+                                </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>--%>
                 </div>
 
             </div>
