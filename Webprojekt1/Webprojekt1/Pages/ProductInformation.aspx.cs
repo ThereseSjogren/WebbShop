@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Webprojekt1
+namespace Webprojekt1.Pages
 {
-    public partial class ShoppingCart : System.Web.UI.Page
+    public partial class ProductInformation : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

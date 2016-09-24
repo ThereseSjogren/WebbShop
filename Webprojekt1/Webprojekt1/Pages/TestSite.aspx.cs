@@ -41,11 +41,11 @@ namespace Webprojekt1.Pages
             wbs.DeleteProductAdmin(productID);
 
         }
-        public void UpdateProduct(int productID, string name)
+        public void UpdateProduct(int productID)
         {
             WbsDAL wbs = new WbsDAL();
             wbs.OpenConnection($"Data Source=(local);Initial Catalog=WebbShop;Integrated Security=True");
-            wbs.UpdateProductAdmin(productID, name);
+            wbs.UpdateProductAdmin(productID);
 
 
         }

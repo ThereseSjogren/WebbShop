@@ -31,9 +31,9 @@ namespace WebShopDAL.ConnectedLayer
                 cmd.ExecuteNonQuery();
             }
         }
-        public void UpdateCustomer( int id, string name)
+        public void UpdateCustomer( int id)
         {
-            string sql = $"Update tblCustomer SET  FirstName = {name} Where CustomerID = {id}";
+            string sql = $"Update tblCustomer SET  Where CustomerID = {id}";
 
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
@@ -59,9 +59,9 @@ namespace WebShopDAL.ConnectedLayer
                 cmd.ExecuteNonQuery();
             }
         }
-        public void UpdateProductAdmin(int id,string name)
+        public void UpdateProductAdmin(int id)
         {
-            string sql = $"Update tblProduct SET  ProductBrand = {name} Where ProductID = {id}";
+            string sql = $"Update tblProduct SET  Where ProductID = {id}";
           
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {

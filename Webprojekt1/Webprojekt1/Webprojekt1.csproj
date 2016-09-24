@@ -220,10 +220,11 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Pages\ShoppingCart.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\Jackets.aspx" />
     <Content Include="Pages\Shoes.aspx" />
-    <Content Include="Pages\ShoppingCart.aspx" />
+    <Content Include="Pages\ProductInformation.aspx" />
     <Content Include="Pages\Sweatshirt.aspx" />
     <Content Include="Pages\TestSite.aspx" />
     <Content Include="Pages\Tshirt.aspx" />
@@ -456,12 +457,12 @@
     <Compile Include="Pages\Shoes.aspx.designer.cs">
       <DependentUpon>Shoes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ShoppingCart.aspx.cs">
-      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    <Compile Include="Pages\ProductInformation.aspx.cs">
+      <DependentUpon>ProductInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\ShoppingCart.aspx.designer.cs">
-      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    <Compile Include="Pages\ProductInformation.aspx.designer.cs">
+      <DependentUpon>ProductInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Sweatshirt.aspx.cs">
       <DependentUpon>Sweatshirt.aspx</DependentUpon>
@@ -514,9 +515,17 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Pages\Tests\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebShopDAL\WebShopDAL.csproj">
