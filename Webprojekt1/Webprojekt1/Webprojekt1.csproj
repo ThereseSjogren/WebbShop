@@ -221,12 +221,14 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Pages\ShoppingCart.aspx" />
+    <Content Include="Pages\Tests\Login.aspx" />
+    <Content Include="Pages\Tests\Registration.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\Jackets.aspx" />
     <Content Include="Pages\Shoes.aspx" />
     <Content Include="Pages\ProductInformation.aspx" />
     <Content Include="Pages\Sweatshirt.aspx" />
-    <Content Include="Pages\TestSite.aspx" />
+    <Content Include="Pages\Tests\TestSite.aspx" />
     <Content Include="Pages\Tshirt.aspx" />
     <Content Include="Pages\Trouses.aspx" />
     <Content Include="Pictures\fashion-person-woman-taking-photo-large.jpg" />
@@ -471,11 +473,11 @@
     <Compile Include="Pages\Sweatshirt.aspx.designer.cs">
       <DependentUpon>Sweatshirt.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TestSite.aspx.cs">
+    <Compile Include="Pages\Tests\TestSite.aspx.cs">
       <DependentUpon>TestSite.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\TestSite.aspx.designer.cs">
+    <Compile Include="Pages\Tests\TestSite.aspx.designer.cs">
       <DependentUpon>TestSite.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Tshirt.aspx.cs">
@@ -522,10 +524,24 @@
     <Compile Include="Pages\ShoppingCart.aspx.designer.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Tests\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Tests\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tests\Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Tests\Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Pages\Tests\" />
+    <Folder Include="TroubleShoot\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebShopDAL\WebShopDAL.csproj">

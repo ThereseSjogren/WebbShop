@@ -10,6 +10,7 @@ using System.Web.ModelBinding;
 using System.Data.SqlClient;
 using System.Data;
 
+
 namespace Webprojekt1.Pages
 {
     public partial class TestSite : System.Web.UI.Page
@@ -38,14 +39,14 @@ namespace Webprojekt1.Pages
         {
             WbsDAL wbs = new WbsDAL();
             wbs.OpenConnection($"Data Source=(local);Initial Catalog=WebbShop;Integrated Security=True");
-            wbs.DeleteProductAdmin(productID);
+            //wbs.DeleteProductAdmin(productID);
 
         }
         public void UpdateProduct(int productID)
         {
             WbsDAL wbs = new WbsDAL();
             wbs.OpenConnection($"Data Source=(local);Initial Catalog=WebbShop;Integrated Security=True");
-            wbs.UpdateProductAdmin(productID);
+            //wbs.UpdateProductAdmin(productID);
 
 
         }
@@ -74,6 +75,18 @@ namespace Webprojekt1.Pages
 
 
         //}
+        public void LogIn()
+        {
+            //WbsDAL wbsDAL = new WbsDAL();
+            //wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
+            //string checkUser = $"SELECT count(*) FROM tblCustomer WHERE UserName = '{_txtBoxUserName.Text}'";
+
+            //using (SqlCommand cmd = new SqlCommand(checkUser, _))
+            //{
+
+
+            //}
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 

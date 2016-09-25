@@ -41,42 +41,42 @@ namespace WebShopDAL.ConnectedLayer
             }
         }
 
-        public void InsertProductAdmin(Product p)
-        {
-            string sql = $"Insert into tblProduct (ProductBrand, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{p.ProductBrand}', '{p.ProductDescription}','{p.PriceUnit}', '{p.Color}', '{p.Size}', '{p.Stock}', '{p.CategoryID}')";
-
-            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
-            {
-                cmd.ExecuteNonQuery();
-            }
-        }
-
-        public void DeleteProductAdmin(int id)
-        {
-            string sql = $"Delete from tblProduct where ProductID = {id}";
-            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
-            {
-                cmd.ExecuteNonQuery();
-            }
-        }
-        public void UpdateProductAdmin(int id)
-        {
-            string sql = $"Update tblProduct SET  Where ProductID = {id}";
-          
-            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
-            {
-                cmd.ExecuteNonQuery();
-            }
-        }
-        //public void ProductSelectOptions(int id,string color, string size, int amount, int categoryID)//Get values from html form (customer)
+        //public void InsertProductAdmin(Product p)
         //{
-        //    string sql = $"SELECT * FROM tblProduct   Color = {color}, Size = {size},Stock = {-amount}, CategodyID = {categoryID} Where ProductID = {id}";
+        //    string sql = $"Insert into tblProduct (ProductBrand, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{p.ProductBrand}', '{p.ProductDescription}','{p.PriceUnit}', '{p.Color}', '{p.Size}', '{p.Stock}', '{p.CategoryID}')";
 
         //    using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
         //    {
         //        cmd.ExecuteNonQuery();
         //    }
         //}
+
+        //public void DeleteProductAdmin(int id)
+        //{
+        //    string sql = $"Delete from tblProduct where ProductID = {id}";
+        //    using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+        //    {
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //}
+        //public void UpdateProductAdmin(int id)
+        //{
+        //    string sql = $"Update tblProduct SET  Where ProductID = {id}";
+          
+        //    using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+        //    {
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //}
+        ////public void ProductSelectOptions(int id,string color, string size, int amount, int categoryID)//Get values from html form (customer)
+        ////{
+        ////    string sql = $"SELECT * FROM tblProduct   Color = {color}, Size = {size},Stock = {-amount}, CategodyID = {categoryID} Where ProductID = {id}";
+
+        ////    using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+        ////    {
+        ////        cmd.ExecuteNonQuery();
+        ////    }
+        ////}
        
         public int InsertToOrderTbl(int custumerID)
         {
@@ -177,7 +177,18 @@ namespace WebShopDAL.ConnectedLayer
             return lsAllProduct;
         }
 
-        
+        public void LogIn()
+        {
+            
+            
+            //string checkUser = $"SELECT count(*) FROM tblCustomer WHERE UserName = '{_txtBoxUserName.Text}'";
+
+            //using (SqlCommand cmd = new SqlCommand(checkUser, _))
+            //{
+
+
+            //}
+        }
 
 
     }
