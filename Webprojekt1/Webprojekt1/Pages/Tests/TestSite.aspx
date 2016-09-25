@@ -10,7 +10,7 @@
 
    
 
-    <asp:GridView ID="_invGridView" runat="server" AllowPaging="true" PageSize="2" AllowSorting="True" DataKeyNames="CarID" CellPadding="4" AutoGenerateColumns="false" ItemType="WebShopDAL.Models.Product" SelectMethod="GetAllProducts" DeleteMethod="DeleteProduct" UpdateMethod="UpdateProduct" EmptyDataText="There are no data records to display." BackColor="#66ccff">
+    <asp:GridView ID="_invGridView" runat="server" AllowPaging="true" PageSize="2" AllowSorting="True" DataKeyNames="ProductID" CellPadding="4" AutoGenerateColumns="false" ItemType="WebShopDAL.Models.Product" SelectMethod="GetAllProducts" DeleteMethod="DeleteProduct" UpdateMethod="UpdateProduct" EmptyDataText="There are no data records to display." BackColor="#66ccff">
 
         <Columns>
             <asp:CommandField ShowDeleteButton="true" ShowEditButton="true" />
