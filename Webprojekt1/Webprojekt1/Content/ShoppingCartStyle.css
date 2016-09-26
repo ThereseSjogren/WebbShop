@@ -32,7 +32,7 @@
     width: 100%;
     min-height: 450px;
     margin-top:60px;
-  
+
 }
 
 .product-image .indicator {
@@ -40,7 +40,7 @@
 }
 
 .product-image .dot {
-    background-color: rgba(0, 0, 0, 0.7);
+ background-color: rgba(0, 0, 0, 0.7);
     border-radius: 50%;
     cursor: pointer;
     display: inline-block;
@@ -51,7 +51,7 @@
 }
 
 .dot:hover {
-    background-color: white;
+ background-color: white;
 }
 
 .product-info {

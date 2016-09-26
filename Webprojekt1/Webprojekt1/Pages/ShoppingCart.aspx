@@ -4,7 +4,7 @@
     <link href="../Content/ShoppingCartStyle.css" rel="stylesheet" type="text/css" />
 
     <div class="product group">
-        <div class="col-1-2 product-image">
+        <div class="col-md-3 product-image">
             <div class="bg"></div>
             <div class="indicator">
                 <div class="dot one"></div>
@@ -12,7 +12,7 @@
                 <div class="dot three"></div>
             </div>
         </div>
-        <div class="col-1-2 product-info">
+        <div class="col-md-3 product-info">
             <h1>T-shirt
                 <br />
                 Tommy Hilfiger
@@ -29,6 +29,7 @@
             </div>
              <div class="select-dropdown">
                 <select>
+                    <option value="quantity">Quantity</option>
                     <option value="quantity">1</option>
                     <option value="quantity">2</option>
                     <option value="quantity">3</option>
@@ -38,7 +39,14 @@
                     <option value="quantity">7</option>
                     <option value="quantity">8</option>
                     <option value="quantity">9</option>
-                    <option value="quantity">10</option>
+                </select>
+            </div>
+                <div class="select-dropdown">
+                <select>
+                    <option value="color">Color</option>
+                    <option value="color">Black</option>
+                    <option value="color">Yellow</option>
+                    <option value="color">White</option>
                 </select>
             </div>
          <a href="#"class="add-btn">Add to cart</a>
@@ -64,4 +72,10 @@
             </ul>
         </div>
     </div>
+
+
+
+
+
+
 </asp:Content>
