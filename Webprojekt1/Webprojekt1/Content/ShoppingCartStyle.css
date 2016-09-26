@@ -124,4 +124,13 @@ h1{
         content:"\2022";
         margin-right:20px;
     }
-
+.cart_details{
+  width:100%;
+  float:left;
+  border-top:3px solid black;
+  border-bottom:3px solid black;
+  margin-top:-20px;
+  position:relative;
+  min-height:270px;
+  max-height:300px;
+}

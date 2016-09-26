@@ -71,6 +71,10 @@
                 <li>Machine wash</li>
                 <li>Our model wears a size Medium</li>
             </ul>
+           
         </div>
-    </div>
+   
+        <div class="cart_details">
+       </div>
+      </div>
 </asp:Content>
