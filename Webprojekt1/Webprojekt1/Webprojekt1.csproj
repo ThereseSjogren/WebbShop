@@ -206,6 +206,7 @@
     <Content Include="Content\ProductStyle.css" />
     <Content Include="Content\ShoppingCartStyle.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Errorhandling\404.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -234,6 +235,7 @@
     <Content Include="Pages\Trouses.aspx" />
     <Content Include="Pictures\fashion-person-woman-taking-photo-large.jpg" />
     <Content Include="Pictures\fashionl.jpg" />
+    <Content Include="Pictures\oldwhite.jpg" />
     <Content Include="Pictures\pexels-photo-24257-large.jpg" />
     <Content Include="Pictures\backgroundIMG.jpg" />
     <Content Include="Pictures\pexels-photo-63196-large.jpeg" />
@@ -434,6 +436,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errorhandling\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errorhandling\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
