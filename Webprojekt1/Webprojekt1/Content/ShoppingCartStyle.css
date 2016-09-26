@@ -1,4 +1,6 @@
-﻿h1{
+﻿
+
+h1{
   font-size: 130%;
 }
 
@@ -19,7 +21,7 @@
     clear: both;
 }
 
-.col-1-2 {
+.col-md-3 {
     width: 50%;
     height: 100%;
     float: left;
@@ -122,26 +124,4 @@
         content:"\2022";
         margin-right:20px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
