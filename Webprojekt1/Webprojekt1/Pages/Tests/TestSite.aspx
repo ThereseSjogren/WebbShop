@@ -4,9 +4,10 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link href="../Content/ProductStyle.css" rel="stylesheet" type="text/css" />
 
-    <h1 class="text-center"><strong>Test Site</strong></h1>
-    <div ><a style="padding:1px; background-color:blueviolet; border-color:white ;text-decoration:none;color:white"  href="Login.aspx">Login test site</a></div>
-    <div ><a style="padding:1px; background-color:blueviolet; border-color:white; text-decoration:none;color:white" href="Registration.aspx">Register test site</a></div>
+    <h1 style="margin-Top:10%" class="text-center"><strong>Test Site</strong></h1>
+    <div ><a style="Width: 1%;padding:1px; background-color:blueviolet; border-color:white ;text-decoration:none;color:white"  href="Login.aspx">Login test site</a></div>
+    <div ><a style="padding:1px; background-color:blueviolet; border-color:black; text-decoration:none;color:white" href="Registration.aspx">Register test site</a></div>
+     <div ><a style="Width: 1% ;padding:1px; background-color:cornflowerblue; border-color:black; text-decoration:none;color:white" href="ProceedOrder.aspx">Proceed Order</a></div>
 
    
 

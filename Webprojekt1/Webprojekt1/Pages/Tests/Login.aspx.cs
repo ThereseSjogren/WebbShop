@@ -38,7 +38,8 @@ namespace Webprojekt1
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
-            con.Open();
+            //WbsDAL wbsDAL = new WbsDAL();
+            //wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
 
             if (_txtBoxUserName.Text.Contains("@"))
             {

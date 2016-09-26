@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="../../Site.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="Webprojekt1.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1 style="margin-Top:20%; font-size: x-large; font-family: Arial, Helvetica, sans-serif; font-style: normal; text-align: center; color: #000000" class="text-center"><strong>Registration Page</strong></h1>
+    <h1 style="margin-Top:10%; font-size: x-large; font-family: Arial, Helvetica, sans-serif; font-style: normal; text-align: center; color: #000000" class="text-center"><strong>Registration Page</strong></h1>
     <hr />
     <table class="nav-justified">
         <tr>

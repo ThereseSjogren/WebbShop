@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-3">
         </div>
-        <div style="margin-top:20%" class="col-md-6">
+        <div style="margin-top:10%" class="col-md-6">
             <h1 style="font-size: x-large; font-family: Arial, Helvetica, sans-serif; font-style: normal; text-align: center; color: #000000" class="text-center"><strong>Login Page</strong></h1>
             <br />
             <hr />

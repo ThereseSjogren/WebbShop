@@ -223,6 +223,7 @@
     <Content Include="Pages\ShoppingCart.aspx" />
     <Content Include="Pages\Tests\Login.aspx" />
     <Content Include="Pages\Tests\Registration.aspx" />
+    <Content Include="Pages\Tests\ProceedOrder.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\Jackets.aspx" />
     <Content Include="Pages\Shoes.aspx" />
@@ -537,6 +538,13 @@
     </Compile>
     <Compile Include="Pages\Tests\Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tests\ProceedOrder.aspx.cs">
+      <DependentUpon>ProceedOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Tests\ProceedOrder.aspx.designer.cs">
+      <DependentUpon>ProceedOrder.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
