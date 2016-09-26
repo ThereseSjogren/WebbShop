@@ -7,6 +7,9 @@ using System.Web.UI.WebControls;
 using WebShopDAL.ConnectedLayer;
 using WebShopDAL.Models;
 using System.Web.ModelBinding;
+using System.Data.SqlClient;
+using System.Data;
+
 
 namespace Webprojekt1.Pages
 {
@@ -18,7 +21,15 @@ namespace Webprojekt1.Pages
             WbsDAL wbs = new WbsDAL();
             wbs.OpenConnection($"Data Source=(local);Initial Catalog=WebbShop;Integrated Security=True");
             allProductsList = wbs.GetProducts();
-
+            //Same solution as the one below
+            //if (string.IsNullOrEmpty(productBrand))
+            //{
+            //    return wbs.GetProducts().AsQueryable();
+            //}
+            //else
+            //{
+            //    return wbs.GetProducts().Where(x => x.ProductBrand == productBrand).AsQueryable();
+            //}
             return string.IsNullOrEmpty(productBrand) ?
                 wbs.GetProducts().AsQueryable() :
                 wbs.GetProducts().Where(x => x.ProductBrand == productBrand).AsQueryable();
@@ -28,14 +39,14 @@ namespace Webprojekt1.Pages
         {
             WbsDAL wbs = new WbsDAL();
             wbs.OpenConnection($"Data Source=(local);Initial Catalog=WebbShop;Integrated Security=True");
-            wbs.DeleteProductAdmin(productID);
+            //wbs.DeleteProductAdmin(productID);
 
         }
-        public void UpdateProduct(int productID, string name)
+        public void UpdateProduct(int productID)
         {
             WbsDAL wbs = new WbsDAL();
             wbs.OpenConnection($"Data Source=(local);Initial Catalog=WebbShop;Integrated Security=True");
-            wbs.UpdateProductAdmin(productID, name);
+            //wbs.UpdateProductAdmin(productID);
 
 
         }
@@ -52,6 +63,29 @@ namespace Webprojekt1.Pages
 
 
             return productList;
+        }
+        //public void GetProductDetails(int id)
+        //{
+        //    List<Product> lstDescriptionProduct = new List<Product>();
+        //    WbsDAL wbs = new WbsDAL();
+        //    wbs.OpenConnection($"Data Source=(local);Initial Catalog=WebbShop;Integrated Security=True");
+        //    lstDescriptionProduct =  wbs.lsDescriptionProduct(id);
+        //    _singleProductGridView.DataSource = lstDescriptionProduct;
+        //    _singleProductGridView.DataBind();
+
+
+        //}
+        public void LogIn()
+        {
+            //WbsDAL wbsDAL = new WbsDAL();
+            //wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
+            //string checkUser = $"SELECT count(*) FROM tblCustomer WHERE UserName = '{_txtBoxUserName.Text}'";
+
+            //using (SqlCommand cmd = new SqlCommand(checkUser, _))
+            //{
+
+
+            //}
         }
         protected void Page_Load(object sender, EventArgs e)
         {

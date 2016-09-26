@@ -22,12 +22,6 @@
                 <li>
                     <a href="Jackets.aspx">Jacket</a>
                 </li>
-                <li>
-                    <a href="Shoes.aspx">Shoes</a>
-                </li>
-                <li>
-                    <a href="#">Watches</a>
-                </li>
             </ul>
         </div>
         <div class="container">
