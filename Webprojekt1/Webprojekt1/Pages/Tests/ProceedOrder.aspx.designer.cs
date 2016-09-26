@@ -13,40 +13,49 @@ namespace Webprojekt1 {
     public partial class ProceedOrder {
         
         /// <summary>
-        /// DropDownList1 control.
+        /// _dropDownGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList _dropDownGender;
         
         /// <summary>
-        /// DropDownList4 control.
+        /// _dropDownCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.DropDownList _dropDownCategory;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// _dropDownSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList _dropDownSize;
         
         /// <summary>
-        /// DropDownList3 control.
+        /// _dropDownColor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList _dropDownColor;
+        
+        /// <summary>
+        /// _txtBoxQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox _txtBoxQuantity;
         
         /// <summary>
         /// _btnSubmitOrder control.
@@ -56,5 +65,14 @@ namespace Webprojekt1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button _btnSubmitOrder;
+        
+        /// <summary>
+        /// GridViewGetProduct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewGetProduct;
     }
 }

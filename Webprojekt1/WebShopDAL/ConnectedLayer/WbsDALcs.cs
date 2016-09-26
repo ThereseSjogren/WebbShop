@@ -142,9 +142,9 @@ namespace WebShopDAL.ConnectedLayer
         {
 
         }//TODO
-        public int GetProduct(string color, string size)
+        public int GetProduct(string category,string gender,string color, string size)
         {
-            string getProduct = $"SELECT ProductID FROM tblProduct WHERE Color = '{color}' AND Size = '{size}' ";
+            string getProduct = $"SELECT p.ProductID FROM tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID  WHERE Category= '{category}' AND Gender= '{gender}' AND Color = '{color}' AND Size = '{size}' ";
             using (SqlCommand cmd = new SqlCommand(getProduct, _sqlConnection))
             {
                 int productID = (int)cmd.ExecuteScalar();

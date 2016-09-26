@@ -75,18 +75,7 @@ namespace Webprojekt1.Pages
 
 
         //}
-        public void LogIn()
-        {
-            //WbsDAL wbsDAL = new WbsDAL();
-            //wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
-            //string checkUser = $"SELECT count(*) FROM tblCustomer WHERE UserName = '{_txtBoxUserName.Text}'";
-
-            //using (SqlCommand cmd = new SqlCommand(checkUser, _))
-            //{
-
-
-            //}
-        }
+       
         protected void Page_Load(object sender, EventArgs e)
         {
 

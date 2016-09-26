@@ -46,21 +46,45 @@ namespace Webprojekt1
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
                 con.Open();
-                string sql = $"INSERT INTO tblCustomer (FirstName,LastName, Address, Email, UserName, Password, ZipCodeID, RabattID) VALUES ('{_txtBoxFName.Text}','{_txtBoxLName.Text}', '{_txtBoxAddress.Text}','{_txtBoxEmail.Text}', '{_txtBoxUserName.Text}', '{_txtBoxPassword.Text}', {Int32.Parse(_dropDownListZipCode.SelectedValue)},{1})";
-                using (SqlCommand _sqlCommand = new SqlCommand(sql, con))
-                {
-                    //_sqlCommand.Parameters.AddWithValue("@FirstName", _txtBoxFName.Text);
-                    //_sqlCommand.Parameters.AddWithValue("@LastName", _txtBoxLName.Text);
-                    //_sqlCommand.Parameters.AddWithValue("@Address", _txtBoxAddress.Text);
-                    //_sqlCommand.Parameters.AddWithValue("@Email", _txtBoxEmail.Text);
-                    //_sqlCommand.Parameters.AddWithValue("@UserName", _txtBoxUserName.Text);
-                    //_sqlCommand.Parameters.AddWithValue("@Password", _txtBoxPassword.Text);
-                    //_sqlCommand.Parameters.AddWithValue("@ZipCodeID", Int32.Parse(_dropDownListZipCode.SelectedValue));
-                    //_sqlCommand.Parameters.AddWithValue("@RabattID", 1);
 
-                    _sqlCommand.ExecuteNonQuery();
-                    Response.Redirect("login.aspx");
-                    Response.Write("Your registration was successfull!");
+                if (_txtBoxUserName.Text == _txtBoxEmail.Text)
+                {
+                    _txtBoxUserName = _txtBoxEmail;
+                    string sql = $"INSERT INTO tblCustomer (FirstName,LastName, Address, Email, UserName, Password, ZipCodeID, RabattID) VALUES ('{_txtBoxFName.Text}','{_txtBoxLName.Text}', '{_txtBoxAddress.Text}','{_txtBoxEmail.Text}', '{_txtBoxUserName.Text}', '{_txtBoxPassword.Text}', {Int32.Parse(_dropDownListZipCode.SelectedValue)},{1})";
+                    using (SqlCommand _sqlCommand = new SqlCommand(sql, con))
+                    {
+                        //_sqlCommand.Parameters.AddWithValue("@FirstName", _txtBoxFName.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@LastName", _txtBoxLName.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@Address", _txtBoxAddress.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@Email", _txtBoxEmail.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@UserName", _txtBoxUserName.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@Password", _txtBoxPassword.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@ZipCodeID", Int32.Parse(_dropDownListZipCode.SelectedValue));
+                        //_sqlCommand.Parameters.AddWithValue("@RabattID", 1);
+
+                        _sqlCommand.ExecuteNonQuery();
+                        Response.Redirect("login.aspx");
+                        Response.Write("Your registration was successfull!"); 
+                    }
+                }
+                else
+                {
+                    string sql = $"INSERT INTO tblCustomer (FirstName,LastName, Address, Email, UserName, Password, ZipCodeID, RabattID) VALUES ('{_txtBoxFName.Text}','{_txtBoxLName.Text}', '{_txtBoxAddress.Text}','{_txtBoxEmail.Text}', '{_txtBoxUserName.Text}', '{_txtBoxPassword.Text}', {Int32.Parse(_dropDownListZipCode.SelectedValue)},{1})";
+                    using (SqlCommand _sqlCommand = new SqlCommand(sql, con))
+                    {
+                        //_sqlCommand.Parameters.AddWithValue("@FirstName", _txtBoxFName.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@LastName", _txtBoxLName.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@Address", _txtBoxAddress.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@Email", _txtBoxEmail.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@UserName", _txtBoxUserName.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@Password", _txtBoxPassword.Text);
+                        //_sqlCommand.Parameters.AddWithValue("@ZipCodeID", Int32.Parse(_dropDownListZipCode.SelectedValue));
+                        //_sqlCommand.Parameters.AddWithValue("@RabattID", 1);
+
+                        _sqlCommand.ExecuteNonQuery();
+                        Response.Redirect("login.aspx");
+                        Response.Write("Your registration was successfull!");
+                    }
                 }
             }
 
