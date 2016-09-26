@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Webprojekt1.Pages {
+namespace Webprojekt1 {
     
     
     public partial class ShoppingCart {
