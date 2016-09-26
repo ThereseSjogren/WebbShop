@@ -125,12 +125,35 @@ h1{
         margin-right:20px;
     }
 .cart_details{
-  width:100%;
+  width:101%;
   float:left;
-  border-top:3px solid black;
-  border-bottom:3px solid black;
-  margin-top:-20px;
-  position:relative;
+  border-top:2px solid #444;
+  border-bottom:2px solid black;
+  margin-top:50px;
+  position:center;
   min-height:270px;
   max-height:300px;
+}
+
+.media-object{
+    width: 100px; 
+    height: 100px;
+}
+.container1{
+    margin-left:-500px;
+}
+.btn-danger{
+    background-color:darkgray;
+    color:white;
+   
+    margin-left:-75px;
+}
+h1,h2,h3,h4,h5{
+    color:black;
+}
+th{
+    color:black;
+}
+span{
+    color:black;
 }
