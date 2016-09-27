@@ -25,20 +25,33 @@
                 </li>
             </ul>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Products</h1>
-                </div>
-                <div id="wrap">
-                    <h1 id="header">DVD Collection</h1>
-                    <ul id="list">
-                        <li><a href="#">Yellow</a></li>
-                        <li><a href="#">M</a></li>
-                        <li><a href="#">Star Trek (2009)</a></li>
-                        <li><a href="#">Tremors</a></li>
-                    </ul>
-                </div>
+       <div class="container">
+	<div class="row">
+        <p class="lead">Products</p>
+        <div class="btn-group show-on-hover">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Size <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Small</a></li>
+            <li><a href="#">Medium</a></li>
+            <li><a href="#">Large</a></li>
+            <li><a href="#">XLarge</a></li>
+          </ul>
+        </div>
+        <div class="btn-group show-on-hover">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Color <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Black</a></li>
+            <li><a href="#">White</a></li>
+            <li><a href="#">Yellow</a></li>
+          </ul>
+        </div>
+	</div>
+</div>
+
                 <div class="row1">
                     <div class="col-md-3 box">
                         <div class="cover left">
@@ -539,8 +552,7 @@
                 </div>
 
             </div>
-        </div>
-    </div>
+    
 </asp:Content>
 
 
