@@ -222,6 +222,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Pages\OrderRec.aspx" />
     <Content Include="Pages\ShoppingCart.aspx" />
     <Content Include="Pages\Tests\Login.aspx" />
     <Content Include="Pages\Tests\Registration.aspx" />
@@ -236,8 +237,8 @@
     <Content Include="Pages\Trouses.aspx" />
     <Content Include="Pictures\ErrorPictures\bild till errorpage.jpg" />
     <Content Include="Pictures\fashionl.jpg" />
+    <Content Include="Pictures\Jeans640.jpg" />
     <Content Include="Pictures\oldwhite.jpg" />
-    <Content Include="Pictures\backgroundIMG.jpg" />
     <Content Include="Pictures\ProductPictures\018390-0082.jpg" />
     <Content Include="Pictures\ProductPictures\129716-3138.jpg" />
     <Content Include="Pictures\ProductPictures\132322-6180.jpg" />
@@ -253,6 +254,7 @@
     <Content Include="Pictures\ProductPictures\891185-0446.jpg" />
     <Content Include="Pictures\Shoes.jpg" />
     <Content Include="Pictures\Sweater.jpeg" />
+    <Content Include="Pictures\T-shirt2.JPG" />
     <Content Include="Pictures\T-shirts\image1xxl[1].jpg" />
     <Content Include="Pictures\Wintercloth.jpeg" />
     <Content Include="Pictures\WinterHats.jpeg" />
@@ -261,6 +263,7 @@
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Filterbox.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -462,6 +465,13 @@
     </Compile>
     <Compile Include="Pages\Jackets.aspx.designer.cs">
       <DependentUpon>Jackets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrderRec.aspx.cs">
+      <DependentUpon>OrderRec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OrderRec.aspx.designer.cs">
+      <DependentUpon>OrderRec.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
