@@ -88,10 +88,12 @@
 
                                 <br />
                                 handtvätt.Kemtvätt
-                           
+                         
                            
                             </p>
-                            <div class="btn"><a href="#">Info</a></div>
+                            <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -132,7 +134,9 @@
                            
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                           <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -173,7 +177,9 @@
                            
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                            <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -214,7 +220,9 @@
                            
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                             <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -255,7 +263,9 @@
                            
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                             <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -296,7 +306,9 @@
                            
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                      <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -337,7 +349,9 @@
                            
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                            <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -378,7 +392,9 @@
                            
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                            <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -419,7 +435,9 @@
                            
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                        <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -460,7 +478,9 @@
                            
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                            <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -501,7 +521,9 @@
                            
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                           <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -542,7 +564,9 @@
                            
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                         <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40 $
+                                             </a></div>
                         </div>
                     </div>
                     <hr />
