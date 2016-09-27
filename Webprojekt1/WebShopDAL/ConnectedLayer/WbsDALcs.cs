@@ -54,57 +54,46 @@ namespace WebShopDAL.ConnectedLayer
         /// <returns>Created order's ID</returns>
         public int InsertToOrderTbl(int custumerID)
         {
-           
-                //////////////////////////////////
-                var OrderDate = DateTime.Now.Date;
-                var DelivDate = OrderDate.AddDays(5).Date;
-                int moms = 25;
-                int createdOrderID = 0;
-                string sql = @"INSERT INTO tblOrder (OrderDate,DeliveryDate, Moms, CustomerID) VALUES ("+OrderDate+","+DelivDate+", "+moms+","+custumerID+")";
-                using (SqlCommand _sqlCommand = new SqlCommand(sql, _sqlConnection))
+
+            //////////////////////////////////
+            var OrderDate = DateTime.Now.Date;
+            var DelivDate = OrderDate.AddDays(5).Date;
+            int moms = 25;
+            int createdOrderID = 0;
+            //////////////////////////////////
+            string sql = @"INSERT INTO tblOrder (OrderDate,DeliveryDate, Moms, CustomerID) OUTPUT INSERTED.OrderID VALUES (@OrderDate,@DeliveryDate, @moms, @custumerID)";
+            using (SqlCommand _sqlCommand = new SqlCommand(sql, _sqlConnection))
             {
-                //_sqlCommand.Parameters.AddWithValue("@ProductID", productID);
-                //_cmdInsertToOrderProductTbl.Parameters.AddWithValue("@OrderID", orderID);
+               
 
-                try
-                {
-                    _sqlCommand.ExecuteNonQuery();
-                    string sql2 = $"SELECT @NewOrderID = SCOPE_IDENTITY()";
-                    using (SqlCommand _sqlCommand2 = new SqlCommand(sql2, _sqlConnection))
-                    {
-                        /////////////////////////////////////////////////
-                        SqlDataReader dataReader = _sqlCommand2.ExecuteReader();
-                        while (dataReader.Read())
-                        {
-                            createdOrderID = (int)dataReader["@NewOrderID"];
-                            return createdOrderID;
-
-                        }
-                        dataReader.Close();
-                        dataReader.Dispose();
-                        //////////////////////////////////////
-                    }
-                }
-                catch (SqlException sqlex)
-                {
-
-                    throw new Exception($"{sqlex}");
-                }
-                    
-                }
-           return createdOrderID;
+                _sqlCommand.Parameters.AddWithValue("@OrderDate", OrderDate);
+                _sqlCommand.Parameters.AddWithValue("@DeliveryDate", DelivDate);
+                _sqlCommand.Parameters.AddWithValue("@moms", moms);
+                _sqlCommand.Parameters.AddWithValue("@custumerID", custumerID);
+                createdOrderID = (int)_sqlCommand.ExecuteScalar();
+            }
+            return createdOrderID;
 
         }
 
-           
-        
+
+        public void ShowDetails(int orderID)
+        {
+            DataTable dr = new DataTable();
+            using (SqlCommand cmdAllOrderDetails = new SqlCommand($"sp_GetAllOrderInfo @OrderID={orderID}", _sqlConnection))
+            {
+                SqlDataReader _adapter = cmdAllOrderDetails.ExecuteReader();
+                dr.Load(_adapter);
+                _adapter.Close();
+            }
+        }
         /// <summary>
         /// Calls InsertToOrderTbl(customerID) and creates a new row in ProductOrder table
         /// </summary>
         /// <param name="productID"></param>
         /// <param name="quantity"></param>
         /// <param name="customerID"></param>
-        public void InsertOrderProductTable(int productID, int quantity, int customerID)
+        public int InsertOrderProductTable(int productID, int quantity, int customerID)
         {
 
             //SqlCommand _cmdInsertProductToOrderTable = new SqlCommand($"", _sqlConnection);
@@ -114,14 +103,12 @@ namespace WebShopDAL.ConnectedLayer
                 _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@ProductID", productID);
                 _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@OrderID", orderID);
                 _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@Quantity", quantity);
-                DataTable dr = new DataTable();
-                using (SqlCommand cmdAllOrderDetails = new SqlCommand($"sp_GetAllOrderInfo @OrderID={orderID}", _sqlConnection))
-                {
-                    SqlDataReader _adapter = cmdAllOrderDetails.ExecuteReader();
-                    dr.Load(_adapter);
-                    _adapter.Close();
-                }
+                //_cmdInsertToOrderProductTbl.ExecuteNonQuery();
+                customerID = (int)_cmdInsertToOrderProductTbl.ExecuteScalar();
+                return customerID;
+
             }
+            
         }
 
         public int GetCustomerLoggedID(string userName)
