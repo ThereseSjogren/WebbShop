@@ -80,36 +80,11 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-                <div id="shop">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span>Shopping Cart<span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdown-cart" role="menu">
-                                <li>
-                                    <span class="item">
-                                        <span class="item-left">
-                                            <img src="Picture" alt="" />
-                                            <span class="item-info">
-                                                <span>T-shirt</span>
-                                                <span>40 $</span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                    <span class="item-right">
-                                        <button class="btn btn-xs btn-danger pull-right">x</button>
-                                    </span>
-
-                                    <li class="divider"></li>
-                                <li><a href="#" class="button">Checkout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                <div id="shop"> 
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>Shopping Cart
+                </button>
+                    </div>
             </div>
         </div>
 
