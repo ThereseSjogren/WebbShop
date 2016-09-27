@@ -24,9 +24,10 @@ namespace WebShopDAL.ConnectedLayer
         {
             _sqlConnection.Close();
         }
+        //Registrate Customer
         public void InsertCustomer(Customer c)
         {
-            string sql = $"Insert into tblCustomer (FirstName, LastName, Email, Address, UserName, Password, RabbatID) Values ('{c.FirstName}', '{c.LastName}','{c.Email}','{c.Address}','{c.UserName}', '{c.Password}',  '{c.ZipCodeID}','{c.RabbatID}')";
+            string sql = $"Insert into tblCustomer (FirstName, LastName, Email, Address, UserName, Password, RabattID) Values ('{c.FirstName}', '{c.LastName}','{c.Email}','{c.Address}','{c.UserName}', '{c.Password}',  '{c.ZipCodeID}','{c.RabattID}')";
 
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
@@ -86,7 +87,7 @@ namespace WebShopDAL.ConnectedLayer
             var DelivDate = OrderDate.AddDays(5);
             int moms = 25;
             int createdOrderID = 0;
-            string sql = $"INSERT INTO tblOrder (OrderDate,DeliveryDate, Moms, CustomerID) OUTPUT INSERTED.ID VALUES ('@OrderDate','@DeliveryDate', '@Moms','@CustumerID')";
+            string sql = $"INSERT INTO tblOrder (OrderDate,DeliveryDate, Moms, CustomerID) OUTPUT INSERTED.ID VALUES (@OrderDate,@DeliveryDate, @Moms,@CustumerID)";
             using (SqlCommand _sqlCommand = new SqlCommand(sql, _sqlConnection))
             {
                 _sqlCommand.Parameters.AddWithValue("@OrderDate", OrderDate);
