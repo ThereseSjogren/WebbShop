@@ -33,7 +33,8 @@ namespace Webprojekt1
             int productID = wbsDAL.GetProduct(category, gender, color, size);
             string userName = (string)Session["UserName"];
             int customerID = wbsDAL.GetCustomerLoggedID(userName);
-            wbsDAL.InsertOrderProductTable(productID, quantity, customerID);
+            int orderID = wbsDAL.InsertOrderProductTable(productID, quantity, customerID);
+            Response.Redirect("../OrderRec.aspx");
             
 
         }

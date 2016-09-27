@@ -46,15 +46,15 @@
 
     <div class="row">
         <div class="col-md-3">
-            <h2>Fall clothing</h2>
+            <h2>Jeans</h2>
             <a href="pages/Products.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/fashionl.jpg"  alt="...." />
+                <img src="Pictures/Jeans640.jpg"  alt="...." />
                     </a>
         </div>
         <div class="col-md-3">
-            <h2>Winter clothing</h2>
+            <h2>T-shirt</h2>
             <a href="pages/Products.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/Wintercloth.jpeg"  alt="...." />
+                <img src="Pictures/T-shirt2.jpg"  alt="...." />
                     </a>
         </div>
         <div class="col-md-3">
@@ -67,33 +67,6 @@
             <h2>Sweaters</h2>
             <a href="pages/Products.aspx" class="thumbnail home-thumb">
                 <img src="Pictures/Sweater.jpeg" alt="...." />
-                    </a>
-        </div>
-    </div>
-   
-    <div class="row">
-        <div class="col-md-3">
-            <h2>Fall clothing</h2>
-            <a href="pages/Products.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/fashionl.jpg"  alt="...." />
-                    </a>
-        </div>
-        <div class="col-md-3">
-            <h2>Winter clothing</h2>
-            <a href="pages/Products.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/Wintercloth.jpeg"  alt="...." />
-                    </a>
-        </div>
-        <div class="col-md-3">
-            <h2>Hats</h2>
-            <a href="pages/Products.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/WinterHats.jpeg" alt="...." />
-                    </a>
-        </div>
-        <div class="col-md-3">
-            <h2>Shoes</h2>
-            <a href="pages/Products.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/Shoes.jpg" alt="...." />
                     </a>
         </div>
     </div>
