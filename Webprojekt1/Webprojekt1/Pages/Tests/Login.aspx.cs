@@ -91,7 +91,7 @@ namespace Webprojekt1
                             string password = (string)comPassword.ExecuteScalar();
                             if (password == _txtBoxPassword.Text)
                             {
-                                Session["New"] = _txtBoxUserName.Text;
+                                Session["UserName"] = _txtBoxUserName.Text;
                                 Response.Write("Password is correct");
                                 Response.Redirect("../Products.aspx");
                             }

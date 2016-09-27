@@ -9,7 +9,8 @@ using WebShopDAL.ConnectedLayer;
 using WebShopDAL.Models;
 using System.Configuration;
 using System.Web.ModelBinding;
-
+using System.Data;
+using System.IO;
 
 namespace Webprojekt1
 {
@@ -30,9 +31,11 @@ namespace Webprojekt1
             string size = _dropDownSize.Text;
             int quantity = Int32.Parse(_txtBoxQuantity.Text);
             int productID = wbsDAL.GetProduct(category, gender, color, size);
-            Login lg = new Login();
-            //lg.Session["New"] = 
-            //InsertOrderProductTable(productID, quantity, customerID);
+            string userName = (string)Session["UserName"];
+            int customerID = wbsDAL.GetCustomerLoggedID(userName);
+            wbsDAL.InsertOrderProductTable(productID, quantity, customerID);
+            
+
         }
     }
 }

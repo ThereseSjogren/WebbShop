@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using WebShopDAL.Models;
 using System.Data.SqlClient;
 using System.Data.Sql;
-
+using System.Web;
+using System.Data;
 
 namespace WebShopDAL.ConnectedLayer
 {
@@ -24,16 +25,17 @@ namespace WebShopDAL.ConnectedLayer
         {
             _sqlConnection.Close();
         }
+        //Registrate Customer
         public void InsertCustomer(Customer c)
         {
-            string sql = $"Insert into tblCustomer (FirstName, LastName, Email, Address, UserName, Password, RabbatID) Values ('{c.FirstName}', '{c.LastName}','{c.Email}','{c.Address}','{c.UserName}', '{c.Password}',  '{c.ZipCodeID}','{c.RabbatID}')";
+            string sql = $"Insert into tblCustomer (FirstName, LastName, Email, Address, UserName, Password, RabattID) Values ('{c.FirstName}', '{c.LastName}','{c.Email}','{c.Address}','{c.UserName}', '{c.Password}',  '{c.ZipCodeID}','{c.RabattID}')";
 
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
                 cmd.ExecuteNonQuery();
             }
         }
-        public void UpdateCustomer( int id)
+        public void UpdateCustomer(int id)
         {
             string sql = $"Update tblCustomer SET  Where CustomerID = {id}";
 
@@ -43,6 +45,116 @@ namespace WebShopDAL.ConnectedLayer
             }
         }
 
+        #region OrderProcess
+
+        /// <summary>
+        /// Order process that includes insert to order table, insert to productOrder table, check username
+        /// </summary>
+        /// <param name="custumerID"></param>
+        /// <returns>Created order's ID</returns>
+        public int InsertToOrderTbl(int custumerID)
+        {
+           
+                //////////////////////////////////
+                var OrderDate = DateTime.Now.Date;
+                var DelivDate = OrderDate.AddDays(5).Date;
+                int moms = 25;
+                int createdOrderID = 0;
+                string sql = @"INSERT INTO tblOrder (OrderDate,DeliveryDate, Moms, CustomerID) VALUES ("+OrderDate+","+DelivDate+", "+moms+","+custumerID+")";
+                using (SqlCommand _sqlCommand = new SqlCommand(sql, _sqlConnection))
+            {
+                //_sqlCommand.Parameters.AddWithValue("@ProductID", productID);
+                //_cmdInsertToOrderProductTbl.Parameters.AddWithValue("@OrderID", orderID);
+
+                try
+                {
+                    _sqlCommand.ExecuteNonQuery();
+                    string sql2 = $"SELECT @NewOrderID = SCOPE_IDENTITY()";
+                    using (SqlCommand _sqlCommand2 = new SqlCommand(sql2, _sqlConnection))
+                    {
+                        /////////////////////////////////////////////////
+                        SqlDataReader dataReader = _sqlCommand2.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            createdOrderID = (int)dataReader["@NewOrderID"];
+                            return createdOrderID;
+
+                        }
+                        dataReader.Close();
+                        dataReader.Dispose();
+                        //////////////////////////////////////
+                    }
+                }
+                catch (SqlException sqlex)
+                {
+
+                    throw new Exception($"{sqlex}");
+                }
+                    
+                }
+           return createdOrderID;
+
+        }
+
+           
+        
+        /// <summary>
+        /// Calls InsertToOrderTbl(customerID) and creates a new row in ProductOrder table
+        /// </summary>
+        /// <param name="productID"></param>
+        /// <param name="quantity"></param>
+        /// <param name="customerID"></param>
+        public void InsertOrderProductTable(int productID, int quantity, int customerID)
+        {
+
+            //SqlCommand _cmdInsertProductToOrderTable = new SqlCommand($"", _sqlConnection);
+            int orderID = InsertToOrderTbl(customerID);
+            using (SqlCommand _cmdInsertToOrderProductTbl = new SqlCommand($"INSERT INTO tblOrderProduct (ProductID,OrderID, Quantity) VALUES (@ProductID,@OrderID, @Quantity)", _sqlConnection))
+            {
+                _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@ProductID", productID);
+                _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@OrderID", orderID);
+                _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@Quantity", quantity);
+                DataTable dr = new DataTable();
+                using (SqlCommand cmdAllOrderDetails = new SqlCommand($"sp_GetAllOrderInfo @OrderID={orderID}", _sqlConnection))
+                {
+                    SqlDataReader _adapter = cmdAllOrderDetails.ExecuteReader();
+                    dr.Load(_adapter);
+                    _adapter.Close();
+                }
+            }
+        }
+
+        public int GetCustomerLoggedID(string userName)
+        {
+            int customerID;
+            string numberOfCustomers = $"SELECT COUNT(*) FROM tblCustomer Where UserName = '{userName}'";
+            using (SqlCommand cmd = new SqlCommand(numberOfCustomers, _sqlConnection))
+            {
+                customerID = (int)cmd.ExecuteScalar();
+                if (customerID == 1)
+                {
+                    return customerID;
+                }
+                return customerID;
+
+
+            }
+
+        }
+
+        public int GetProduct(string category, string gender, string color, string size)
+        {
+            string getProduct = $"SELECT p.ProductID FROM tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID  WHERE CategoryName= '{category}' AND Gender= '{gender}' AND Color = '{color}' AND Size = '{size}' ";
+            using (SqlCommand cmd = new SqlCommand(getProduct, _sqlConnection))
+            {
+                int productID = (int)cmd.ExecuteScalar();
+                return productID;
+            }
+
+        }
+        #endregion
+
+        #region ProductAdministration
         //public void InsertProductAdmin(Product p)
         //{
         //    string sql = $"Insert into tblProduct (ProductBrand, PriceUnit, Description, Color, Size,Stock, CategodyID) Values ('{p.ProductBrand}', '{p.ProductDescription}','{p.PriceUnit}', '{p.Color}', '{p.Size}', '{p.Stock}', '{p.CategoryID}')";
@@ -64,7 +176,7 @@ namespace WebShopDAL.ConnectedLayer
         //public void UpdateProductAdmin(int id)
         //{
         //    string sql = $"Update tblProduct SET  Where ProductID = {id}";
-          
+
         //    using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
         //    {
         //        cmd.ExecuteNonQuery();
@@ -78,80 +190,7 @@ namespace WebShopDAL.ConnectedLayer
         ////    {
         ////        cmd.ExecuteNonQuery();
         ////    }
-        ////}
-       
-        public int InsertToOrderTbl(int custumerID)
-        {
-            var OrderDate = DateTime.Now;
-            var DelivDate = OrderDate.AddDays(5);
-            int moms = 25;
-            int createdOrderID = 0;
-            string sql = $"INSERT INTO tblOrder (OrderDate,DeliveryDate, Moms, CustomerID) OUTPUT INSERTED.ID VALUES ('@OrderDate','@DeliveryDate', '@Moms','@CustumerID')";
-            using (SqlCommand _sqlCommand = new SqlCommand(sql, _sqlConnection))
-            {
-                _sqlCommand.Parameters.AddWithValue("@OrderDate", OrderDate);
-                _sqlCommand.Parameters.AddWithValue("@DeliveryDate", DelivDate);
-                _sqlCommand.Parameters.AddWithValue("@Moms", moms);
-                _sqlCommand.Parameters.AddWithValue("@CustumerID", custumerID);
-                _sqlConnection.Open();
-
-                createdOrderID = (int)_sqlCommand.ExecuteScalar();
-
-                if (_sqlConnection.State == System.Data.ConnectionState.Open)
-                {
-                    _sqlConnection.Close();
-                }
-                return createdOrderID;
-
-
-            }
-        }
-        public void InsertOrderProductTable(int productID, int quantity, int customerID)
-        {
-
-            //SqlCommand _cmdInsertProductToOrderTable = new SqlCommand($"", _sqlConnection);
-            int orderID = InsertToOrderTbl(customerID);
-            using (SqlCommand _cmdInsertToOrderProductTbl = new SqlCommand($"INSERT INTO tblOrderProduct (ProductID,OrderID, Quantity) VALUES (@ProductID,@OrderID, @Quantity)", _sqlConnection))
-            {
-                _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@ProductID", productID);
-                _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@OrderID", orderID);
-                _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@Quantity", quantity);
-              
-            }
-
-        }
-        public void GetCustomerLoggedID(bool isLogged)
-        {
-
-        }
-        
-        public void InsertCustomersOrder(int customerID)
-        {
-
-            //if ()
-            //{
-            //    string sql = $"INSERT INTO tblOrder(Order)";
-
-            //    using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
-            //    {
-            //        cmd.ExecuteNonQuery();
-            //    } 
-            //}
-        }
-        public void CrateOrderXML()
-        {
-
-        }//TODO
-        public int GetProduct(string category,string gender,string color, string size)
-        {
-            string getProduct = $"SELECT p.ProductID FROM tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID  WHERE Category= '{category}' AND Gender= '{gender}' AND Color = '{color}' AND Size = '{size}' ";
-            using (SqlCommand cmd = new SqlCommand(getProduct, _sqlConnection))
-            {
-                int productID = (int)cmd.ExecuteScalar();
-                return productID;
-            }
-            
-        }
+        ////} 
         public List<Product> lsDescriptionProduct(int id)
         {
             List<Product> lsAllProduct = new List<Product>();
@@ -161,16 +200,16 @@ namespace WebShopDAL.ConnectedLayer
                 SqlDataReader _sqlDtReader = cmd.ExecuteReader();
                 while (_sqlDtReader.Read())
                 {
-                    
+
                     string productBrand = (string)_sqlDtReader["ProductBrand"];
                     decimal priceUnit = (decimal)_sqlDtReader["PriceUnit"];
                     string productDescription = (string)_sqlDtReader["ProductDescription"];
                     string color = (string)_sqlDtReader["Color"];
                     string size = (string)_sqlDtReader["Size"];
-                    
-                    
 
-                    lsAllProduct.Add(new Product( productBrand, priceUnit, productDescription, color, size));
+
+
+                    lsAllProduct.Add(new Product(productBrand, priceUnit, productDescription, color, size));
                 }
                 _sqlDtReader.Close();
 
@@ -202,7 +241,7 @@ namespace WebShopDAL.ConnectedLayer
                     lsAllProduct.Add(new Product(productID, productBrand, priceUnit, productDescription, color, size, stock, categoryID));
                 }
                 _sqlDtReader.Close();
-               
+
             }
             return lsAllProduct;
         }
@@ -235,7 +274,7 @@ namespace WebShopDAL.ConnectedLayer
                                 {
                                     customerID = (int)comPassword2.ExecuteScalar();
                                     islogged = true;
-                                    //Session["New"] = email;
+                                    //Session["NewUserEmail"] = email;
                                     //("Password is correct");
                                     //Response.Redirect("../Products.aspx");                                                            
                                 }
@@ -274,7 +313,7 @@ namespace WebShopDAL.ConnectedLayer
                                 {
                                     customerID = (int)comPassword2.ExecuteScalar();
                                     islogged = true;
-                                    //Session["New"] = email;
+                                    //Session["New"] = userName;
                                     //("Password is correct");
                                     //Response.Redirect("../Products.aspx");                          
                                 }
@@ -292,6 +331,10 @@ namespace WebShopDAL.ConnectedLayer
             }
 
         }//TODO Needs to return customerID
+        #endregion
+
+
+
 
 
     }
