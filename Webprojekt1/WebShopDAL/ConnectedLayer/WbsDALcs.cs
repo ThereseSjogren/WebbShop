@@ -54,40 +54,50 @@ namespace WebShopDAL.ConnectedLayer
         /// <returns>Created order's ID</returns>
         public int InsertToOrderTbl(int custumerID)
         {
-            //try
-            //{
-            var OrderDate = DateTime.Now;
-            var DelivDate = OrderDate.AddDays(5);
-            int moms = 25;
-            int createdOrderID;
-            string sql = $"INSERT INTO tblOrder (OrderDate,DeliveryDate, Moms, CustomerID) VALUES ({OrderDate},{DelivDate}, {moms},{custumerID});SELECT @NewOrderID = SCOPE_IDENTITY()";
-            using (SqlCommand _sqlCommand = new SqlCommand(sql, _sqlConnection))
+           
+                //////////////////////////////////
+                var OrderDate = DateTime.Now.Date;
+                var DelivDate = OrderDate.AddDays(5).Date;
+                int moms = 25;
+                int createdOrderID = 0;
+                string sql = @"INSERT INTO tblOrder (OrderDate,DeliveryDate, Moms, CustomerID) VALUES ("+OrderDate+","+DelivDate+", "+moms+","+custumerID+")";
+                using (SqlCommand _sqlCommand = new SqlCommand(sql, _sqlConnection))
             {
+                //_sqlCommand.Parameters.AddWithValue("@ProductID", productID);
+                //_cmdInsertToOrderProductTbl.Parameters.AddWithValue("@OrderID", orderID);
 
+                try
+                {
+                    _sqlCommand.ExecuteNonQuery();
+                    string sql2 = $"SELECT @NewOrderID = SCOPE_IDENTITY()";
+                    using (SqlCommand _sqlCommand2 = new SqlCommand(sql2, _sqlConnection))
+                    {
+                        /////////////////////////////////////////////////
+                        SqlDataReader dataReader = _sqlCommand2.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            createdOrderID = (int)dataReader["@NewOrderID"];
+                            return createdOrderID;
 
-                createdOrderID = (int)_sqlCommand.ExecuteScalar();
+                        }
+                        dataReader.Close();
+                        dataReader.Dispose();
+                        //////////////////////////////////////
+                    }
+                }
+                catch (SqlException sqlex)
+                {
 
-
-            }
-            return createdOrderID;
-            //}
-
-            //catch (Exception ex)
-            //{
-            //    throw (ex);
-
-            //}
-
-            ////if (_sqlConnection.State == System.Data.ConnectionState.Open)
-            ////{
-            ////    _sqlConnection.Close();
-            ////}
-            ////_sqlConnection.Close();
-            //finally
-            //{  }
-
+                    throw new Exception($"{sqlex}");
+                }
+                    
+                }
+           return createdOrderID;
 
         }
+
+           
+        
         /// <summary>
         /// Calls InsertToOrderTbl(customerID) and creates a new row in ProductOrder table
         /// </summary>
