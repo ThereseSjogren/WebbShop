@@ -235,12 +235,9 @@
     <Content Include="Pages\Tshirt.aspx" />
     <Content Include="Pages\Trouses.aspx" />
     <Content Include="Pictures\ErrorPictures\bild till errorpage.jpg" />
-    <Content Include="Pictures\fashion-person-woman-taking-photo-large.jpg" />
     <Content Include="Pictures\fashionl.jpg" />
     <Content Include="Pictures\oldwhite.jpg" />
-    <Content Include="Pictures\pexels-photo-24257-large.jpg" />
     <Content Include="Pictures\backgroundIMG.jpg" />
-    <Content Include="Pictures\pexels-photo-63196-large.jpeg" />
     <Content Include="Pictures\ProductPictures\018390-0082.jpg" />
     <Content Include="Pictures\ProductPictures\129716-3138.jpg" />
     <Content Include="Pictures\ProductPictures\132322-6180.jpg" />
@@ -255,6 +252,7 @@
     <Content Include="Pictures\ProductPictures\804070-7767.jpg" />
     <Content Include="Pictures\ProductPictures\891185-0446.jpg" />
     <Content Include="Pictures\Shoes.jpg" />
+    <Content Include="Pictures\Sweater.jpeg" />
     <Content Include="Pictures\T-shirts\image1xxl[1].jpg" />
     <Content Include="Pictures\Wintercloth.jpeg" />
     <Content Include="Pictures\WinterHats.jpeg" />
