@@ -28,7 +28,7 @@
                     <option value="size">XLarge</option>
                 </select>
             </div>
-             <div class="select-dropdown">
+            <div class="select-dropdown">
                 <select>
                     <option value="quantity">Quantity</option>
                     <option value="quantity">1</option>
@@ -42,7 +42,7 @@
                     <option value="quantity">9</option>
                 </select>
             </div>
-                <div class="select-dropdown">
+            <div class="select-dropdown">
                 <select>
                     <option value="color">Color</option>
                     <option value="color">Black</option>
@@ -50,7 +50,7 @@
                     <option value="color">White</option>
                 </select>
             </div>
-         <a href="#"class="add-btn">Add to cart</a>
+            <a href="#" class="add-btn">Add to cart</a>
             <p>
                 Thomas Jacob Hilfiger founded his eponymous
                  label Tommy Hilfiger in 1985, expanding the 
@@ -61,9 +61,9 @@
                 and blue logo is seen across an edit of accessories, 
                 sunglasses and underwear.
             </p>
-           
+
             <ul>
-               <li>Soft-touch jersey</li>
+                <li>Soft-touch jersey</li>
                 <li>Crew-neck</li>
                 <li>Plain design</li>
                 <li>Logo detail </li>
@@ -71,10 +71,77 @@
                 <li>Machine wash</li>
                 <li>Our model wears a size Medium</li>
             </ul>
-           
+
         </div>
-   
-        <div class="cart_details">
-       </div>
-      </div>
+
+
+        <div class="container1">
+            <div class="cart_details">
+                <div class="row">
+                    <div class="col-sm-12 col-md-10 col-md-offset-1">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                      <th>Size</th>
+                                      <th>Color</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-sm-8 col-md-6">
+                                        <div class="media">
+                                            <a class="thumbnail pull-left" href="#">
+                                                <img class="media-object" src="../Pictures/ProductPictures/018390-0082.jpg" />
+                                            </a>
+                                            <div class="media-body">
+                                                <h4><a href="#">T-Shirt</a></h4>
+                                                <span>Status:</span><span class="text-success"><strong>In Stock</strong></span>
+                                            </div>
+                                        </div>
+
+                                                
+                                    </td>
+                                   
+                                    <td class="col-sm-1 col-md-1"><strong>$40</strong></td>
+                                    <td class="col-sm-1 col-md-1"><strong>$40</strong></td>
+                                    <td class="col-sm-1 col-md-1">
+                                        <button type="button" class="btn btn-danger">
+                                            <span class="glyphicon glyphicon-remove"></span>Remove
+                                        </button>
+                                        </td>
+                                </tr>
+                            <tr>
+                               <td><h5>Subtotal</h5></td>
+                                <td><h5><strong>$80</strong></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5>Shipping</h5></td>
+                                    <td><h5><strong>Free</strong></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h3>Total</h3></td>
+                                    <td><h3><strong>$80</strong></h3></td>
+                              </tr>
+                                <tr>
+                                  
+                                    <td>
+                                       <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                        </button></td>
+                        <td>
+                        <button type="button" class="btn btn-success">
+                            Checkout <span class="glyphicon glyphicon-play"></span>
+                        </button></td>
+                                     </tr>
+                             </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
 </asp:Content>
