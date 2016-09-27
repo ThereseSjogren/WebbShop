@@ -7,7 +7,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">Category
+                    <a href="Products.aspx">Category
                     </a>
                 </li>
                   <li>
@@ -56,7 +56,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                            <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -84,7 +87,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                             <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -112,7 +118,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                             <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -140,7 +149,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                             <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -168,7 +180,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                           <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -196,7 +211,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                             <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -224,7 +242,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                            <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -252,7 +273,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                            <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -280,7 +304,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                             <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -308,7 +335,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                       <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -336,7 +366,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                            <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 box">
@@ -364,7 +397,10 @@
                                 handtvätt.Kemtvätt
                            
                             </p>
-                            <div class="btn"><a href="#">Add to Cart</a></div>
+                         <div class="btn"><a href="ShoppingCart.aspx">Info<br />
+                                40$ </a>
+
+                            </div>
                         </div>
                     </div>
                     <hr />
