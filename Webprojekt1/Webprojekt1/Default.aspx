@@ -64,16 +64,10 @@
                     </a>
         </div>
         <div class="col-md-3">
-            <h2>Shirts</h2>
+            <h2>Sweaters</h2>
             <a href="pages/Products.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/Shoes.jpg" alt="...." />
+                <img src="Pictures/Sweater.jpeg" alt="...." />
                     </a>
-            <%--<p>
-                Enter text here--%>
-            <%--</p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>--%>
         </div>
     </div>
    
@@ -101,12 +95,6 @@
             <a href="pages/Products.aspx" class="thumbnail home-thumb">
                 <img src="Pictures/Shoes.jpg" alt="...." />
                     </a>
-            <%--<p>
-                Enter text here--%>
-            <%--</p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>--%>
         </div>
     </div>
 

@@ -5504,7 +5504,19 @@ a.list-group-item:focus {
     text-align:center;
     margin-left: 500px;
 }
+#shop{
+    float:right;
+    margin-top: -30px;
+    margin-right: -150px;
+}
+.input-group {
+    color:black;
 
+}
+.form-group{
+    color:black;
+    margin-top: 20px;
+}
 #Fotter{
     background-color:transparent;
     color:#000000;
@@ -6971,23 +6983,31 @@ td.visible-print {
 }
 
 @media print {
-  .visible-print {
-    display: block !important;
-  }
-  tr.visible-print {
-    display: table-row !important;
-  }
-  th.visible-print,
-  td.visible-print {
-    display: table-cell !important;
-  }
-  .hidden-print {
-    display: none !important;
-  }
-  tr.hidden-print {
-    display: none !important;
-  }
-  th.hidden-print,
-  td.hidden-print {
-    display: none !important;
-  }
+    .visible-print {
+        display: block !important;
+    }
+
+    tr.visible-print {
+        display: table-row !important;
+    }
+
+    th.visible-print,
+    td.visible-print {
+        display: table-cell !important;
+    }
+
+    .hidden-print {
+        display: none !important;
+    }
+
+    tr.hidden-print {
+        display: none !important;
+    }
+
+    th.hidden-print,
+    td.hidden-print {
+        display: none !important;
+    }
+
+
+}

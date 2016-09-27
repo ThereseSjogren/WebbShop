@@ -272,7 +272,8 @@
     <Content Include="Content\ProductStyle.css" />
     <Content Include="Content\ShoppingCartStyle.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Errorhandling\404.aspx" />
+    <Content Include="Errorhandling\fourhundredfour.aspx" />
+    <Content Include="Errorhandling\errorPage.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -299,12 +300,10 @@
     <Content Include="Pages\Tests\TestSite.aspx" />
     <Content Include="Pages\Tshirt.aspx" />
     <Content Include="Pages\Trouses.aspx" />
-    <Content Include="Pictures\fashion-person-woman-taking-photo-large.jpg" />
+    <Content Include="Pictures\ErrorPictures\bild till errorpage.jpg" />
     <Content Include="Pictures\fashionl.jpg" />
     <Content Include="Pictures\oldwhite.jpg" />
-    <Content Include="Pictures\pexels-photo-24257-large.jpg" />
     <Content Include="Pictures\backgroundIMG.jpg" />
-    <Content Include="Pictures\pexels-photo-63196-large.jpeg" />
     <Content Include="Pictures\ProductPictures\018390-0082.jpg" />
     <Content Include="Pictures\ProductPictures\129716-3138.jpg" />
     <Content Include="Pictures\ProductPictures\132322-6180.jpg" />
@@ -319,6 +318,7 @@
     <Content Include="Pictures\ProductPictures\804070-7767.jpg" />
     <Content Include="Pictures\ProductPictures\891185-0446.jpg" />
     <Content Include="Pictures\Shoes.jpg" />
+    <Content Include="Pictures\Sweater.jpeg" />
     <Content Include="Pictures\T-shirts\image1xxl[1].jpg" />
     <Content Include="Pictures\Wintercloth.jpeg" />
     <Content Include="Pictures\WinterHats.jpeg" />
@@ -367,6 +367,7 @@
     <Content Include="Site.Mobile.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -503,12 +504,19 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Errorhandling\404.aspx.cs">
-      <DependentUpon>404.aspx</DependentUpon>
+    <Compile Include="Errorhandling\fourhundredfour.aspx.cs">
+      <DependentUpon>fourhundredfour.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Errorhandling\404.aspx.designer.cs">
-      <DependentUpon>404.aspx</DependentUpon>
+    <Compile Include="Errorhandling\fourhundredfour.aspx.designer.cs">
+      <DependentUpon>fourhundredfour.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errorhandling\errorPage.aspx.cs">
+      <DependentUpon>errorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errorhandling\errorPage.aspx.designer.cs">
+      <DependentUpon>errorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

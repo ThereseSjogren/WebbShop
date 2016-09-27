@@ -25,9 +25,10 @@ namespace WebShopDAL.ConnectedLayer
         {
             _sqlConnection.Close();
         }
+        //Registrate Customer
         public void InsertCustomer(Customer c)
         {
-            string sql = $"Insert into tblCustomer (FirstName, LastName, Email, Address, UserName, Password, RabbatID) Values ('{c.FirstName}', '{c.LastName}','{c.Email}','{c.Address}','{c.UserName}', '{c.Password}',  '{c.ZipCodeID}','{c.RabbatID}')";
+            string sql = $"Insert into tblCustomer (FirstName, LastName, Email, Address, UserName, Password, RabattID) Values ('{c.FirstName}', '{c.LastName}','{c.Email}','{c.Address}','{c.UserName}', '{c.Password}',  '{c.ZipCodeID}','{c.RabattID}')";
 
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
