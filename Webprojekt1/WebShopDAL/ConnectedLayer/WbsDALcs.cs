@@ -104,8 +104,8 @@ namespace WebShopDAL.ConnectedLayer
                 _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@OrderID", orderID);
                 _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@Quantity", quantity);
                 //_cmdInsertToOrderProductTbl.ExecuteNonQuery();
-                customerID = (int)_cmdInsertToOrderProductTbl.ExecuteScalar();
-                return customerID;
+                _cmdInsertToOrderProductTbl.ExecuteNonQuery();
+                return orderID;
 
             }
             
