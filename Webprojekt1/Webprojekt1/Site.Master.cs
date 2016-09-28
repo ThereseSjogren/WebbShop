@@ -69,7 +69,12 @@ namespace Webprojekt1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserName"] != null)
+            {
+                _lblBox.Text = (string)Session["UserName"];
+            }
+            //else
+            //    _lblUserLoggedIn.Text = Session["UserName"];
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
