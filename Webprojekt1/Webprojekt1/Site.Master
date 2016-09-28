@@ -48,7 +48,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">ETEA Cloth</a>
+                    <a class="navbar-brand" runat="server" href="~/">ETEA Clothes</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -82,10 +82,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
 
                 <div id="shop">
                     <ul class="nav navbar-nav navbar-right">

@@ -5523,9 +5523,9 @@ a.list-group-item:focus {
     margin-top:40px;
     height: 200px;
     border-radius: 5px;
-    
-    E A T E
-        ETEA
+}
+.lead{
+    color:black;
 }
 h2{
     color:black;

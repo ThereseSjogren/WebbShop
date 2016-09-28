@@ -20,20 +20,17 @@
       </div>
       <div class="form-group">
         <label for="InputMessage">Message</label>
-        <div class="input-group"
->
+        <div class="input-group">
           <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
       </div>
-      
       <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
     </div>
-
   <hr class="featurette-divider hidden-lg">
   <div class="col-lg-5 col-md-push-1">
     <address >
     
     <p class="lead">
-Helsingborg S 26458<<br>
+Helsingborg S 26458<br>
       Phone: 042-00000<br>
       </p>
     </address>
