@@ -17,7 +17,7 @@
                     <a href="Sweatshirt.aspx">Sweatshirt</a>
                 </li>
                 <li>
-                    <a href="Jackets.aspx">Trouses</a>
+                    <a href="Trouses.aspx">Trouses</a>
                 </li>
                 <li>
                     <a href="Jackets.aspx">Jacket</a>
