@@ -53,19 +53,19 @@
         </div>
         <div class="col-md-3">
             <h2>T-shirt</h2>
-            <a href="pages/Products.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/T-shirt2.jpg"  alt="...." />
+            <a href="pages/Tshirt.aspx" class="thumbnail home-thumb">
+                <img src="Pictures/shirt.jpg"  alt="...." />
                     </a>
         </div>
         <div class="col-md-3">
             <h2>Jackets</h2>
-            <a href="pages/Products.aspx" class="thumbnail home-thumb">
+            <a href="pages/Jackets.aspx" class="thumbnail home-thumb">
                 <img src="Pictures/WinterHats.jpeg" alt="...." />
                     </a>
         </div>
         <div class="col-md-3">
             <h2>Sweaters</h2>
-            <a href="pages/Products.aspx" class="thumbnail home-thumb">
+            <a href="pages/Sweatshirt.aspx" class="thumbnail home-thumb">
                 <img src="Pictures/Sweater.jpeg" alt="...." />
                     </a>
         </div>
