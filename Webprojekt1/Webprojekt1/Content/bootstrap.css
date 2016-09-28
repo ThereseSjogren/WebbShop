@@ -7012,6 +7012,8 @@ td.visible-print {
     td.hidden-print {
         display: none !important;
     }
-
+.lead{
+    float:right;
+}
 
 }
