@@ -13,12 +13,48 @@ namespace Webprojekt1.Pages {
     public partial class ProductInformation {
         
         /// <summary>
-        /// DropDownListSize control.
+        /// _dropDownGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListSize;
+        protected global::System.Web.UI.WebControls.DropDownList _dropDownGender;
+        
+        /// <summary>
+        /// _dropDownColor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList _dropDownColor;
+        
+        /// <summary>
+        /// _dropDownSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList _dropDownSize;
+        
+        /// <summary>
+        /// _dropDownQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList _dropDownQuantity;
+        
+        /// <summary>
+        /// _btnAddToChart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button _btnAddToChart;
     }
 }

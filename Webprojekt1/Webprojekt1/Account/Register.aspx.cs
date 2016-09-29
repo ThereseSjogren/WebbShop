@@ -44,17 +44,25 @@ namespace Webprojekt1.Account
                 if (_txtBoxUserName.Text == _txtBoxEmail.Text)
                 {
                     _txtBoxUserName = _txtBoxEmail;
-                    string sql = $"INSERT INTO tblCustomer (FirstName,LastName, Address, Email, UserName, Password, ZipCodeID, RabattID) VALUES ('{_txtBoxFName.Text}','{_txtBoxLName.Text}', '{_txtBoxAddress.Text}','{_txtBoxEmail.Text}', '{_txtBoxUserName.Text}', '{_txtBoxPassword.Text}', {Int32.Parse(_txtBoxZipCode.Text)},{1})";
+                    /*INSERT INTO table3 ( name, age, sex, city, id, number, nationality)
+                    SELECT name, age, sex, city, p.id, number, n.nationality
+                    FROM table1 p
+                    INNER JOIN table2 c ON c.Id = p.Id*/
+                    //string sql = $"INSERT INTO tblCustomer (FirstName,LastName, Address, Email, UserName, Password, ZipCodeID, RabattID) VALUES ('{_txtBoxFName.Text}','{_txtBoxLName.Text}', '{_txtBoxAddress.Text}','{_txtBoxEmail.Text}', '{_txtBoxUserName.Text}', '{_txtBoxPassword.Text}', {Int32.Parse(_txtBoxZipCode.Text)},{1})";
+                    string sql = @"INSERT INTO tblCustomer (FirstName,LastName, Address, Email, UserName, Password, ZipCodeID, RabattID)
+                                    SELECT @FirstName, @LastName, @Address, @Email, @UserName, Password, z.@ZipCode, @RabattID FROM tblCustomer AS c 
+                                    INNER JOIN tblZipCode AS z ON c.ZipCodeID = z.ZipCodeID ";
+
                     using (SqlCommand _sqlCommand = new SqlCommand(sql, con))
                     {
-                        //_sqlCommand.Parameters.AddWithValue("@FirstName", _txtBoxFName.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@LastName", _txtBoxLName.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@Address", _txtBoxAddress.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@Email", _txtBoxEmail.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@UserName", _txtBoxUserName.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@Password", _txtBoxPassword.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@ZipCodeID", Int32.Parse(_dropDownListZipCode.SelectedValue));
-                        //_sqlCommand.Parameters.AddWithValue("@RabattID", 1);
+                        _sqlCommand.Parameters.AddWithValue("@FirstName", _txtBoxFName.Text);
+                        _sqlCommand.Parameters.AddWithValue("@LastName", _txtBoxLName.Text);
+                        _sqlCommand.Parameters.AddWithValue("@Address", _txtBoxAddress.Text);
+                        _sqlCommand.Parameters.AddWithValue("@Email", _txtBoxEmail.Text);
+                        _sqlCommand.Parameters.AddWithValue("@UserName", _txtBoxUserName.Text);
+                        _sqlCommand.Parameters.AddWithValue("@Password", _txtBoxPassword.Text);
+                        _sqlCommand.Parameters.AddWithValue("@ZipCode", Int32.Parse(_txtBoxZipCode.Text));
+                        _sqlCommand.Parameters.AddWithValue("@RabattID", 1);
 
                         _sqlCommand.ExecuteNonQuery();
                         Response.Redirect("login.aspx");
@@ -63,17 +71,20 @@ namespace Webprojekt1.Account
                 }
                 else
                 {
-                    string sql = $"INSERT INTO tblCustomer (FirstName,LastName, Address, Email, UserName, Password, ZipCodeID, RabattID) VALUES ('{_txtBoxFName.Text}','{_txtBoxLName.Text}', '{_txtBoxAddress.Text}','{_txtBoxEmail.Text}', '{_txtBoxUserName.Text}', '{_txtBoxPassword.Text}', {Int32.Parse(_txtBoxZipCode.Text)},{1})";
+                    string sql = @"INSERT INTO tblCustomer (FirstName,LastName, Address, Email, UserName, Password, ZipCodeID, RabattID)
+                                    SELECT @FirstName, @LastName, @Address, @Email, @UserName, Password, z.@ZipCode, @RabattID FROM tblCustomer AS c 
+                                    INNER JOIN tblZipCode AS z ON c.ZipCodeID = z.ZipCodeID ";
+
                     using (SqlCommand _sqlCommand = new SqlCommand(sql, con))
                     {
-                        //_sqlCommand.Parameters.AddWithValue("@FirstName", _txtBoxFName.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@LastName", _txtBoxLName.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@Address", _txtBoxAddress.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@Email", _txtBoxEmail.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@UserName", _txtBoxUserName.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@Password", _txtBoxPassword.Text);
-                        //_sqlCommand.Parameters.AddWithValue("@ZipCodeID", Int32.Parse(_dropDownListZipCode.SelectedValue));
-                        //_sqlCommand.Parameters.AddWithValue("@RabattID", 1);
+                        _sqlCommand.Parameters.AddWithValue("@FirstName", _txtBoxFName.Text);
+                        _sqlCommand.Parameters.AddWithValue("@LastName", _txtBoxLName.Text);
+                        _sqlCommand.Parameters.AddWithValue("@Address", _txtBoxAddress.Text);
+                        _sqlCommand.Parameters.AddWithValue("@Email", _txtBoxEmail.Text);
+                        _sqlCommand.Parameters.AddWithValue("@UserName", _txtBoxUserName.Text);
+                        _sqlCommand.Parameters.AddWithValue("@Password", _txtBoxPassword.Text);
+                        _sqlCommand.Parameters.AddWithValue("@ZipCode", Int32.Parse(_txtBoxZipCode.Text));
+                        _sqlCommand.Parameters.AddWithValue("@RabattID", 1);
 
                         _sqlCommand.ExecuteNonQuery();
                         Response.Redirect("login.aspx");
