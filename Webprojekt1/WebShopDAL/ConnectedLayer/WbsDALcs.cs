@@ -64,7 +64,7 @@ namespace WebShopDAL.ConnectedLayer
             string sql = @"INSERT INTO tblOrder (OrderDate,DeliveryDate, Moms, CustomerID) OUTPUT INSERTED.OrderID VALUES (@OrderDate,@DeliveryDate, @moms, @custumerID)";
             using (SqlCommand _sqlCommand = new SqlCommand(sql, _sqlConnection))
             {
-               
+
 
                 _sqlCommand.Parameters.AddWithValue("@OrderDate", OrderDate);
                 _sqlCommand.Parameters.AddWithValue("@DeliveryDate", DelivDate);
@@ -108,7 +108,7 @@ namespace WebShopDAL.ConnectedLayer
                 return orderID;
 
             }
-            
+
         }
 
         public int GetCustomerLoggedID(string userName)
@@ -123,10 +123,7 @@ namespace WebShopDAL.ConnectedLayer
                     return customerID;
                 }
                 return customerID;
-
-
             }
-
         }
 
         public int GetProduct(string category, string gender, string color, string size)
@@ -140,6 +137,16 @@ namespace WebShopDAL.ConnectedLayer
 
         }
         #endregion
+
+        public int FilterItem(string category, string color, string size)
+        {
+            string filterItem = $"select productID from tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where CategoryName= '{category}' And Color = '{color}' AND Size = '{size}'";
+            using (SqlCommand cmd = new SqlCommand(filterItem, _sqlConnection))
+            {
+                int productID = (int)cmd.ExecuteScalar();
+                return productID;
+            }
+        }
 
         #region ProductAdministration
         //public void InsertProductAdmin(Product p)
