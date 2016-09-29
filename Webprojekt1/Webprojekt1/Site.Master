@@ -82,7 +82,7 @@
                         <%--<li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>--%>
                         <li><a runat="server" href="Pages/Products.aspx">Products</a>
-                        <li><a runat="server" href="Pages/Tests/TestSite.aspx">Tests</a></li>
+                        
                     </ul>
                     <div class="box1">
                         <div class="container-1">

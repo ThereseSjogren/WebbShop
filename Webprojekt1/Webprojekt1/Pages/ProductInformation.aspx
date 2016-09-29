@@ -18,13 +18,43 @@
                 Tommy Hilfiger
             </h1>
             <h3>$40</h3>
-
-    <asp:DropDownList ID="DropDownListSize" AppendDataBoundItems="true" AutoPostBack="true"
-DataTextField="Color" DataValueField="Color" runat ="server" >
-        <asp:ListItem Value="Black" Text="Black" ></asp:ListItem>
-        <asp:ListItem Value="Yellow" Text="Yellow"></asp:ListItem>
-        <asp:ListItem Value="Blue" Text="Blue"></asp:ListItem>
-        </asp:DropDownList>
+       
+            <div>
+                <asp:DropDownList ID="_dropDownGender" runat="server" Width="180px">
+                        <asp:ListItem>Gender</asp:ListItem>
+                        <asp:ListItem>Male</asp:ListItem>
+                        <asp:ListItem>Female</asp:ListItem>
+                        <asp:ListItem>Child</asp:ListItem>
+                    </asp:DropDownList>
+            </div>
+             <div>
+            <asp:DropDownList ID="_dropDownColor" AppendDataBoundItems="true" AutoPostBack="true"
+                DataTextField="Color" DataValueField="Color" runat ="server" >
+                <asp:ListItem Value="Black" Text="Black" ></asp:ListItem>
+                <asp:ListItem Value="Yellow" Text="Yellow"></asp:ListItem>
+                <asp:ListItem Value="Blue" Text="Blue"></asp:ListItem>
+            </asp:DropDownList>
+        </div>
+                <asp:DropDownList ID="_dropDownSize" runat="server" Width="180px">
+                        <asp:ListItem>Size</asp:ListItem>
+                        <asp:ListItem>XS</asp:ListItem>
+                        <asp:ListItem>S</asp:ListItem>
+                        <asp:ListItem>M</asp:ListItem>
+                        <asp:ListItem>L</asp:ListItem>
+                        <asp:ListItem>XL</asp:ListItem>
+                    </asp:DropDownList>
+            <div>
+            </div>
+                <asp:DropDownList ID="_dropDownQuantity" runat="server" Width="180px">
+                        <asp:ListItem>Quantity</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                    </asp:DropDownList>
+             <div>
+            </div>
              <%--<div class="select-dropdown">
                 <select>
                     <option value="color">Black</option>
@@ -33,7 +63,7 @@ DataTextField="Color" DataValueField="Color" runat ="server" >
                     
                 </select>
             </div>--%>
-             <div class="select-dropdown">
+            <%-- <div class="select-dropdown">
                 <select>
                     <option value="quantity">1</option>
                     <option value="quantity">2</option>
@@ -47,7 +77,8 @@ DataTextField="Color" DataValueField="Color" runat ="server" >
                     <option value="quantity">10</option>
                 </select>
             </div>
-         <a href="#"class="add-btn">Add to cart</a>
+         --%>
+            <asp:Button runat="server" CssClase="add-btn" ID="_btnAddToChart" Text="Add to cart"  OnClick="_btnAddToChart_Click" /><%--<a href="#"class="add-btn"></a>CssClass="add-btn"--%>
             <p>
                 Thomas Jacob Hilfiger founded his eponymous
                  label Tommy Hilfiger in 1985, expanding the 
