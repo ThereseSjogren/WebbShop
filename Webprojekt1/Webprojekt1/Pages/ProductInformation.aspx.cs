@@ -30,6 +30,7 @@ namespace Webprojekt1.Pages
                 decimal price = (decimal)row;
                 decimal totalWithDiscount = (decimal)row;
                 decimal totalWithTax = (decimal)row;
+                //Keep values in class helper ProductOrderInfoChartCart
                 var productOrderInfo = new ProductOrderInfoChartCart(productID, brand, color, size, categoryName, priceUnit, rabattID, quantity, price, totalWithDiscount, totalWithTax);
                 chartCartList = new List<ProductOrderInfoChartCart>();
                 chartCartList.Add(productOrderInfo);
@@ -56,7 +57,7 @@ namespace Webprojekt1.Pages
             wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
 
             //Get all product attributes to be able to call the product
-            string category = null; /* = _dropDownCategory.Text;         WARNING: NEED variable category from form!!!!!*/
+            string category = null; /* = _dropDownCategory.Text;         WARNING: NEED variable category from form!!!!! Will be added in a session*/
             string gender = _dropDownGender.Text;
             string color = _dropDownColor.Text;
             string size = _dropDownSize.Text;
@@ -78,12 +79,15 @@ namespace Webprojekt1.Pages
                 AddToChartCart(dt);
             }
 
-            
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            //    Should insert the order in Maste.Site.cs (shoppingCart) TODO  / Needs to reLogic it   //
+            //////////////////////////////////////////////////////////////////////////////////////////////
+
             //Check userName to be able to get CustomerID
             string userName = (string)Session["UserName"];
             //Get CustomerID to be able to get OrderID
             int customerID = wbsDAL.GetCustomerLoggedID(userName);
-            //Get OrderID
+            //Get OrderID and insert into tblOrderProduct
             int orderID = wbsDAL.InsertOrderProductTable(productID, quantity, customerID);
             Response.Redirect("../OrderRec.aspx");
         }

@@ -82,11 +82,10 @@ namespace Webprojekt1
             myChartList = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
             foreach (var p in myChartList)
             {
-                
                 infoChart += $"<li>{p.ProductID}\t{p.Brand}\t{p.Color}\t{p.Size}t{p.CategoryName}\t{p.PriceUnit}\t{p.RabattID}\t{p.Quantity}\t{p.Price}\t{p.TotalWithDiscount}\t{p.TotalWithTax}</li>";
                 _lblShowCart.Text = infoChart;
             }
-            
+
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
