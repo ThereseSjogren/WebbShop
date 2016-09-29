@@ -1,25 +1,27 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Sweatshirt.aspx.cs" Inherits="Webprojekt1.Products" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MaleJackets.aspx.cs" Inherits="Webprojekt1.Pages.MaleClothes.MaleJackets" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../Scripts/Filterbox.js"></script>
-    <link href="../../Content/ProductStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../../Content/ProductStyle.css" rel="stylesheet" type="text/css" />
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <h3>Men Sweatshirts</h3>
+                    <h3>Men Jackets</h3>
                 </li>
-                  <li>
-                    <a href="menclothes/Tshirt.aspx">T-Shirt</a>
+                
+
+                <li>
+                    <a href="MaleTshirts.aspx">T-shirts</a>
+                </li>
+                <li>
+                    <a href="MaleJeans.aspx">Sweatshirts</a>
+                </li>
+                <li>
+                    <a href="MaleJeans.aspx">Jeans</a>
                 </li>
                
-                <li>
-                    <a href="menclothes/Jeans.aspx">Jeans</a>
-                </li>
-                <li>
-                    <a href="enclothes/Jackets.aspx">Jacket</a>
-                </li>
             </ul>
         </div>
         <div class="container">
@@ -33,7 +35,7 @@
                         <li><a href="#">Small</a></li>
                         <li><a href="#">Medium</a></li>
                         <li><a href="#">Large</a></li>
-                    
+
                     </ul>
                 </div>
                 <div class="btn-group show-on-hover">
@@ -99,10 +101,6 @@
                     </div>
                 </div>
             </div>
-           
         </div>
     </div>
 </asp:Content>
-
-
-

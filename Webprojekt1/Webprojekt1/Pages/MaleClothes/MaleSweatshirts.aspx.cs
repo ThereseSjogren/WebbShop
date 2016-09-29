@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Webprojekt1.Pages
+namespace Webprojekt1.Pages.MaleClothes
 {
-    public partial class mensite : System.Web.UI.Page
+    public partial class MaleSweatshirts : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

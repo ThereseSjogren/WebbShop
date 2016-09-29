@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChildJeans.aspx.cs" Inherits="Webprojekt1.Products" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChildJeans.aspx.cs" Inherits="Webprojekt1.Pages.ChildClothes.ChildJeans" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../Scripts/Filterbox.js"></script>
@@ -10,14 +10,14 @@
                     <h3>Child Jeans</h3>
                 </li>
                  <li>
-                    <a href="ChildClothes/ChildTshirt.aspx">T-Shirt</a>
+                    <a href="ChildTshirt.aspx">T-Shirt</a>
                 </li>
                 <li>
-                    <a href="ChildClothes/ChildSweatshirt.aspx">Sweatshirt</a>
+                    <a href="ChildSweatshirt.aspx">Sweatshirt</a>
                 </li>
               
                 <li>
-                    <a href="ChildClothes/ChildJackets.aspx">Jacket</a>
+                    <a href="ChildJackets.aspx">Jacket</a>
                 </li>
             </ul>
         </div>

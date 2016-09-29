@@ -1,25 +1,25 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="mensite.aspx.cs" Inherits="Webprojekt1.Products" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MaleTshirts.aspx.cs" Inherits="Webprojekt1.Pages.MaleClothes.MaleTshirts" %>
+
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../Scripts/Filterbox.js"></script>
-      <link href="../../Content/ProductStyle.css" rel="stylesheet" type="text/css"/>
+     <link href="../../Content/ProductStyle.css" rel="stylesheet" type="text/css"/>
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                   <h3>Men Category</h3>
+                   <h3>Men T-shirts</h3>
+                </li>
+              
+            
+                <li>
+                   <a href="MaleSweatshirts.aspx">Sweatshirts</a>
                 </li>
                 <li>
-                    <a href="menclothes/Tshirt.aspx">T-Shirt</a>
+                <a href="MaleJeans.aspx">Jeans</a>
                 </li>
                 <li>
-                    <a href="menclothes/Sweatshirt.aspx">Sweatshirt</a>
-                </li>
-                <li>
-                    <a href="menclothes/Jeans.aspx">Jeans</a>
-                </li>
-                <li>
-                    <a href="enclothes/Jackets.aspx">Jacket</a>
+                   <a href="MaleJackets.aspx">Jackets</a>
                 </li>
             </ul>
         </div>
@@ -628,21 +628,68 @@
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3 box">
+            </div> <div class="col-md-3 box">
                 <div class="cover left">
                     <h2 class="title">Tommy Hilfiger</h2>
                     <p class="intro">
                         Produktinformation
-                                   <br />
+                                  <br />
                         Material: 70% Ull, 
-                              <br />
+                             <br />
                         20% Polyester, 4% Nylon,
-                                <br />
+                                    <br />
                         3% Viskos Dubbelknäppt 
                               <br />
                         Snörfodrad kant Avtagbart
-                                <br />
+                                 <br />
+                        foder Tål ej maskin- eller 
+                                       <br />
+                        handtvätt.Kemtvätt
+                    </p>
+                    <div class="btn">
+                        <a href="ShoppingCart.aspx">Info<br />
+                            40 $
+                        </a>
+                    </div>
+                </div>
+            </div> <div class="col-md-3 box">
+                <div class="cover left">
+                    <h2 class="title">Tommy Hilfiger</h2>
+                    <p class="intro">
+                        Produktinformation
+                                  <br />
+                        Material: 70% Ull, 
+                             <br />
+                        20% Polyester, 4% Nylon,
+                                    <br />
+                        3% Viskos Dubbelknäppt 
+                              <br />
+                        Snörfodrad kant Avtagbart
+                                 <br />
+                        foder Tål ej maskin- eller 
+                                       <br />
+                        handtvätt.Kemtvätt
+                    </p>
+                    <div class="btn">
+                        <a href="ShoppingCart.aspx">Info<br />
+                            40 $
+                        </a>
+                    </div>
+                </div>
+            </div> <div class="col-md-3 box">
+                <div class="cover left">
+                    <h2 class="title">Tommy Hilfiger</h2>
+                    <p class="intro">
+                        Produktinformation
+                                  <br />
+                        Material: 70% Ull, 
+                             <br />
+                        20% Polyester, 4% Nylon,
+                                    <br />
+                        3% Viskos Dubbelknäppt 
+                              <br />
+                        Snörfodrad kant Avtagbart
+                                 <br />
                         foder Tål ej maskin- eller 
                                        <br />
                         handtvätt.Kemtvätt
@@ -654,237 +701,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                               <br />
-                        20% Polyester, 4% Nylon,
-                                 <br />
-                        3% Viskos Dubbelknäppt 
-                                   <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                   <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                <br />
-                        Material: 70% Ull, 
-                                   <br />
-                        20% Polyester, 4% Nylon,
-                              <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                  <br />
-                        foder Tål ej maskin- eller 
-                                   <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                                    <br />
-                        20% Polyester, 4% Nylon,
-                           <br />
-                        3% Viskos Dubbelknäppt 
-                                 <br />
-                        Snörfodrad kant Avtagbart
-                               <br />
-                        foder Tål ej maskin- eller 
-                                 <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                             <br />
-                        Material: 70% Ull, 
-                               <br />
-                        20% Polyester, 4% Nylon,
-                                     <br />
-                        3% Viskos Dubbelknäppt 
-                           <br />
-                        Snörfodrad kant Avtagbart
-                                   <br />
-                        foder Tål ej maskin- eller 
-                                  <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                   <br />
-                        Material: 70% Ull, 
-                            <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                                  <br />
-                        Snörfodrad kant Avtagbart
-                           <br />
-                        foder Tål ej maskin- eller 
-                                  <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                              <br />
-                        Material: 70% Ull, 
-                                     <br />
-                        20% Polyester, 4% Nylon,
-                            <br />
-                        3% Viskos Dubbelknäppt 
-                                <br />
-                        Snörfodrad kant Avtagbart
-                                  <br />
-                        foder Tål ej maskin- eller 
-                                   <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                                <br />
-                        Snörfodrad kant Avtagbart
-                               <br />
-                        foder Tål ej maskin- eller 
-                                     <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                               <br />
-                        Material: 70% Ull, 
-                                <br />
-                        20% Polyester, 4% Nylon,
-                                <br />
-                        3% Viskos Dubbelknäppt 
-                             <br />
-                        Snörfodrad kant Avtagbart
-                                       <br />
-                        foder Tål ej maskin- eller 
-                                   <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                               <br />
-                        Material: 70% Ull, 
-                                   <br />
-                        20% Polyester, 4% Nylon,
-                             <br />
-                        3% Viskos Dubbelknäppt 
-                                <br />
-                        Snörfodrad kant Avtagbart
-                                <br />
-                        foder Tål ej maskin- eller 
-                                    <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <hr />
-            <%--<div style="margin-right: 5px; margin-top: 326px">
-                        
-                    </div>--%>
+           
         </div>
     </div>
 </asp:Content>
-
 
