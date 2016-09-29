@@ -113,13 +113,12 @@
                                         <span class="item-left">
                                             <img src="Picture" alt="" />
                                             <span class="item-info">
-                                                <span>T-shirt</span>
-                                                <span>40 $</span>
+                                                <asp:Label ID="_lblShowCart" runat="server" Text="Label"></asp:Label>
                                             </span>
                                         </span>
                                     </span>
                                     <span class="item-right">
-                                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                                        <button class="btn btn-xs btn-danger pull-right" onclick="ConfirmOrderShoppingCart_Click">Buy</button>
                                     </span>
 
                                     <li class="divider"></li>
