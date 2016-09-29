@@ -44,13 +44,13 @@ namespace Webprojekt1
 
             if (_txtBoxUserName.Text.Contains("@"))
             {
-                string checkEmail = $"SELECT count(*) FROM tblCustomer where Email = '{_txtBoxUserName.Text}'";
+                string checkEmail = $"SELECT UserName FROM tblCustomer where Email = '{_txtBoxUserName.Text}'";
                 using (SqlCommand cmd = new SqlCommand(checkEmail, con))
                 {
                     //Returns number of users with the inputed user
                     
-                    int tempEmail = (int)cmd.ExecuteScalar();
-                    if (tempEmail == 1)
+                    string tempEmail = (string)cmd.ExecuteScalar();
+                    if (tempEmail == _txtBoxUserName.Text)
                     {
                         //con.Open();
                         string checkPasswordQuery = $"Select Password from tblCustomer where Email = '{_txtBoxUserName.Text}'";
@@ -59,7 +59,7 @@ namespace Webprojekt1
                             string password = (string)comPassword.ExecuteScalar();
                             if (password == _txtBoxPassword.Text)
                             {
-                                Session["New"] = _txtBoxUserName.Text;
+                                Session["UserName"] = _txtBoxUserName.Text;
                                 Response.Write("Password is correct");
                                 Response.Redirect("../Products.aspx");
                             }
@@ -75,14 +75,14 @@ namespace Webprojekt1
             }
             else
             {
-                string checkUser = $"SELECT count(*) FROM tblCustomer WHERE UserName = '{_txtBoxUserName.Text}'";
+                string checkUser = $"SELECT UserName FROM tblCustomer WHERE UserName = '{_txtBoxUserName.Text}'";
 
                 using (SqlCommand cmd2 = new SqlCommand(checkUser, con))
                 {
                     //Returns number of users with the inputed user
-                    int tempUser = (int)cmd2.ExecuteScalar();
+                    string tempUser = (string)cmd2.ExecuteScalar();
                     
-                    if (tempUser == 1)
+                    if (tempUser == _txtBoxUserName.Text)
                     {
                         
                         string checkPasswordQuery = $"Select Password from tblCustomer where UserName = '{_txtBoxUserName.Text}'";

@@ -265,11 +265,13 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\AboutStyle.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CartDropDown.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\OrderRec.css" />
     <Content Include="Content\ProductStyle.css" />
     <Content Include="Content\ShoppingCartStyle.css" />
     <Content Include="Content\Site.css" />
@@ -302,10 +304,12 @@
     <Content Include="Pages\Tests\TestSite.aspx" />
     <Content Include="Pages\Tshirt.aspx" />
     <Content Include="Pages\Trouses.aspx" />
+    <Content Include="Pictures\Company\company.png" />
     <Content Include="Pictures\ErrorPictures\bild till errorpage.jpg" />
     <Content Include="Pictures\fashionl.jpg" />
     <Content Include="Pictures\Jeans640.jpg" />
     <Content Include="Pictures\oldwhite.jpg" />
+    <Content Include="Pictures\OrderRec\thank you.jpg" />
     <Content Include="Pictures\ProductPictures\018390-0082.jpg" />
     <Content Include="Pictures\ProductPictures\129716-3138.jpg" />
     <Content Include="Pictures\ProductPictures\132322-6180.jpg" />

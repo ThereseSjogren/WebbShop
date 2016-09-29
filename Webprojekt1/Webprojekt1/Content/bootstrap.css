@@ -5506,7 +5506,7 @@ a.list-group-item:focus {
 }
 #shop{
     float:right;
-    margin-top: -53px;
+    margin-top: -101px;
     margin-right: -150px;
 }
 .input-group {
@@ -5530,9 +5530,21 @@ a.list-group-item:focus {
 h2{
     color:black;
 }
+
+
+
 .box1{
-    margin:10px;
+
+   margin-top:-103px;
+    margin-left: 470px;
+
+    
 }
+
+
+
+
+
 .container-1 input#search{
   width: 250px;
   height: 40px;
@@ -7012,6 +7024,8 @@ td.visible-print {
     td.hidden-print {
         display: none !important;
     }
-
+.lead{
+    float:right;
+}
 
 }

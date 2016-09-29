@@ -7,7 +7,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">Category
+                    <a href="#">Men Category
                     </a>
                 </li>
                 <li>
@@ -35,7 +35,7 @@
                         <li><a href="#">Small</a></li>
                         <li><a href="#">Medium</a></li>
                         <li><a href="#">Large</a></li>
-                        <li><a href="#">XLarge</a></li>
+                    
                     </ul>
                 </div>
                 <div class="btn-group show-on-hover">
@@ -44,7 +44,7 @@
                     </button>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#">Black</a></li>
-                        <li><a href="#">White</a></li>
+                        <li><a href="#">Blue</a></li>
                         <li><a href="#">Yellow</a></li>
                     </ul>
                 </div>

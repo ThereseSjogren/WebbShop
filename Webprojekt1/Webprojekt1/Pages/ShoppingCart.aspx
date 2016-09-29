@@ -25,7 +25,7 @@
                     <option value="size">Small</option>
                     <option value="size">Medium</option>
                     <option value="size">Large</option>
-                    <option value="size">XLarge</option>
+            
                 </select>
             </div>
             <div class="select-dropdown">
@@ -47,7 +47,7 @@
                     <option value="color">Color</option>
                     <option value="color">Black</option>
                     <option value="color">Yellow</option>
-                    <option value="color">White</option>
+                    <option value="color">Blue</option>
                 </select>
             </div>
             <a href="#" class="add-btn">Add to cart</a>

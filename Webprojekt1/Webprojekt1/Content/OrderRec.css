@@ -1,15 +1,16 @@
 ﻿
-.image_w_text {
+.OrderRecText {
     width: 400px;
     text-align: center;
 }
 
-    .image_w_text img {
+    .OrderRecText img {
         border: 1px solid gray;
         margin-top:40px;
+        width:350px;
     }
 
-    .image_w_text p {
+    .OrderRecText p {
         font-style: italic;
         font-size: 20px;
         color:black;
@@ -18,7 +19,7 @@
         color:black;
     }
 
-.image_w_text {
+.OrderRecText {
     margin-left: 387px;
     margin-top: 30px;
 }

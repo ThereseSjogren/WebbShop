@@ -39,7 +39,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
+        <asp:Label ID="_lblBox" runat="server" Text="Label"></asp:Label>
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -53,17 +53,41 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gender
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="#">Male</a></li>
+                                <li><a runat="server" href="#">Female</a></li>
+                                <li><a runat="server" href="#">Child</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="#">T-shirts</a></li>
+                                <li><a runat="server" href="#">Sweatshirts</a></li>
+                                <li><a runat="server" href="#">Trouses</a></li>
+                                <li><a runat="server" href="#">jackets</a></li>
+                            </ul>
+                        </li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="Pages/Products.aspx">Products</a>
                         <li><a runat="server" href="Pages/Tests/TestSite.aspx">Tests</a></li>
-
                     </ul>
+                    <div class="box1">
+                        <div class="container-1">
+                            <input type="search" id="search" placeholder="Search..." />
+                        </div>
+                    </div>
+
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a runat="server" href="~/Account/Register"><span class="glyphicon glyphicon-user">Register</a></li>
+                                <li><a runat="server" href="~/Account/Login"><span class="glyphicon glyphicon-log-in"></span>Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
@@ -75,12 +99,8 @@
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
+
                     
-                    <div class="box1">
-                        <div class="container-1">
-                            <input type="search" id="search" placeholder="Search..." />
-                        </div>
-                    </div>
                 </div>
 
                 <div id="shop">
