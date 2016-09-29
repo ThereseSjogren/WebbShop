@@ -8,8 +8,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">Women Sweatshirt
-                    </a>
+                  <h3>Women Sweatshirts</h3>
                 </li>
                  <li>
                     <a href="Womenclothes/WomenTshirt.aspx">T-Shirt</a>

@@ -8,8 +8,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">Men T-Shirt
-                    </a>
+                    <h3>Men T-shirts</h3>
                 </li>
                
                  

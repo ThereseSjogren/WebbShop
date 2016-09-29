@@ -7,8 +7,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">Child T-shirt
-                    </a>
+                   <h3>Child T-shirts</h3>
                 </li>
               
             
