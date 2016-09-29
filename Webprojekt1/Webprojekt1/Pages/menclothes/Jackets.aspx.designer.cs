@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Webprojekt1 {
+namespace Webprojekt1.Pages.mensclothes {
     
     
-    public partial class Products {
+    public partial class jackets {
     }
 }

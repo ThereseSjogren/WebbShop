@@ -56,8 +56,10 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Women
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                 <li><h4>Category</h4></li>
-                               <li><a runat="server" href="Pages/Womenclothes/WomenTshirt.aspx">T-shirts</a></li>
+                                <li>
+                                    <h4>Category</h4>
+                                </li>
+                                <li><a runat="server" href="Pages/Womenclothes/WomenTshirt.aspx">T-shirts</a></li>
                                 <li><a runat="server" href="Pages/Womenclothes/WomenSweatshirt.aspx">Sweatshirts</a></li>
                                 <li><a runat="server" href="Pages/Womenclothes/WomenJeans.aspx">Jeans</a></li>
                                 <li><a runat="server" href="Pages/Womenclothes/WomenJackets.aspx">jackets</a></li>
@@ -67,18 +69,24 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Men
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><h4>Category</h4></li>
+                                <li>
+                                    <h4>Category</h4>
+                                </li>
                                 <li><a runat="server" href="Pages/menclothes/Tshirt.aspx">T-shirts</a></li>
                                 <li><a runat="server" href="Pages/menclothes/Sweatshirt.aspx">Sweatshirts</a></li>
                                 <li><a runat="server" href="Pages/menclothes/Jeans.aspx">Jeans</a></li>
                                 <li><a runat="server" href="Pages/menclothes/Jackets.aspx">jackets</a></li>
-                             </ul>
+
+
+                            </ul>
                         </li>
-                          <li class="dropdown">
+                        <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Child
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><h4>Category</h4></li>
+                                <li>
+                                    <h4>Category</h4>
+                                </li>
                                 <li><a runat="server" href="Pages/ChildClothes/ChildTshirt.aspx">T-shirts</a></li>
                                 <li><a runat="server" href="Pages/ChildClothes/ChildSweatshirt.aspx">Sweatshirts</a></li>
                                 <li><a runat="server" href="Pages/ChildClothes/ChildJeans.aspx">Jeans</a></li>
@@ -95,8 +103,6 @@
                         </li>
                         <%--<li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>--%>
-                  
-                        
                     </ul>
                     <div class="box1">
                         <div class="container-1">
