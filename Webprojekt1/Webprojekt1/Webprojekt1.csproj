@@ -298,7 +298,6 @@
     <Content Include="Pages\Tests\ProceedOrder.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\Jackets.aspx" />
-    <Content Include="Pages\Shoes.aspx" />
     <Content Include="Pages\ProductInformation.aspx" />
     <Content Include="Pages\Sweatshirt.aspx" />
     <Content Include="Pages\Tests\TestSite.aspx" />
@@ -551,13 +550,6 @@
     </Compile>
     <Compile Include="Pages\Products.aspx.designer.cs">
       <DependentUpon>Products.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Shoes.aspx.cs">
-      <DependentUpon>Shoes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Shoes.aspx.designer.cs">
-      <DependentUpon>Shoes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProductInformation.aspx.cs">
       <DependentUpon>ProductInformation.aspx</DependentUpon>
