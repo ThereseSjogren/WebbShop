@@ -147,6 +147,7 @@ namespace WebShopDAL.ConnectedLayer
                 return productID;
             }
         }
+       
 
         #region ProductAdministration
         //public void InsertProductAdmin(Product p)

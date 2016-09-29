@@ -39,7 +39,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <asp:Label ID="_lblBox" runat="server" Text="Label"></asp:Label>
+        
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">

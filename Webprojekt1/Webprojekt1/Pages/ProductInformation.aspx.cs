@@ -35,10 +35,10 @@ namespace Webprojekt1.Pages
             WbsDAL wbsDAL = new WbsDAL();
             wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
             //TODO: **** string category = _dropDownCategory.Text; ****Check how to get Insert CategoryName into the table at the same time it inserts into order
-            string gender = _dropDownGender.Text;
-            string color = _dropDownColor.Text;
-            string size = _dropDownSize.Text;
-            int quantity = Int32.Parse(_dropDownQuantity.Text);
+            string gender = _dropDownGender.SelectedValue;
+            string color = _dropDownColor.SelectedValue;
+            string size = _dropDownSize.SelectedValue;
+            int quantity = Int32.Parse(_dropDownQuantity.SelectedValue);
             int productID = 0;//TODO: **** Depends on category***** => int productID = wbsDAL.GetProduct(category, gender, color, size);
             string userName = (string)Session["UserName"];
             int customerID = wbsDAL.GetCustomerLoggedID(userName);

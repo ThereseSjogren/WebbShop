@@ -3523,6 +3523,8 @@ input[type="button"].btn-block {
 
 .btn-group > .btn:first-child {
   margin-left: 0;
+    top: 2px;
+    left: 1px;
 }
 
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
