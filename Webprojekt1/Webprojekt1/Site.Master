@@ -62,25 +62,28 @@
                                 <li><a runat="server" href="Pages/Womenclothes/WomenTshirt.aspx">T-shirts</a></li>
                                 <li><a runat="server" href="Pages/Womenclothes/WomenSweatshirt.aspx">Sweatshirts</a></li>
                                 <li><a runat="server" href="Pages/Womenclothes/WomenJeans.aspx">Jeans</a></li>
-                                <li><a runat="server" href="Pages/Womenclothes/WomenJackets.aspx">jackets</a></li>
+                                <li><a runat="server" href="Pages/Womenclothes/WomenJackets.aspx">Jackets</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
+                                 <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Men
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <h4>Category</h4>
                                 </li>
-                                <li><a runat="server" href="Pages/menclothes/Tshirt.aspx">T-shirts</a></li>
-                                <li><a runat="server" href="Pages/menclothes/Sweatshirt.aspx">Sweatshirts</a></li>
-                                <li><a runat="server" href="Pages/menclothes/Jeans.aspx">Jeans</a></li>
-                                <li><a runat="server" href="Pages/menclothes/Jackets.aspx">jackets</a></li>
+                                <li><a runat="server" href="Pages/MaleClothes/MaleTshirts.aspx">T-shirts</a></li>
 
+                                <li><a runat="server" href="Pages/MaleClothes/MaleSweatshirts.aspx">Sweatshirts</a></li>
 
+                                <li><a runat="server" href="Pages/MaleClothes/MaleJeans.aspx">Jeans</a></li>
+
+                                <li><a runat="server" href="Pages/MaleClothes/MaleJackets.aspx">Jackets</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
+
+
+                            <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Child
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -90,7 +93,7 @@
                                 <li><a runat="server" href="Pages/ChildClothes/ChildTshirt.aspx">T-shirts</a></li>
                                 <li><a runat="server" href="Pages/ChildClothes/ChildSweatshirt.aspx">Sweatshirts</a></li>
                                 <li><a runat="server" href="Pages/ChildClothes/ChildJeans.aspx">Jeans</a></li>
-                                <li><a runat="server" href="Pages/ChildClothes/ChildJackets.aspx">jackets</a></li>
+                                <li><a runat="server" href="Pages/ChildClothes/ChildJackets.aspx">Jackets</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
