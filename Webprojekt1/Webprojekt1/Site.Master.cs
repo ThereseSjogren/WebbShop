@@ -7,6 +7,8 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using WebShopDAL.Models;
+using WebShopDAL.ConnectedLayer;
 
 namespace Webprojekt1
 {
@@ -69,12 +71,22 @@ namespace Webprojekt1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserName"] != null)
-            {
-                _lblBox.Text = (string)Session["UserName"];
-            }
+            
             //else
             //    _lblUserLoggedIn.Text = Session["UserName"];
+        }
+        protected void ConfirmOrderShoppingCart_Click(object sender, EventArgs e)
+        {
+            string infoChart = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tRabattID\tQuantity\tPrice\tTotal With Discount\tTotal With Tax";
+            List<ProductOrderInfoChartCart> myChartList = new List<ProductOrderInfoChartCart>();
+            myChartList = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
+            foreach (var p in myChartList)
+            {
+                
+                infoChart += $"<li>{p.ProductID}\t{p.Brand}\t{p.Color}\t{p.Size}t{p.CategoryName}\t{p.PriceUnit}\t{p.RabattID}\t{p.Quantity}\t{p.Price}\t{p.TotalWithDiscount}\t{p.TotalWithTax}</li>";
+                _lblShowCart.Text = infoChart;
+            }
+            
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
@@ -84,3 +96,15 @@ namespace Webprojekt1
     }
 
 }
+
+/*int productID = (int)row;
+                string brand = (string)row;
+                string color = (string)row;
+                string size = (string)row;
+                string categoryName = (string)row;
+                decimal priceUnit = (decimal)row;                
+                int rabattID = (int)row;
+                int quantity = (int)row;
+                decimal price = (decimal)row;
+                decimal totalWithDiscount = (decimal)row;
+                decimal totalWithTax = (decimal)row;*/

@@ -43,6 +43,7 @@
     <Compile Include="ConnectedLayer\WbsDALcs.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductOrderInfoChartCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

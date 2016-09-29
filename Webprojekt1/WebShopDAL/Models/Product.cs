@@ -29,6 +29,12 @@ namespace WebShopDAL.Models
             
 
         }
+        public Product(int productID, string color, string size)
+        {
+            ProductID = productID;
+            Color = color;
+            Size = size;
+        }
 
         public Product(int productID,string productBrand,decimal priceUnit,string description, string color, string size, int stock, int categoryID)
         {
