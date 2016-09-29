@@ -17,38 +17,43 @@
                     <a href="Sweatshirt.aspx">Sweatshirt</a>
                 </li>
                 <li>
-                    <a href="Trouses.aspx">Trouses</a>
+                    <a href="Trouses.aspx">Jeans</a>
                 </li>
                 <li>
-                    <a href="Jackets.aspx">Jacket</a>
+                  <a href="Jackets.aspx">Jacket</a>
                 </li>
             </ul>
         </div>
         <div class="container">
             <div class="row">
                 <p class="lead">Products</p>
-                <div class="btn-group show-on-hover">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        Size <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Small</a></li>
-                        <li><a href="#">Medium</a></li>
-                        <li><a href="#">Large</a></li>
-                    
-                    </ul>
-                </div>
-                <div class="btn-group show-on-hover">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        Color <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Black</a></li>
-                        <li><a href="#">Blue</a></li>
-                        <li><a href="#">Yellow</a></li>
-                    </ul>
-                </div>
+               <div>
+                <asp:DropDownList ID="_dropDownSize" runat="server" Width="180px">
+                        <asp:ListItem>Size</asp:ListItem>
+                        <asp:ListItem Value="S">Small</asp:ListItem>
+                        <asp:ListItem Value="M">Medium</asp:ListItem>
+                        <asp:ListItem Value="L">Large</asp:ListItem>
+                    </asp:DropDownList>
             </div>
+              <div>
+                <asp:DropDownList ID="_dropDownColor" runat="server" Width="180px">
+                        <asp:ListItem>Color</asp:ListItem>
+                        <asp:ListItem Value="Black">Black</asp:ListItem>
+                        <asp:ListItem Value="Yellow">Yellow</asp:ListItem>
+                        <asp:ListItem Value="Blue">Blue</asp:ListItem>
+                    </asp:DropDownList>
+            </div>
+                <asp:Button ID="CreateFilter" runat="server" Text="Button" OnClick="CreateFilter_Click" />
+                <br />
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductID" DataSourceID="SqlDataSourceFilter">
+                    <Columns>
+                        <asp:BoundField DataField="Color" HeaderText="Color" SortExpression="Color" />
+                        <asp:BoundField DataField="Size" HeaderText="Size" SortExpression="Size" />
+                        <asp:BoundField DataField="ProductID" HeaderText="ProductID" InsertVisible="False" ReadOnly="True" SortExpression="ProductID" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSourceFilter" runat="server" ConnectionString="<%$ ConnectionStrings:WebbShopConnectionString %>" SelectCommand="SELECT [Color], [Size], [ProductID] FROM [tblProduct]"></asp:SqlDataSource>
+              </div>
         </div>
         <div class="row1">
             <div class="col-md-3 box">

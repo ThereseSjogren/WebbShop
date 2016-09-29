@@ -2082,7 +2082,7 @@ textarea.input-lg {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-       -o-user-select: none;
+     
           user-select: none;
 }
 
@@ -3523,6 +3523,8 @@ input[type="button"].btn-block {
 
 .btn-group > .btn:first-child {
   margin-left: 0;
+    top: 2px;
+    left: 1px;
 }
 
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
@@ -4293,7 +4295,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-toggle .icon-bar {
   display: block;
   width: 22px;
-  height: 2px;
   border-radius: 1px;
 }
 
@@ -4594,7 +4595,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: ;
+  
   background-color: transparent;
 }
 
@@ -5231,7 +5232,7 @@ a.thumbnail:focus {
 .progress.active .progress-bar {
   -webkit-animation: progress-bar-stripes 2s linear infinite;
      -moz-animation: progress-bar-stripes 2s linear infinite;
-      -ms-animation: progress-bar-stripes 2s linear infinite;
+
        -o-animation: progress-bar-stripes 2s linear infinite;
           animation: progress-bar-stripes 2s linear infinite;
 }
@@ -5506,8 +5507,8 @@ a.list-group-item:focus {
 }
 #shop{
     float:right;
-    margin-top: -101px;
-    margin-right: -150px;
+   margin-top: -50px;
+    margin-right: -200px;
 }
 .input-group {
     color:black;
@@ -5530,21 +5531,6 @@ a.list-group-item:focus {
 h2{
     color:black;
 }
-
-
-
-.box1{
-
-   margin-top:-103px;
-    margin-left: 470px;
-
-    
-}
-
-
-
-
-
 .container-1 input#search{
   width: 250px;
   height: 40px;
@@ -5555,11 +5541,13 @@ h2{
   font-size: 10pt;
   float: left;
   color: #262626;
-  padding-left: 45px;
+  padding-left: 40px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  margin-bottom:5px;
+  margin-top:5px;
+  margin-left:150px;
+  
  
    
     -webkit-transition: background .55s ease;
