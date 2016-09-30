@@ -87,6 +87,8 @@ namespace Webprojekt1.Account
                         _sqlCommand.Parameters.AddWithValue("@ZipCode", Int32.Parse(_txtBoxZipCode.Text));
                         _sqlCommand.Parameters.AddWithValue("@RabattID", 1);
 
+                        Session["UserEmail"] = _txtBoxEmail.Text;
+                        Session["Customer"] = _txtBoxFName.Text + " " + _txtBoxLName.Text;
                         _sqlCommand.ExecuteNonQuery();
                         Response.Redirect("login.aspx");
                         Response.Write("Your registration was successfull!");
