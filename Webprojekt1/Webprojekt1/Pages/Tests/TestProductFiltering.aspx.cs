@@ -6,22 +6,21 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
-using WebShopDAL.ConnectedLayer;
 using WebShopDAL.Models;
 using System.Data;
 using System.Web.ModelBinding;
 
-namespace Webprojekt1.Pages.MaleClothes
+namespace Webprojekt1.Pages.Tests
 {
-    public partial class MaleTshirts : System.Web.UI.Page
+    public partial class TestProductFiltering : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        protected void CreateFilter_Click(object sender, EventArgs e)
-        {
 
+        protected void _btnSubmit_Click(object sender, EventArgs e)
+        {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
             con.Open();
 
@@ -35,8 +34,8 @@ namespace Webprojekt1.Pages.MaleClothes
                             Where  Color = '@Color' AND Size = '@Size'";
             using (SqlCommand _sqlCommand = new SqlCommand(sql, con))
             {
-                _sqlCommand.Parameters.AddWithValue("@Size", _dropDownSize.SelectedValue);
-                _sqlCommand.Parameters.AddWithValue("@Color", _dropDownColor.SelectedValue);
+                _sqlCommand.Parameters.AddWithValue("@Size", _dropDownListSize.SelectedValue);
+                _sqlCommand.Parameters.AddWithValue("@Color", _dropDownListColor.SelectedValue);
 
 
                 List<Product> filt = new List<Product>();
@@ -51,8 +50,8 @@ namespace Webprojekt1.Pages.MaleClothes
                         string size = (string)reader["Size"];
                         Product p = new Product(productID, color, size);
                         filt.Add(p);
-                        //GridView1.DataSource = filt;
-                        //GridView1.DataBind();
+                        _gridView.DataSource = filt;
+                        _gridView.DataBind();
                     }
                     catch (SqlException ex)
                     {
@@ -64,5 +63,5 @@ namespace Webprojekt1.Pages.MaleClothes
 
         }
     }
-
+    
 }

@@ -7,45 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Webprojekt1 {
+namespace Webprojekt1.Pages.Tests {
     
     
-    public partial class Products {
+    public partial class TestProductFiltering {
         
         /// <summary>
-        /// _dropDownSize control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList _dropDownSize;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// _dropDownColor control.
+        /// _dropDownListSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList _dropDownColor;
+        protected global::System.Web.UI.WebControls.DropDownList _dropDownListSize;
         
         /// <summary>
-        /// CreateFilter control.
+        /// _dropDownListColor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CreateFilter;
+        protected global::System.Web.UI.WebControls.DropDownList _dropDownListColor;
         
         /// <summary>
-        /// GridView1 control.
+        /// _btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Button _btnSubmit;
+        
+        /// <summary>
+        /// _gridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView _gridView;
+        
+        /// <summary>
+        /// SqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource;
     }
 }
