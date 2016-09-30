@@ -63,7 +63,7 @@
                         <div class="mask">
                             <h2>Lacoste</h2>
                             <p>$50.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCart.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -80,7 +80,7 @@
                         <div class="mask">
                             <h2>G-Star</h2>
                             <p>$70.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCart.aspx" class="more">More info</a>
                         </div>
 
                     </div>

@@ -60,7 +60,7 @@
                         <div class="mask">
                             <h2>Fjällräven</h2>
                             <p>$80.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCart.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -77,7 +77,7 @@
                         <div class="mask">
                             <h2>Cellbes</h2>
                             <p>$85.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCart.aspx" class="more">More info</a>
                         </div>
 
                     </div>

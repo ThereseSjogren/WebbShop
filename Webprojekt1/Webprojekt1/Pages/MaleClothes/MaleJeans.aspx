@@ -62,7 +62,7 @@
                         <div class="mask">
                             <h2>Replay</h2>
                             <p>$110.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCart.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -77,7 +77,7 @@
                         <div class="mask">
                             <h2>Lee</h2>
                             <p>$100.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCart.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -94,7 +94,7 @@
                         <div class="mask">
                             <h2>G-Star</h2>
                             <p>$90.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCart.aspx" class="more">More info</a>
                         </div>
 
                     </div>
