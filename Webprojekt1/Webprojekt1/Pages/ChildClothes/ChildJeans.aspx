@@ -2,28 +2,29 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../Scripts/Filterbox.js"></script>
-   <link href="../../Content/ProductStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../../Content/Childstyle.css" rel="stylesheet" type="text/css" />
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <h3>Child Jeans</h3>
                 </li>
-                 <li>
+                <li>
                     <a href="ChildTshirt.aspx">T-Shirt</a>
                 </li>
                 <li>
                     <a href="ChildSweatshirt.aspx">Sweatshirt</a>
                 </li>
-              
                 <li>
                     <a href="ChildJackets.aspx">Jacket</a>
                 </li>
+
+
             </ul>
         </div>
         <div class="container">
             <div class="row">
-                <p class="lead">Products</p>
+               
                 <div class="btn-group show-on-hover">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                         Size <span class="caret"></span>
@@ -32,7 +33,7 @@
                         <li><a href="#">Small</a></li>
                         <li><a href="#">Medium</a></li>
                         <li><a href="#">Large</a></li>
-                    
+                            
                     </ul>
                 </div>
                 <div class="btn-group show-on-hover">
@@ -47,60 +48,46 @@
                 </div>
             </div>
         </div>
-        <div class="row1">
-            <div class="col-md-3 box">
+
+
+
+      
+            <div class="col-1-4">
                 <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                            <br />
-                        Material: 70% Ull, 
-                                 <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                         <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                      <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
+                    <div class="show show-second">
+                        <img src="../../Pictures/child/Jeans/Wholesale-2015-kids-pants-Boys-jeans-pant-kids-denim-trousers-baby-jeans-clothing-child-pant-baby.jpg" />
+
+                        <div class="mask">
+                            <h2>Levis</h2>
+                            <p>$70.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 box">
+            
+
+
+            <div class="col-1-4">
                 <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
+                    <div class="show show-second">
+                        <img src="../../Pictures/child/Jeans/gp621440-00vliv01.jpg" />
+
+                        <div class="mask">
+                            <h2>Replay</h2>
+                            <p>$60.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
                     </div>
+
                 </div>
             </div>
-           
-        </div>
+
+       
     </div>
 </asp:Content>
+
 
 
