@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WomenTshirt.aspx.cs" Inherits="Webprojekt1.Products" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WomenTshirt.aspx.cs" Inherits="Webprojekt1.Pages.Womenclothes.WomenTshirt" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -14,13 +14,13 @@
                
               
                 <li>
-                    <a href="Womenclothes/WomenSweatshirt.aspx">Sweatshirt</a>
+                    <a href="WomenSweatshirt.aspx">Sweatshirt</a>
                 </li>
                 <li>
-                    <a href="Womenclothes/WomenJeans.aspx">Jeans</a>
+                    <a href="WomenJeans.aspx">Jeans</a>
                 </li>
                 <li>
-                    <a href="Womenclothes/WomenJackets.aspx">Jacket</a>
+                    <a href="WomenJackets.aspx">Jacket</a>
                 </li>
             </ul>
         </div>

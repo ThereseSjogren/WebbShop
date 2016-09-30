@@ -76,10 +76,12 @@
                     <option value="quantity">9</option>
                     <option value="quantity">10</option>
                 </select>
+                <!--<a href="#"class="add-btn"></a>CssClass="add-btn"-->
             </div>
          --%>
-
-           <%-- <asp:Button runat="server" CssClase="add-btn" ID="_btnAddToChart" Text="Add to cart"  OnClick="_btnAddToChart_Click" />--%>
+            <div class="add-btn">
+            <asp:Button runat="server"  ID="_btnAddToChart" Text="Add to cart"  OnClick="_btnAddToChart_Click" /> 
+                </div>
             <p>
                 Thomas Jacob Hilfiger founded his eponymous
                  label Tommy Hilfiger in 1985, expanding the 

@@ -47,6 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
+
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">ETEA Clothes</a>
                 </div>
@@ -56,33 +57,44 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Women
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                 <li><h4>Category</h4></li>
-                               <li><a runat="server" href="Pages/Womenclothes/WomenTshirt.aspx">T-shirts</a></li>
+                                <li>
+                                    <h4>Category</h4>
+                                </li>
+                                <li><a runat="server" href="Pages/Womenclothes/WomenTshirt.aspx">T-shirts</a></li>
                                 <li><a runat="server" href="Pages/Womenclothes/WomenSweatshirt.aspx">Sweatshirts</a></li>
                                 <li><a runat="server" href="Pages/Womenclothes/WomenJeans.aspx">Jeans</a></li>
-                                <li><a runat="server" href="Pages/Womenclothes/WomenJackets.aspx">jackets</a></li>
+                                <li><a runat="server" href="Pages/Womenclothes/WomenJackets.aspx">Jackets</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
+                                 <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Men
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><h4>Category</h4></li>
-                                <li><a runat="server" href="Pages/menclothes/Tshirt.aspx">T-shirts</a></li>
-                                <li><a runat="server" href="Pages/menclothes/Sweatshirt.aspx">Sweatshirts</a></li>
-                                <li><a runat="server" href="Pages/menclothes/Jeans.aspx">Jeans</a></li>
-                                <li><a runat="server" href="Pages/menclothes/Jackets.aspx">jackets</a></li>
-                             </ul>
+                                <li>
+                                    <h4>Category</h4>
+                                </li>
+                                <li><a runat="server" href="Pages/MaleClothes/MaleTshirts.aspx">T-shirts</a></li>
+
+                                <li><a runat="server" href="Pages/MaleClothes/MaleSweatshirts.aspx">Sweatshirts</a></li>
+
+                                <li><a runat="server" href="Pages/MaleClothes/MaleJeans.aspx">Jeans</a></li>
+
+                                <li><a runat="server" href="Pages/MaleClothes/MaleJackets.aspx">Jackets</a></li>
+                            </ul>
                         </li>
-                          <li class="dropdown">
+
+
+                            <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Child
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><h4>Category</h4></li>
+                                <li>
+                                    <h4>Category</h4>
+                                </li>
                                 <li><a runat="server" href="Pages/ChildClothes/ChildTshirt.aspx">T-shirts</a></li>
                                 <li><a runat="server" href="Pages/ChildClothes/ChildSweatshirt.aspx">Sweatshirts</a></li>
                                 <li><a runat="server" href="Pages/ChildClothes/ChildJeans.aspx">Jeans</a></li>
-                                <li><a runat="server" href="Pages/ChildClothes/ChildJackets.aspx">jackets</a></li>
+                                <li><a runat="server" href="Pages/ChildClothes/ChildJackets.aspx">Jackets</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -95,8 +107,6 @@
                         </li>
                         <%--<li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>--%>
-                  
-                        
                     </ul>
                     <div class="box1">
                         <div class="container-1">
@@ -132,13 +142,12 @@
                                         <span class="item-left">
                                             <img src="Picture" alt="" />
                                             <span class="item-info">
-                                                <span>T-shirt</span>
-                                                <span>40 $</span>
+                                                <asp:Label ID="_lblShowCart" runat="server" Text="Label"></asp:Label>
                                             </span>
                                         </span>
                                     </span>
                                     <span class="item-right">
-                                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                                        <button class="btn btn-xs btn-danger pull-right" onclick="ConfirmOrderShoppingCart_Click">Buy</button>
                                     </span>
 
                                     <li class="divider"></li>
