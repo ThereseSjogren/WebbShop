@@ -24,29 +24,30 @@
             </ul>
         </div>
         <div class="container">
-            <div class="row">
+              <div class="row">
                 <p class="lead">Products</p>
-                <div class="btn-group show-on-hover">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        Size <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Small</a></li>
-                        <li><a href="#">Medium</a></li>
-                        <li><a href="#">Large</a></li>
-                    
-                    </ul>
-                </div>
-                <div class="btn-group show-on-hover">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        Color <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Black</a></li>
-                        <li><a href="#">Blue</a></li>
-                        <li><a href="#">Yellow</a></li>
-                    </ul>
-                </div>
+               <div>
+                <asp:DropDownList ID="_dropDownSize" runat="server" Width="180px">
+                        <asp:ListItem>Size</asp:ListItem>
+                        <asp:ListItem Value="S">Small</asp:ListItem>
+                        <asp:ListItem Value="M">Medium</asp:ListItem>
+                        <asp:ListItem Value="L">Large</asp:ListItem>
+                    </asp:DropDownList>
+            </div>
+              <div>
+                <asp:DropDownList ID="_dropDownColor" runat="server" Width="180px">
+                        <asp:ListItem>Color</asp:ListItem>
+                        <asp:ListItem Value="Black">Black</asp:ListItem>
+                        <asp:ListItem Value="Yellow">Yellow</asp:ListItem>
+                        <asp:ListItem Value="Blue">Blue</asp:ListItem>
+                    </asp:DropDownList>
+            
+                
+                <asp:Button ID="CreateFilter" runat="server" Text="Button" OnClick="CreateFilter_Click" />
+                <br />
+                  </div>
+               
+                
             </div>
         </div>
         <div class="row1">
