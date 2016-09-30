@@ -11,7 +11,6 @@
                     <div class="input-group">
                         Our Mail:<asp:Label ID="lblOurMAil" runat="server" Text="contactUs@website.se"></asp:Label>
                         <%--<input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>--%>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -19,15 +18,14 @@
                     <div class="input-group">
                         <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
                         <%--<input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>--%>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="InputEmail">Your Email:</label>
                     <div class="input-group">
-                        <asp:TextBox ID="txtInputEmail" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtInputEmail" runat="server" ></asp:TextBox>
                         <%--<input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required  >--%>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                        <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtInputEmail" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
                     </div>
                 </div>
                 <div class="form-group">
@@ -35,7 +33,6 @@
                     <div class="input-group">
                         <asp:TextBox ID="txtSubject" runat="server"></asp:TextBox>
                         <%--<input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>--%>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -53,7 +50,6 @@
                         <asp:Button ID="btnSendEmail" runat="server" Text="Send!" OnClick="btnSendEmail_Click" />
                         <%--<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">--%>
                     </div>
-
                     <hr class="featurette-divider hidden-lg">
                     <div class="col-lg-5 col-md-push-1">
                         <address>
