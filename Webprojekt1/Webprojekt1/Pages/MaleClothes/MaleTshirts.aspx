@@ -1,14 +1,15 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MaleTshirts.aspx.cs" Inherits="Webprojekt1.Pages.MaleClothes.MaleTshirts" %>
 
 
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../Scripts/Filterbox.js"></script>
-     <link href="../../Content/ProductStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../../Content/Childstyle.css" rel="stylesheet" type="text/css" />
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                   <h3>Men T-shirts</h3>
+               <h3>Men T-shirts</h3>
                 </li>
               
             
@@ -21,689 +22,425 @@
                 <li>
                    <a href="MaleJackets.aspx">Jackets</a>
                 </li>
+
+
             </ul>
         </div>
         <div class="container">
-              <div class="row">
-                <p class="lead">Products</p>
-               <div>
-                <asp:DropDownList ID="_dropDownSize" runat="server" Width="180px">
-                        <asp:ListItem>Size</asp:ListItem>
-                        <asp:ListItem Value="S">Small</asp:ListItem>
-                        <asp:ListItem Value="M">Medium</asp:ListItem>
-                        <asp:ListItem Value="L">Large</asp:ListItem>
-                    </asp:DropDownList>
+            <div class="row">
+             
+                <div class="btn-group show-on-hover">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Size <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Small</a></li>
+                        <li><a href="#">Medium</a></li>
+                        <li><a href="#">Large</a></li>
+                            
+                    </ul>
+                </div>
+                <div class="btn-group show-on-hover">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Color <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Black</a></li>
+                        <li><a href="#">Blue</a></li>
+                        <li><a href="#">Yellow</a></li>
+                    </ul>
+                </div>
             </div>
-              <div>
-                <asp:DropDownList ID="_dropDownColor" runat="server" Width="180px">
-                        <asp:ListItem>Color</asp:ListItem>
-                        <asp:ListItem Value="Black">Black</asp:ListItem>
-                        <asp:ListItem Value="Yellow">Yellow</asp:ListItem>
-                        <asp:ListItem Value="Blue">Blue</asp:ListItem>
-                    </asp:DropDownList>
+        </div>
+
+
+
+      
+            <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
             
-                
-                <asp:Button ID="CreateFilter" runat="server" Text="Button" OnClick="CreateFilter_Click" />
-                <br />
-                  </div>
-               
-                
-            </div>
-        </div>
-        <div class="row1">
-            <div class="col-md-3 box">
+
+
+            <div class="col-1-4">
                 <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                            <br />
-                        Material: 70% Ull, 
-                                 <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                         <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                      <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/2015-New-sport-hoodie-font-b-men-b-font-rain-font-b-jacket-b-font-winter.jpg" />
+
+                        <div class="mask">
+                            <h2>Henry Llyod</h2>
+                            <p>$120.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 box">
+              <div class="col-1-4">
                 <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
-             <div class="col-md-3 box">
+              <div class="col-1-4">
                 <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
-                    </div>
-                </div>
-            </div> <div class="col-md-3 box">
-                <div class="cover left">
-                    <h2 class="title">Tommy Hilfiger</h2>
-                    <p class="intro">
-                        Produktinformation
-                                  <br />
-                        Material: 70% Ull, 
-                             <br />
-                        20% Polyester, 4% Nylon,
-                                    <br />
-                        3% Viskos Dubbelknäppt 
-                              <br />
-                        Snörfodrad kant Avtagbart
-                                 <br />
-                        foder Tål ej maskin- eller 
-                                       <br />
-                        handtvätt.Kemtvätt
-                    </p>
-                    <div class="btn">
-                        <a href="ShoppingCart.aspx">Info<br />
-                            40 $
-                        </a>
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
-           
-        </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="col-1-4">
+                <div class="cover left">
+                    <div class="show show-second">
+                        <img src="../../Pictures/men/Jacket/High-Quality-Pure-Cotton-font-b-Men-b-font-font-b-jacket-b-font-2016-Spring.jpg" />
+
+                        <div class="mask">
+                            <h2>Helly Hansen</h2>
+                            <p>$80.00</p>
+                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+       
     </div>
 </asp:Content>
 
