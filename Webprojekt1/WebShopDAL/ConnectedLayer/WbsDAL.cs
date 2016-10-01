@@ -45,9 +45,10 @@ namespace WebShopDAL.ConnectedLayer
             }
         }
         #region ChartQueries
-        public DataTable GetProductInfo(int productID, string category, string gender, string color, string size, int quantity, int rabattID)
+        public List<ProductOrderInfoChartCart> GetProductInfo(int productID, string category, string gender, string color, string size, int quantity, int rabattID)
         {
-            DataTable dataTable = new DataTable();
+
+            List<ProductOrderInfoChartCart> productOrderInfo = new List<ProductOrderInfoChartCart>();
             //string getProduct = $"SELECT p.ProductID p.ProductBrand, op.Quantity, p.PriceUnit, o. p.FROM tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID  WHERE CategoryName= '{category}' AND Gender= '{gender}' AND Color = '{color}' AND Size = '{size}' ";
             using (SqlCommand cmd = new SqlCommand("sp_GetAllChartInfo", _sqlConnection))
             {
@@ -61,7 +62,28 @@ namespace WebShopDAL.ConnectedLayer
                 cmd.Parameters.AddWithValue("@RabattID", rabattID);
 
                 SqlDataReader dataReader = cmd.ExecuteReader();//Here is the issue
-                dataTable.Load(dataReader);
+                //dataTable.Load(dataReader);
+                //dataReader.Close();
+                //dataReader.Dispose();
+                
+                while (dataReader.Read())
+                {
+                    
+                    productOrderInfo.Add(new ProductOrderInfoChartCart
+                    {
+                        ProductID = (int)dataReader["ProductID"],
+                        ProductBrand = (string)dataReader["ProductBrand"],
+                        Color = (string)dataReader["Color"],
+                        Size = (string)dataReader["Size"],
+                        CategoryName = (string)dataReader["CategoryName"],
+                        PriceUnit = (decimal)dataReader["PriceUnit"],
+                        Quantity = (int)dataReader["Quantity"],
+                        Rabatt = (int)dataReader["Rabatt"],                                               
+                        Price = (decimal)dataReader["Total"],
+                        TotalWithDiscount = (decimal)dataReader["Total with Discount"],
+                        TotalWithTax = (decimal)dataReader["Total with Tax"]
+                });
+                }
                 dataReader.Close();
                 dataReader.Dispose();
                 //while (dataReader.Read())
@@ -76,10 +98,10 @@ namespace WebShopDAL.ConnectedLayer
                 //        Quantity = (int)dataReader["Quantity"],
                 //        RabattID = (int)dataReader["RabattID"]
                 //    });
-               
+
 
             }
-            return dataTable;
+            return productOrderInfo;
 
         }
 

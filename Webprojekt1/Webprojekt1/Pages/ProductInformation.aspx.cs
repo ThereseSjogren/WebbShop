@@ -15,33 +15,34 @@ namespace Webprojekt1.Pages
     public partial class ProductInformation : Page
     {
        
-        public void AddToChartCart(DataTable dt)
+        public void AddToChartCart(List<ProductOrderInfoChartCart> listChart)
         {
-            string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
+            //string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
                       
-            Session["AddToChartCart"] = dt;
-            DataTable newDt = new DataTable();
-            newDt = Session["AddToChartCart"] as DataTable;
-            foreach (DataRow row in newDt.Rows)
-            {
+            Session["AddToChartCart"] = listChart;
+            
+            //DataTable newDt = new DataTable();
+            //newDt = Session["AddToChartCart"] as DataTable;
+            //foreach (DataRow row in newDt.Rows)
+            //{
                 
-                    int productID = (int)row["ProductID"];
-                    string brand = (string)row["ProductBrand"];
-                    string color = (string)row["Color"];
-                    string size = (string)row["Size"];
-                    string categoryName = (string)row["CategoryName"];
-                    decimal priceUnit = (decimal)row["PriceUnit"];
-                    int quantity = (int)row["Quantity"];
-                    int rabatt = (int)row["Rabatt"];
-                    decimal price = (decimal)row["Total"];
-                    decimal totalWithDiscount = (decimal)row["Total with Discount"];
-                    decimal totalWithTax = (decimal)row["Total with Tax"]; 
+            //        int productID = (int)row["ProductID"];
+            //        string brand = (string)row["ProductBrand"];
+            //        string color = (string)row["Color"];
+            //        string size = (string)row["Size"];
+            //        string categoryName = (string)row["CategoryName"];
+            //        decimal priceUnit = (decimal)row["PriceUnit"];
+            //        int quantity = (int)row["Quantity"];
+            //        int rabatt = (int)row["Rabatt"];
+            //        decimal price = (decimal)row["Total"];
+            //        decimal totalWithDiscount = (decimal)row["Total with Discount"];
+            //        decimal totalWithTax = (decimal)row["Total with Tax"]; 
 
 
-                         sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>"; 
+            //             sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>"; 
 
-            }
-            _lblTestSessionList.Text = sessionInfo;
+            //}
+            //_lblTestSessionList.Text = sessionInfo;
            
         }
        
@@ -68,17 +69,17 @@ namespace Webprojekt1.Pages
             int productID = wbsDAL.GetProduct(description, category, gender, color, size);
             
             //Get DataTable with all Info
-            DataTable dt = new DataTable();
+            List<ProductOrderInfoChartCart> listChart;
             if (Session["UserName"] != null)
             {
-                dt = wbsDAL.GetProductInfo(productID, category, gender, color, size, quantity, 1);
+                listChart = wbsDAL.GetProductInfo(productID, category, gender, color, size, quantity, 1);
                 
-                AddToChartCart(dt); 
+                AddToChartCart(listChart); 
             }
             else
             {
-                dt = wbsDAL.GetProductInfo(productID, category, gender, color, size, quantity, 2);
-                AddToChartCart(dt);
+                listChart = wbsDAL.GetProductInfo(productID, category, gender, color, size, quantity, 2);
+                AddToChartCart(listChart);
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////

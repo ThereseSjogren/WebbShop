@@ -74,29 +74,32 @@ namespace Webprojekt1
         {
             if (Session["AddToChartCart"] != null)
             {
-                string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
+                List<ProductOrderInfoChartCart> listChart = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
+                _listViewChart.DataSource = listChart;
+                _listViewChart.DataBind();
+                //string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
 
-                DataTable newDt = (DataTable)Session["AddToChartCart"];
+                //DataTable newDt = (DataTable)Session["AddToChartCart"];
 
-                foreach (DataRow row in newDt.Rows)
-                {
+                //foreach (DataRow row in newDt.Rows)
+                //{
 
-                    int productID = (int)row["ProductID"];
-                    string brand = (string)row["ProductBrand"];
-                    string color = (string)row["Color"];
-                    string size = (string)row["Size"];
-                    string categoryName = (string)row["CategoryName"];
-                    decimal priceUnit = (decimal)row["PriceUnit"];
-                    int quantity = (int)row["Quantity"];
-                    int rabatt = (int)row["Rabatt"];
-                    decimal price = (decimal)row["Total"];
-                    decimal totalWithDiscount = (decimal)row["Total with Discount"];
-                    decimal totalWithTax = (decimal)row["Total with Tax"];
+                //    int productID = (int)row["ProductID"];
+                //    string brand = (string)row["ProductBrand"];
+                //    string color = (string)row["Color"];
+                //    string size = (string)row["Size"];
+                //    string categoryName = (string)row["CategoryName"];
+                //    decimal priceUnit = (decimal)row["PriceUnit"];
+                //    int quantity = (int)row["Quantity"];
+                //    int rabatt = (int)row["Rabatt"];
+                //    decimal price = (decimal)row["Total"];
+                //    decimal totalWithDiscount = (decimal)row["Total with Discount"];
+                //    decimal totalWithTax = (decimal)row["Total with Tax"];
 
 
-                    sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>"; 
-                }
-                _lblShowCart.Text = sessionInfo;
+                //    sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>"; 
+                //}
+                //_lblShowCart.Text = sessionInfo;
             }
             
 
@@ -144,7 +147,7 @@ namespace Webprojekt1
                 sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>";
 
             }
-            _lblShowCart.Text = sessionInfo;
+            //_lblShowCart.Text = sessionInfo;
             //------------------------------------------------------------------------------------------------------
             //if (Session["AddToChartCart"] != null)
             //{
