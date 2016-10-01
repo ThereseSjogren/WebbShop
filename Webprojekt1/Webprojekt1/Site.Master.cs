@@ -72,7 +72,34 @@ namespace Webprojekt1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["AddToChartCart"] != null)
+            {
+                string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
+
+                DataTable newDt = (DataTable)Session["AddToChartCart"];
+
+                foreach (DataRow row in newDt.Rows)
+                {
+
+                    int productID = (int)row["ProductID"];
+                    string brand = (string)row["ProductBrand"];
+                    string color = (string)row["Color"];
+                    string size = (string)row["Size"];
+                    string categoryName = (string)row["CategoryName"];
+                    decimal priceUnit = (decimal)row["PriceUnit"];
+                    int quantity = (int)row["Quantity"];
+                    int rabatt = (int)row["Rabatt"];
+                    decimal price = (decimal)row["Total"];
+                    decimal totalWithDiscount = (decimal)row["Total with Discount"];
+                    decimal totalWithTax = (decimal)row["Total with Tax"];
+
+
+                    sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>"; 
+                }
+                _lblShowCart.Text = sessionInfo;
+            }
             
+
             //---------------------------------------------------------------------------
             //if (Session["AddToChartCart"] != null)
             //{
@@ -95,8 +122,9 @@ namespace Webprojekt1
         protected void OpenShoppingCart_Click(object sender, EventArgs e)
         {
             string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
-            System.Data.DataTable newDt = new DataTable();
-            newDt = Session["AddToChartCart"] as DataTable;
+
+            DataTable newDt = Session["AddToChartCart"] as DataTable;
+            
             foreach (DataRow row in newDt.Rows)
             {
 

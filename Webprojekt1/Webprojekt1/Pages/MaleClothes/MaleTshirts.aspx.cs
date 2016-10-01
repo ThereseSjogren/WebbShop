@@ -35,8 +35,8 @@ namespace Webprojekt1.Pages.MaleClothes
                             Where  Color = '@Color' AND Size = '@Size'";
             using (SqlCommand _sqlCommand = new SqlCommand(sql, con))
             {
-                _sqlCommand.Parameters.AddWithValue("@Size", _dropDownSize.SelectedValue);
-                _sqlCommand.Parameters.AddWithValue("@Color", _dropDownColor.SelectedValue);
+                //_sqlCommand.Parameters.AddWithValue("@Size", _dropDownSize.SelectedValue);
+                //_sqlCommand.Parameters.AddWithValue("@Color", _dropDownColor.SelectedValue);
 
 
                 List<Product> filt = new List<Product>();
