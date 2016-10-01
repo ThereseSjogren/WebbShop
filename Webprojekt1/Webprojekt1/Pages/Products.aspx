@@ -42,17 +42,31 @@
                         <asp:ListItem Value="Yellow">Yellow</asp:ListItem>
                         <asp:ListItem Value="Blue">Blue</asp:ListItem>
                     </asp:DropDownList>
-            </div>
+            
+                
                 <asp:Button ID="CreateFilter" runat="server" Text="Button" OnClick="CreateFilter_Click" />
                 <br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductID" DataSourceID="SqlDataSourceFilter">
-                    <Columns>
-                        <asp:BoundField DataField="Color" HeaderText="Color" SortExpression="Color" />
-                        <asp:BoundField DataField="Size" HeaderText="Size" SortExpression="Size" />
-                        <asp:BoundField DataField="ProductID" HeaderText="ProductID" InsertVisible="False" ReadOnly="True" SortExpression="ProductID" />
-                    </Columns>
-                </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSourceFilter" runat="server" ConnectionString="<%$ ConnectionStrings:WebbShopConnectionString %>" SelectCommand="SELECT [Color], [Size], [ProductID] FROM [tblProduct]"></asp:SqlDataSource>
+                  </div>
+                <div>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductID" CellPadding="4" ForeColor="#333333" GridLines="None" >
+                                     <AlternatingRowStyle BackColor="White" />
+                                     <Columns>
+                                         <asp:BoundField DataField="ProductID" HeaderText="ProductID" InsertVisible="False"         ReadOnly="True" SortExpression="ProductID" />
+                                         <asp:BoundField DataField="Color" HeaderText="Color" SortExpression="Color" />
+                                         <asp:BoundField DataField="Size" HeaderText="Size" SortExpression="Size" />
+                                     </Columns>
+                                     <EditRowStyle BackColor="#2461BF" />
+                                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                     <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                     <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                     <RowStyle BackColor="#EFF3FB" />
+                                     <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                     <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                     <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                        </asp:GridView>
+                    
               </div>
         </div>
         <div class="row1">
@@ -63,6 +77,8 @@
                         Produktinformation
                             <br />
                         Material: 70% Ull, 
+                                 
+                        
                                  <br />
                         20% Polyester, 4% Nylon,
                                     <br />
@@ -361,6 +377,7 @@
                         
                     </div>--%>
         </div>
+    </div>
     </div>
 </asp:Content>
 
