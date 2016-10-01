@@ -25,12 +25,13 @@ namespace Webprojekt1
         {
             WbsDAL wbsDAL = new WbsDAL();
             wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
+            string description = "Fine brand";//Check this
             string category = _dropDownCategory.Text;
             string gender = _dropDownGender.Text;
             string color = _dropDownColor.Text;
             string size = _dropDownSize.Text;
             int quantity = Int32.Parse(_txtBoxQuantity.Text);
-            int productID = wbsDAL.GetProduct(category, gender, color, size);
+            int productID = wbsDAL.GetProduct(description, category, gender, color, size);
             string userName = (string)Session["UserName"];
             int customerID = wbsDAL.GetCustomerLoggedID(userName);
             int orderID = wbsDAL.InsertOrderProductTable(productID, quantity, customerID);

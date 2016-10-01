@@ -14,35 +14,35 @@ namespace Webprojekt1.Pages
 {
     public partial class ProductInformation : Page
     {
-        private List<ProductOrderInfoChartCart> chartCartList { get; set; }
+       
         public void AddToChartCart(DataTable dt)
         {
-            foreach (var row in dt.Rows)
+            string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
+                      
+            Session["AddToChartCart"] = dt;
+            DataTable newDt = new DataTable();
+            newDt = Session["AddToChartCart"] as DataTable;
+            foreach (DataRow row in newDt.Rows)
             {
-                int productID = (int)row;
-                string brand = (string)row;
-                string color = (string)row;
-                string size = (string)row;
-                string categoryName = (string)row;
-                decimal priceUnit = (decimal)row;                
-                int rabattID = (int)row;
-                int quantity = (int)row;
-                decimal price = (decimal)row;
-                decimal totalWithDiscount = (decimal)row;
-                decimal totalWithTax = (decimal)row;
-                //Keep values in class helper ProductOrderInfoChartCart
-                var productOrderInfo = new ProductOrderInfoChartCart(productID, brand, color, size, categoryName, priceUnit, rabattID, quantity, price, totalWithDiscount, totalWithTax);
-                chartCartList = new List<ProductOrderInfoChartCart>();
-                chartCartList.Add(productOrderInfo);
-                Session["AddToChartCart"] = chartCartList;
-            }
-            
                 
-                
-               
-                
-            
+                    int productID = (int)row["ProductID"];
+                    string brand = (string)row["ProductBrand"];
+                    string color = (string)row["Color"];
+                    string size = (string)row["Size"];
+                    string categoryName = (string)row["CategoryName"];
+                    decimal priceUnit = (decimal)row["PriceUnit"];
+                    int quantity = (int)row["Quantity"];
+                    int rabatt = (int)row["Rabatt"];
+                    decimal price = (decimal)row["Total"];
+                    decimal totalWithDiscount = (decimal)row["Total with Discount"];
+                    decimal totalWithTax = (decimal)row["Total with Tax"]; 
 
+
+                         sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>"; 
+
+            }
+            _lblTestSessionList.Text = sessionInfo;
+           
         }
        
         protected void Page_Load(object sender, EventArgs e)
@@ -57,20 +57,22 @@ namespace Webprojekt1.Pages
             wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
 
             //Get all product attributes to be able to call the product
-            string category = null; /* = _dropDownCategory.Text;         WARNING: NEED variable category from form!!!!! Will be added in a session*/
-            string gender = _dropDownGender.Text;
-            string color = _dropDownColor.Text;
-            string size = _dropDownSize.Text;
-            int quantity = Int32.Parse(_dropDownQuantity.Text);
+            string description = "Fine brand";
+            string category ="T-Shirt";         
+            string gender = _dropDownGender.SelectedValue.ToString();
+            string color = _dropDownColor.SelectedValue.ToString();
+            string size = _dropDownSize.SelectedValue.ToString();
+            int quantity = Int32.Parse(_dropDownQuantity.SelectedValue);
 
             //Get ProductID
-            int productID = wbsDAL.GetProduct(category, gender, color, size);
-
+            int productID = wbsDAL.GetProduct(description, category, gender, color, size);
+            
             //Get DataTable with all Info
             DataTable dt = new DataTable();
             if (Session["UserName"] != null)
             {
                 dt = wbsDAL.GetProductInfo(productID, category, gender, color, size, quantity, 1);
+                
                 AddToChartCart(dt); 
             }
             else
@@ -83,13 +85,13 @@ namespace Webprojekt1.Pages
             //    Should insert the order in Maste.Site.cs (shoppingCart) TODO  / Needs to reLogic it   //
             //////////////////////////////////////////////////////////////////////////////////////////////
 
-            //Check userName to be able to get CustomerID
-            string userName = (string)Session["UserName"];
-            //Get CustomerID to be able to get OrderID
-            int customerID = wbsDAL.GetCustomerLoggedID(userName);
-            //Get OrderID and insert into tblOrderProduct
-            int orderID = wbsDAL.InsertOrderProductTable(productID, quantity, customerID);
-            Response.Redirect("../OrderRec.aspx");
+            ////Check userName to be able to get CustomerID
+            //string userName = (string)Session["UserName"];
+            ////Get CustomerID to be able to get OrderID
+            //int customerID = wbsDAL.GetCustomerLoggedID(userName);
+            ////Get OrderID and insert into tblOrderProduct
+            //int orderID = wbsDAL.InsertOrderProductTable(productID, quantity, customerID);
+            //Response.Redirect("../OrderRec.aspx");
         }
     }
 }

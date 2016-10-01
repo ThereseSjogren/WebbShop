@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Security.Principal;
@@ -72,20 +73,73 @@ namespace Webprojekt1
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            //else
-            //    _lblUserLoggedIn.Text = Session["UserName"];
+            //---------------------------------------------------------------------------
+            //if (Session["AddToChartCart"] != null)
+            //{
+            //    string infoChart = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tRabattID\tQuantity\tPrice\tTotal With Discount\tTotal With Tax";
+            //    List<ProductOrderInfoChartCart> myChartList = new List<ProductOrderInfoChartCart>();
+            //    myChartList = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
+            //    foreach (var p in myChartList)
+            //    {
+            //        infoChart += $"<li>{p.ProductID}\t{p.Brand}\t{p.Color}\t{p.Size}t{p.CategoryName}\t{p.PriceUnit}\t{p.RabattID}\t{p.Quantity}\t{p.Price}\t{p.TotalWithDiscount}\t{p.TotalWithTax}</li>";
+            //        _lblShowCart.Text = infoChart;
+            //    }
+            //}
+
         }
         protected void ConfirmOrderShoppingCart_Click(object sender, EventArgs e)
         {
-            string infoChart = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tRabattID\tQuantity\tPrice\tTotal With Discount\tTotal With Tax";
-            List<ProductOrderInfoChartCart> myChartList = new List<ProductOrderInfoChartCart>();
-            myChartList = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
-            foreach (var p in myChartList)
-            {
-                infoChart += $"<li>{p.ProductID}\t{p.Brand}\t{p.Color}\t{p.Size}t{p.CategoryName}\t{p.PriceUnit}\t{p.RabattID}\t{p.Quantity}\t{p.Price}\t{p.TotalWithDiscount}\t{p.TotalWithTax}</li>";
-                _lblShowCart.Text = infoChart;
-            }
+           
 
+        }
+        protected void OpenShoppingCart_Click(object sender, EventArgs e)
+        {
+            string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
+            System.Data.DataTable newDt = new DataTable();
+            newDt = Session["AddToChartCart"] as DataTable;
+            foreach (DataRow row in newDt.Rows)
+            {
+
+                int productID = (int)row["ProductID"];
+                string brand = (string)row["ProductBrand"];
+                string color = (string)row["Color"];
+                string size = (string)row["Size"];
+                string categoryName = (string)row["CategoryName"];
+                decimal priceUnit = (decimal)row["PriceUnit"];
+                int quantity = (int)row["Quantity"];
+                int rabatt = (int)row["Rabatt"];
+                decimal price = (decimal)row["Total"];
+                decimal totalWithDiscount = (decimal)row["Total with Discount"];
+                decimal totalWithTax = (decimal)row["Total with Tax"];
+
+
+                sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>";
+
+            }
+            _lblShowCart.Text = sessionInfo;
+            //------------------------------------------------------------------------------------------------------
+            //if (Session["AddToChartCart"] != null)
+            //{
+            //    string infoChart = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tRabattID\tQuantity\tPrice\tTotal With Discount\tTotal With Tax";
+            //    List<ProductOrderInfoChartCart> myChartList = new List<ProductOrderInfoChartCart>();
+            //    myChartList = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
+            //    foreach (var p in myChartList)
+            //    {
+            //        infoChart += $"<li>{p.ProductID}\t{p.Brand}\t{p.Color}\t{p.Size}t{p.CategoryName}\t{p.PriceUnit}\t{p.RabattID}\t{p.Quantity}\t{p.Price}\t{p.TotalWithDiscount}\t{p.TotalWithTax}</li>";
+            //        _lblShowCart.Text = infoChart;
+            //    }
+            //}
+            //else
+            //{
+            //    string infoChart = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tRabattID\tQuantity\tPrice\tTotal With Discount\tTotal With Tax";
+            //    List<ProductOrderInfoChartCart> myChartList = new List<ProductOrderInfoChartCart>();
+            //    myChartList = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
+            //    foreach (var p in myChartList)
+            //    {
+            //        infoChart += $"<li>{p.ProductID}\t{p.Brand}\t{p.Color}\t{p.Size}t{p.CategoryName}\t{p.PriceUnit}\t{p.RabattID}\t{p.Quantity}\t{p.Price}\t{p.TotalWithDiscount}\t{p.TotalWithTax}</li>";
+            //        _lblShowCart.Text = infoChart;
+            //    }
+            //}
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

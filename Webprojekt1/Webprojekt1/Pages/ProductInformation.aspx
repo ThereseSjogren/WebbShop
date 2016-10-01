@@ -54,6 +54,9 @@
                         <asp:ListItem>5</asp:ListItem>
                     </asp:DropDownList>
              <div>
+                 <div>
+                     <asp:Label ID="_lblTestSessionList" runat="server" Text=""></asp:Label>
+                 </div>
             </div>
              <%--<div class="select-dropdown">
                 <select>

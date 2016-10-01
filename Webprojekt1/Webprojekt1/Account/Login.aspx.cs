@@ -62,14 +62,16 @@ namespace Webprojekt1.Account
                 //        ErrorMessage.Visible = true;
                 //        break;
                 #endregion
-
+                //1 - Connection
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
                 con.Open();
                 //WbsDAL wbsDAL = new WbsDAL();
                 //wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
 
+                //Check if Username is an email
                 if (_txtBoxUserName.Text.Contains("@"))
                 {
+                    //Using 
                     string checkEmail = $"SELECT UserName FROM tblCustomer where Email = '{_txtBoxUserName.Text}'";
                     using (SqlCommand cmd = new SqlCommand(checkEmail, con))
                     {
