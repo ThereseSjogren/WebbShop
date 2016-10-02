@@ -60,7 +60,7 @@
                         <div class="mask">
                             <h2>Tommy Hilfiger</h2>
                             <p>$40.00</p>
-                            <a href="../ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCartChild/ChildCartJacket/CJacket1.aspx" class="more">More info</a>
                         </div>
                         
                     </div>
@@ -77,7 +77,7 @@
                         <div class="mask">
                             <h2>Peak Performance</h2>
                             <p>$50.00</p>
-                            <a href="../ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCartChild/ChildCartJacket/CJacket2.aspx" class="more">More info</a>
                         </div>
 
                     </div>

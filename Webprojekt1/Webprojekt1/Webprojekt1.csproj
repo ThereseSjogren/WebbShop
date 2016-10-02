@@ -304,6 +304,29 @@
     <Content Include="Pages\MaleClothes\MaleTshirts.aspx" />
     <Content Include="Pages\OrderRec.aspx" />
     <Content Include="Pages\ShoppingCart.aspx" />
+    <Content Include="Pages\ShoppingCartChild\ChildCartJacket\CJacket2.aspx" />
+    <Content Include="Pages\ShoppingCartChild\ChildCartJacket\CJacket1.aspx" />
+    <Content Include="Pages\ShoppingCartChild\ChildCartJeans\CJeans1.aspx" />
+    <Content Include="Pages\ShoppingCartChild\ChildCartJeans\CJeans2.aspx" />
+    <Content Include="Pages\ShoppingCartChild\ChildCartSweatShirt\CSweatShirt1.aspx" />
+    <Content Include="Pages\ShoppingCartChild\ChildCartSweatShirt\CSweatShirt2.aspx" />
+    <Content Include="Pages\ShoppingCartChild\ChildCartTShirt\CTShirt1.aspx" />
+    <Content Include="Pages\ShoppingCartChild\ChildCartTShirt\CTShirt2.aspx" />
+    <Content Include="Pages\ShoppingCartMen\MenCartJacket\MJacket1.aspx" />
+    <Content Include="Pages\ShoppingCartMen\MenCartJacket\Mjacket2.aspx" />
+    <Content Include="Pages\ShoppingCartMen\MenCartJeans\MJeans1.aspx" />
+    <Content Include="Pages\ShoppingCartMen\MenCartJeans\MJeans2.aspx" />
+    <Content Include="Pages\ShoppingCartMen\MenCartJeans\MJeans3.aspx" />
+    <Content Include="Pages\ShoppingCartMen\MenCartSweatShirt\MSweatShirt1.aspx" />
+    <Content Include="Pages\ShoppingCartMen\MenCartSweatShirt\MSweatShirt2.aspx" />
+    <Content Include="Pages\ShoppingCartWomen\WomenCartJacket\WJacket1.aspx" />
+    <Content Include="Pages\ShoppingCartWomen\WomenCartJacket\WJacket2.aspx" />
+    <Content Include="Pages\ShoppingCartWomen\WomenCartJeans\WJeans1.aspx" />
+    <Content Include="Pages\ShoppingCartWomen\WomenCartJeans\WJeans2.aspx" />
+    <Content Include="Pages\ShoppingCartWomen\WomenCartSweatShirt\WSweatShirt1.aspx" />
+    <Content Include="Pages\ShoppingCartWomen\WomenCartSweatShirt\WSweatShirt2.aspx" />
+    <Content Include="Pages\ShoppingCartWomen\WomenCartTShirt\WTShirt1.aspx" />
+    <Content Include="Pages\ShoppingCartWomen\WomenCartTShirt\WTShirt2.aspx" />
     <Content Include="Pages\Tests\Login.aspx" />
     <Content Include="Pages\Tests\Registration.aspx" />
     <Content Include="Pages\Tests\ProceedOrder.aspx" />
@@ -339,8 +362,6 @@
     <Content Include="Pictures\men\Jeans\denim-jeans-for-men-1.jpg" />
     <Content Include="Pictures\men\Sweatshirt\3caa141679d0786eeac67d5f3e7b7cbf.jpg" />
     <Content Include="Pictures\men\Sweatshirt\60f2cf198749d11d54c436685f2fe903.jpg" />
-    <Content Include="Pictures\men\Sweatshirt\images5E0XG3E0.jpg" />
-    <Content Include="Pictures\men\Sweatshirt\Nike-Football-Mens-Sweatshirt-588153_071_A.jpg" />
     <Content Include="Pictures\men\T-shirt\24.jpg" />
     <Content Include="Pictures\men\T-shirt\41igERUiR7L._SX342_.jpg" />
     <Content Include="Pictures\men\T-shirt\45197503_xxl.jpg" />
@@ -696,6 +717,167 @@
     <Compile Include="Pages\ProductInformation.aspx.designer.cs">
       <DependentUpon>ProductInformation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartJacket\CJacket2.aspx.cs">
+      <DependentUpon>CJacket2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartJacket\CJacket2.aspx.designer.cs">
+      <DependentUpon>CJacket2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartJacket\CJacket1.aspx.cs">
+      <DependentUpon>CJacket1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartJacket\CJacket1.aspx.designer.cs">
+      <DependentUpon>CJacket1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartJeans\CJeans1.aspx.cs">
+      <DependentUpon>CJeans1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartJeans\CJeans1.aspx.designer.cs">
+      <DependentUpon>CJeans1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartJeans\CJeans2.aspx.cs">
+      <DependentUpon>CJeans2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartJeans\CJeans2.aspx.designer.cs">
+      <DependentUpon>CJeans2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartSweatShirt\CSweatShirt1.aspx.cs">
+      <DependentUpon>CSweatShirt1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartSweatShirt\CSweatShirt1.aspx.designer.cs">
+      <DependentUpon>CSweatShirt1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartSweatShirt\CSweatShirt2.aspx.cs">
+      <DependentUpon>CSweatShirt2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartSweatShirt\CSweatShirt2.aspx.designer.cs">
+      <DependentUpon>CSweatShirt2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartTShirt\CTShirt1.aspx.cs">
+      <DependentUpon>CTShirt1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartTShirt\CTShirt1.aspx.designer.cs">
+      <DependentUpon>CTShirt1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartTShirt\CTShirt2.aspx.cs">
+      <DependentUpon>CTShirt2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartChild\ChildCartTShirt\CTShirt2.aspx.designer.cs">
+      <DependentUpon>CTShirt2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartJacket\MJacket1.aspx.cs">
+      <DependentUpon>MJacket1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartJacket\MJacket1.aspx.designer.cs">
+      <DependentUpon>MJacket1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartJacket\Mjacket2.aspx.cs">
+      <DependentUpon>Mjacket2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartJacket\Mjacket2.aspx.designer.cs">
+      <DependentUpon>Mjacket2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartJeans\MJeans1.aspx.cs">
+      <DependentUpon>MJeans1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartJeans\MJeans1.aspx.designer.cs">
+      <DependentUpon>MJeans1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartJeans\MJeans2.aspx.cs">
+      <DependentUpon>MJeans2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartJeans\MJeans2.aspx.designer.cs">
+      <DependentUpon>MJeans2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartJeans\MJeans3.aspx.cs">
+      <DependentUpon>MJeans3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartJeans\MJeans3.aspx.designer.cs">
+      <DependentUpon>MJeans3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartSweatShirt\MSweatShirt1.aspx.cs">
+      <DependentUpon>MSweatShirt1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartSweatShirt\MSweatShirt1.aspx.designer.cs">
+      <DependentUpon>MSweatShirt1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartSweatShirt\MSweatShirt2.aspx.cs">
+      <DependentUpon>MSweatShirt2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartMen\MenCartSweatShirt\MSweatShirt2.aspx.designer.cs">
+      <DependentUpon>MSweatShirt2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartJacket\WJacket1.aspx.cs">
+      <DependentUpon>WJacket1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartJacket\WJacket1.aspx.designer.cs">
+      <DependentUpon>WJacket1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartJacket\WJacket2.aspx.cs">
+      <DependentUpon>WJacket2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartJacket\WJacket2.aspx.designer.cs">
+      <DependentUpon>WJacket2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartJeans\WJeans1.aspx.cs">
+      <DependentUpon>WJeans1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartJeans\WJeans1.aspx.designer.cs">
+      <DependentUpon>WJeans1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartJeans\WJeans2.aspx.cs">
+      <DependentUpon>WJeans2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartJeans\WJeans2.aspx.designer.cs">
+      <DependentUpon>WJeans2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartSweatShirt\WSweatShirt1.aspx.cs">
+      <DependentUpon>WSweatShirt1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartSweatShirt\WSweatShirt1.aspx.designer.cs">
+      <DependentUpon>WSweatShirt1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartSweatShirt\WSweatShirt2.aspx.cs">
+      <DependentUpon>WSweatShirt2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartSweatShirt\WSweatShirt2.aspx.designer.cs">
+      <DependentUpon>WSweatShirt2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartTShirt\WTShirt1.aspx.cs">
+      <DependentUpon>WTShirt1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartTShirt\WTShirt1.aspx.designer.cs">
+      <DependentUpon>WTShirt1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartTShirt\WTShirt2.aspx.cs">
+      <DependentUpon>WTShirt2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCartWomen\WomenCartTShirt\WTShirt2.aspx.designer.cs">
+      <DependentUpon>WTShirt2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Tests\TestProductFiltering.aspx.cs">
       <DependentUpon>TestProductFiltering.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -800,6 +982,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="FinanceDepartment\" />
+    <Folder Include="Pages\ShoppingCartMen\MenCartTShirt\" />
     <Folder Include="TroubleShoot\" />
   </ItemGroup>
   <ItemGroup>

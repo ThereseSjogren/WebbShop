@@ -61,7 +61,7 @@
                         <div class="mask">
                             <h2>Fred Perry</h2>
                             <p>$15.00</p>
-                            <a href="../ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCartChild/ChildCartTShirt/CTShirt1.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -78,7 +78,7 @@
                         <div class="mask">
                             <h2>Gant</h2>
                             <p>$10.00</p>
-                            <a href="../ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCartChild/ChildCartTShirt/CTShirt2.aspx" class="more">More info</a>
                         </div>
 
                     </div>
