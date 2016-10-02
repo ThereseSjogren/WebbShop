@@ -62,7 +62,7 @@
                         <div class="mask">
                             <h2>Mos Mosh</h2>
                             <p>$70.00</p>
-                            <a href="../ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCartWomen/WomenCartJeans/WJeans1.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -79,7 +79,7 @@
                         <div class="mask">
                             <h2>Pieces</h2>
                             <p>$65.00</p>
-                            <a href="../ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCartWomen/WomenCartJeans/WJeans2.aspx" class="more">More info</a>
                         </div>
 
                     </div>

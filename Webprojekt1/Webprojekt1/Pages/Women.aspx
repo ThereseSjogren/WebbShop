@@ -63,7 +63,7 @@
                         <div class="mask">
                             <h2>Mos Mosh</h2>
                             <p>$70.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="ShoppingCartWomen/WomenCartJeans/WJeans1.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -80,7 +80,7 @@
                         <div class="mask">
                             <h2>Pieces</h2>
                             <p>$65.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="ShoppingCartWomen/WomenCartJeans/WJeans2.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -98,7 +98,7 @@
                         <div class="mask">
                             <h2>ONLY</h2>
                             <p>$50.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="ShoppingCartWomen/WomenCartSweatShirt/WSweatShirt1.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -115,7 +115,7 @@
                         <div class="mask">
                             <h2>Espirit</h2>
                             <p>$55.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="ShoppingCartWomen/WomenCartSweatShirt/WSweatShirt2.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -130,7 +130,7 @@
                         <div class="mask">
                             <h2>Pulz</h2>
                             <p>$15.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="ShoppingCartWomen/WomenCartTShirt/WTShirt1.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -147,7 +147,7 @@
                         <div class="mask">
                             <h2>Vero Moda</h2>
                             <p>$10.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="ShoppingCartWomen/WomenCartTShirt/WTShirt2.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -164,7 +164,7 @@
                         <div class="mask">
                             <h2>Fjällräven</h2>
                             <p>$80.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="ShoppingCartWomen/WomenCartJacket/WJacket1.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -181,7 +181,7 @@
                         <div class="mask">
                             <h2>Cellbes</h2>
                             <p>$85.00</p>
-                            <a href="ShoppingCart.aspx" class="more">More info</a>
+                            <a href="ShoppingCartWomen/WomenCartJacket/WJacket2.aspx" class="more">More info</a>
                         </div>
 
                     </div>

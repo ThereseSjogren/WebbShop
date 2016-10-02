@@ -27,8 +27,8 @@ h1{
     float: left;
 }
 
-.product-image .bg {
-    background-image: url('../Pictures/T-shirts/image1xxl[1].jpg');
+.product-image img {
+   
     background-size: cover;
     background-position: center top;
     width: 100%;
@@ -37,24 +37,6 @@ h1{
   
 }
 
-.product-image .indicator {
-    text-align: center;
-}
-
-.product-image .dot {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    cursor: pointer;
-    display: inline-block;
-    margin-right: 5px;
-    width: 16px;
-    height: 16px;
-    transition: all 400ms ease;
-}
-
-.dot:hover {
-    background-color: white;
-}
 
 .product-info {
     padding: 0px 8%;

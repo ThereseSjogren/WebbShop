@@ -60,7 +60,7 @@
                         <div class="mask">
                             <h2>Levis</h2>
                             <p>$70.00</p>
-                            <a href="../ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCartChild/ChildCartJeans/CJeans1.aspx" class="more">More info</a>
                         </div>
 
                     </div>
@@ -77,7 +77,7 @@
                         <div class="mask">
                             <h2>Replay</h2>
                             <p>$60.00</p>
-                            <a href="../ShoppingCart.aspx" class="more">More info</a>
+                            <a href="../ShoppingCartChild/ChildCartJeans/CJeans2.aspx" class="more">More info</a>
                         </div>
 
                     </div>
