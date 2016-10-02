@@ -86,20 +86,6 @@ namespace WebShopDAL.ConnectedLayer
                 }
                 dataReader.Close();
                 dataReader.Dispose();
-                //while (dataReader.Read())
-                //{
-                //    _getProductlist.Add(new ProductChartInfo
-                //    {
-                //        ProductID = (int)dataReader["ProductID"],
-                //        CategoryName = (string)dataReader["CategoryName"],
-                //        Gender = (string)dataReader["Gender"],
-                //        Color = (string)dataReader["Gender"],
-                //        Size = (string)dataReader["Size"],
-                //        Quantity = (int)dataReader["Quantity"],
-                //        RabattID = (int)dataReader["RabattID"]
-                //    });
-
-
             }
             return productOrderInfo;
 

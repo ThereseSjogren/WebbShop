@@ -79,9 +79,12 @@
                     CssClass="text-danger" ErrorMessage="The Zip Code field is required." />
             </div>
         </div>
+        <div  class="form-group">
+            <asp:Label runat="server"   ID="_lblUserExits" Text="" ForeColor="Red"  ></asp:Label>
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
+                <asp:Button runat="server" ID="CreateUser" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
         </div>
     </div>

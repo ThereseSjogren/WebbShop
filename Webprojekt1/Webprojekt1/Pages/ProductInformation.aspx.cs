@@ -14,18 +14,20 @@ namespace Webprojekt1.Pages
 {
     public partial class ProductInformation : Page
     {
-       
+        protected  List<ProductOrderInfoChartCart> listChart;
+
         public void AddToChartCart(List<ProductOrderInfoChartCart> listChart)
         {
-            //string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
+            //Add list to Session
                       
             Session["AddToChartCart"] = listChart;
             
+            #region FirstCode
             //DataTable newDt = new DataTable();
             //newDt = Session["AddToChartCart"] as DataTable;
             //foreach (DataRow row in newDt.Rows)
             //{
-                
+
             //        int productID = (int)row["ProductID"];
             //        string brand = (string)row["ProductBrand"];
             //        string color = (string)row["Color"];
@@ -42,8 +44,9 @@ namespace Webprojekt1.Pages
             //             sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>"; 
 
             //}
-            //_lblTestSessionList.Text = sessionInfo;
-           
+            //_lblTestSessionList.Text = sessionInfo; 
+            #endregion
+
         }
        
         protected void Page_Load(object sender, EventArgs e)
@@ -69,7 +72,7 @@ namespace Webprojekt1.Pages
             int productID = wbsDAL.GetProduct(description, category, gender, color, size);
             
             //Get DataTable with all Info
-            List<ProductOrderInfoChartCart> listChart;
+            
             if (Session["UserName"] != null)
             {
                 listChart = wbsDAL.GetProductInfo(productID, category, gender, color, size, quantity, 1);
@@ -81,6 +84,7 @@ namespace Webprojekt1.Pages
                 listChart = wbsDAL.GetProductInfo(productID, category, gender, color, size, quantity, 2);
                 AddToChartCart(listChart);
             }
+            Response.Redirect("../Default");
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             //    Should insert the order in Maste.Site.cs (shoppingCart) TODO  / Needs to reLogic it   //

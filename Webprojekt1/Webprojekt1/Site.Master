@@ -15,7 +15,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="Content/font-awesome.css" rel="stylesheet" />
     <link href="Content/CartDropDown.css" rel="stylesheet" />
-
+    
 </head>
 <body>
     <form runat="server">
@@ -36,6 +36,7 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
+                
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
@@ -138,13 +139,14 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span>Shopping Cart<span class="caret"></span></a>
                             <ul class="dropdown-menu dropdown-cart" role="menu">
                                 <li>
+                                    
                                     <span class="item">
+                                        
                                         <span class="item-left">
-                                            <%--<img src="Picture" alt="" />--%>
-                                            <span class="item-info">
-                                               
-
-                                                <asp:ListView ID="_listViewChart" runat="server" DataKeyNames="ProductID">
+                                             
+                                             <span class="item-right">
+                                                 <button class="btn btn-xs btn-danger pull-right" >X</button>
+                                                 <asp:ListView ID="_listViewChart" runat="server" DataKeyNames="ProductID">
                                                     <AlternatingItemTemplate>
                                                         <tr style="">
                                                             <td>
@@ -307,19 +309,17 @@
                                                         </tr>
                                                     </ItemTemplate>
                                                     <LayoutTemplate>
-                                                        <table runat="server">
-                                                            <tr runat="server">
-                                                                <td runat="server">
-                                                                    <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+                                                                <div>
+                                                                    <table id="itemPlaceholderContainer" runat="server" class=".table-hover">
                                                                         <tr runat="server" style="">
-                                                                            <th runat="server">ProductID</th>
-                                                                            <th runat="server">ProductBrand</th>
+                                                                            <th runat="server">Product ID</th>
+                                                                            <th runat="server">Product Brand</th>
                                                                             <th runat="server">Color</th>
                                                                             <th runat="server">Size</th>
-                                                                            <th runat="server">CategoryName</th>
-                                                                            <th runat="server">PriceUnit</th>
+                                                                            <th runat="server">Category Name</th>
+                                                                            <th runat="server">Price Unit</th>
                                                                             <th runat="server">Quantity</th>
-                                                                            <th runat="server">Rabatt</th>
+                                                                            <th runat="server">Discount</th>
                                                                             <th runat="server">Price</th>
                                                                             <th runat="server">Total with Discount</th>
                                                                             <th runat="server">Total with Tax</th>
@@ -327,12 +327,7 @@
                                                                         <tr id="itemPlaceholder" runat="server">
                                                                         </tr>
                                                                     </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr runat="server">
-                                                                <td runat="server" style=""></td>
-                                                            </tr>
-                                                        </table>
+                                                                </div>
                                                     </LayoutTemplate>
                                                     <SelectedItemTemplate>
                                                         <tr style="">
@@ -371,17 +366,21 @@
                                                             </td>
                                                         </tr>
                                                     </SelectedItemTemplate>
-                                                </asp:ListView>
+                                                </asp:ListView>                                       
+                                            </span>
+                                            <%--<img src="Picture" alt="" />--%>
+                                            <span class="item-info">
+                                               
+                                                 
+                                               
                                                 
                                             </span>
                                         </span>
                                     </span>
-                                    <span class="item-right">
-                                        <button class="btn btn-xs btn-danger pull-right" onclick="ConfirmOrderShoppingCart_Click">Buy</button>
-                                    </span>
+                                   
 
                                     <li class="divider"></li>
-                                <li><a href="#" class="button">Checkout</a></li>
+                                <li><a href="#" class="button" onclick="ConfirmOrderShoppingCart_Click">Checkout</a></li>
                             </ul>
                         </li>
                     </ul>

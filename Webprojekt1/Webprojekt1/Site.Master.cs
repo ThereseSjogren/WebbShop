@@ -3,6 +3,7 @@ using System.Data;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Security.Principal;
+using System.Configuration;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -18,6 +19,7 @@ namespace Webprojekt1
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+        private List<ProductOrderInfoChartCart> listChart;
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -72,11 +74,16 @@ namespace Webprojekt1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["AddToChartCart"] != null)
-            {
-                List<ProductOrderInfoChartCart> listChart = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
+            //listChart = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
+            //_listViewChart.DataSource = listChart;
+            //_listViewChart.DataBind();
+            //if (Session["AddToChartCart"] == null)
+            //{
+                listChart = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
                 _listViewChart.DataSource = listChart;
                 _listViewChart.DataBind();
+
+                #region LargeVersionCode
                 //string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
 
                 //DataTable newDt = (DataTable)Session["AddToChartCart"];
@@ -99,10 +106,12 @@ namespace Webprojekt1
 
                 //    sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>"; 
                 //}
-                //_lblShowCart.Text = sessionInfo;
-            }
-            
+                //_lblShowCart.Text = sessionInfo; 
+                #endregion
+            //}
 
+
+            #region FirstCode
             //---------------------------------------------------------------------------
             //if (Session["AddToChartCart"] != null)
             //{
@@ -116,37 +125,55 @@ namespace Webprojekt1
             //    }
             //}
 
+            #endregion
         }
         protected void ConfirmOrderShoppingCart_Click(object sender, EventArgs e)
         {
-           
+            if ((string)Session["UserName"] != null)
+            {
+                WbsDAL wbsDAL = new WbsDAL();
+                wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
+                foreach (var p in listChart)
+                {
+                    //Decreasing in DB the 
+                    p.Quantity = -p.Quantity;
+                    string userName = (string)Session["UserName"];
+                    int customerID = wbsDAL.GetCustomerLoggedID(userName);
+                    int orderID = wbsDAL.InsertOrderProductTable(p.ProductID, p.Quantity, customerID);
+                    Response.Redirect("/Pages/OrderRec.aspx");
+                }
+            }
+            else
+                Response.Redirect("/Pages/AnonymousUserDetails");
 
         }
         protected void OpenShoppingCart_Click(object sender, EventArgs e)
         {
-            string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
-
-            DataTable newDt = Session["AddToChartCart"] as DataTable;
             
-            foreach (DataRow row in newDt.Rows)
-            {
+            #region FirstCode
+            //string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
 
-                int productID = (int)row["ProductID"];
-                string brand = (string)row["ProductBrand"];
-                string color = (string)row["Color"];
-                string size = (string)row["Size"];
-                string categoryName = (string)row["CategoryName"];
-                decimal priceUnit = (decimal)row["PriceUnit"];
-                int quantity = (int)row["Quantity"];
-                int rabatt = (int)row["Rabatt"];
-                decimal price = (decimal)row["Total"];
-                decimal totalWithDiscount = (decimal)row["Total with Discount"];
-                decimal totalWithTax = (decimal)row["Total with Tax"];
+            //DataTable newDt = Session["AddToChartCart"] as DataTable;
+
+            //foreach (DataRow row in newDt.Rows)
+            //{
+
+            //    int productID = (int)row["ProductID"];
+            //    string brand = (string)row["ProductBrand"];
+            //    string color = (string)row["Color"];
+            //    string size = (string)row["Size"];
+            //    string categoryName = (string)row["CategoryName"];
+            //    decimal priceUnit = (decimal)row["PriceUnit"];
+            //    int quantity = (int)row["Quantity"];
+            //    int rabatt = (int)row["Rabatt"];
+            //    decimal price = (decimal)row["Total"];
+            //    decimal totalWithDiscount = (decimal)row["Total with Discount"];
+            //    decimal totalWithTax = (decimal)row["Total with Tax"];
 
 
-                sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>";
+            //    sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>";
 
-            }
+            //}
             //_lblShowCart.Text = sessionInfo;
             //------------------------------------------------------------------------------------------------------
             //if (Session["AddToChartCart"] != null)
@@ -170,7 +197,8 @@ namespace Webprojekt1
             //        infoChart += $"<li>{p.ProductID}\t{p.Brand}\t{p.Color}\t{p.Size}t{p.CategoryName}\t{p.PriceUnit}\t{p.RabattID}\t{p.Quantity}\t{p.Price}\t{p.TotalWithDiscount}\t{p.TotalWithTax}</li>";
             //        _lblShowCart.Text = infoChart;
             //    }
-            //}
+            //} 
+            #endregion
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
@@ -181,14 +209,3 @@ namespace Webprojekt1
 
 }
 
-/*int productID = (int)row;
-                string brand = (string)row;
-                string color = (string)row;
-                string size = (string)row;
-                string categoryName = (string)row;
-                decimal priceUnit = (decimal)row;                
-                int rabattID = (int)row;
-                int quantity = (int)row;
-                decimal price = (decimal)row;
-                decimal totalWithDiscount = (decimal)row;
-                decimal totalWithTax = (decimal)row;*/

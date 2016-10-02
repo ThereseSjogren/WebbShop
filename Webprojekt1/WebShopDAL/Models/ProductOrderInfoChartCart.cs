@@ -43,6 +43,10 @@ namespace WebShopDAL.Models
             TotalWithTax = totalWithTax;
 
         }
+        public void AddProductToChart(ProductOrderInfoChartCart Product)
+        {
+
+        }
         public void DeleteProductFromChart(List<ProductOrderInfoChartCart> chartList, int productID)
         {
             chartList.Select(x => x.ProductID == productID);
