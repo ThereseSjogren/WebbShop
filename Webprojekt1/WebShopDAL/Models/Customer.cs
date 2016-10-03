@@ -15,10 +15,10 @@ namespace WebShopDAL.Models
         public string Email { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public int ZipCodeID { get; set; }
+        public string ZipCode { get; set; }
         public int RabattID { get; set; }
 
-        public Customer(int customerID, string firstName, string lastName, string address, string email, string userName, string password, int zipcodeID, int rabattID)
+        public Customer(int customerID, string firstName, string lastName, string address, string email, string userName, string password, string zipcode, int rabattID)
         {
             CustomerID = customerID;
             FirstName = firstName;
@@ -27,7 +27,7 @@ namespace WebShopDAL.Models
             Email = email;
             UserName = userName;
             Password = password;
-            ZipCodeID = zipcodeID;
+            ZipCode = zipcode;
             RabattID = rabattID;
 
         }

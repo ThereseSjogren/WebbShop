@@ -14,7 +14,14 @@ namespace WebShopDAL.ConnectedLayer
     public class WbsDAL
     {
         private SqlConnection _sqlConnection = null;
+        public List<Product> ProductList { get; set; }
+        public List<Category> CategoryList { get; set; }
 
+        public WbsDAL()
+        {
+            ProductList = new List<Product>();
+            CategoryList = new List<Category>();
+        }
 
         public void OpenConnection(string connectionString)
         {
@@ -28,7 +35,7 @@ namespace WebShopDAL.ConnectedLayer
         //Registrate Customer
         public void InsertCustomer(Customer c)
         {
-            string sql = $"Insert into tblCustomer (FirstName, LastName, Email, Address, UserName, Password, RabattID) Values ('{c.FirstName}', '{c.LastName}','{c.Email}','{c.Address}','{c.UserName}', '{c.Password}',  '{c.ZipCodeID}','{c.RabattID}')";
+            string sql = $"Insert into tblCustomer (FirstName, LastName, Email, Address, UserName, Password, RabattID, ZipCode) Values ({c.FirstName}, {c.LastName},{c.Email},{c.Address},{c.UserName}, {c.Password},{c.RabattID}, {c.ZipCode})";
 
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
@@ -44,6 +51,40 @@ namespace WebShopDAL.ConnectedLayer
                 cmd.ExecuteNonQuery();
             }
         }
+
+        #region ProductSiteRequest
+        public List<Product> GetListOfAllProducts()
+        {
+            List<Product> productList = new List<Product>();
+            string sql = $"Select * From tblProduct";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productList.Add(new Product
+                    { 
+
+                    ImageURL = (string)reader["ImageURL"],
+                    ProductID = (int)reader["ProductID"],
+                    ProductBrand = (string)reader["ProductBrand"],
+                    PriceUnit = (decimal)reader["PriceUnit"],
+                    ProductDescription = (string)reader["ProductDescription"],
+                    Color = (string)reader["Color"],
+                    Size = (string)reader["Size"],
+                    Stock = (int)reader["Stock"],
+                    CategoryID = (int)reader["CategoryID"]
+
+                    });
+                    
+
+                }
+                reader.Close();
+                reader.Dispose();
+            }
+            return productList;
+        } 
+        #endregion
         #region ChartQueries
         public List<ProductOrderInfoChartCart> GetProductInfo(int productID, string category, string gender, string color, string size, int quantity, int rabattID)
         {
@@ -248,6 +289,7 @@ namespace WebShopDAL.ConnectedLayer
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    string imageURL = (string)reader["ImageURL"];
                     int productID = (int)reader["ProductID"];
                     string productBrand = (string)reader["ProductBrand"];
                     decimal priceUnit = (decimal)reader["PriceUnit"];
@@ -256,7 +298,8 @@ namespace WebShopDAL.ConnectedLayer
                     string size = (string)reader["Size"];
                     int stock = (int)reader["Stock"];
                     int categoryID = (int)reader["CategoryID"];
-                    productToCart = new Product(productID, productBrand, priceUnit, productDescription, color, size, stock, categoryID);
+
+                    productToCart = new Product(imageURL,productID, productBrand, priceUnit, productDescription, color, size, stock, categoryID);
                     
                 }
                 reader.Close();
@@ -293,7 +336,7 @@ namespace WebShopDAL.ConnectedLayer
 
 
 
-        }
+        }//NOT IN USE
 
         public List<Product> GetProducts()
         {
@@ -304,6 +347,7 @@ namespace WebShopDAL.ConnectedLayer
                 SqlDataReader _sqlDtReader = cmd.ExecuteReader();
                 while (_sqlDtReader.Read())
                 {
+
                     int productID = (int)_sqlDtReader["ProductID"];
                     string productBrand = (string)_sqlDtReader["ProductBrand"];
                     decimal priceUnit = (decimal)_sqlDtReader["PriceUnit"];
@@ -313,7 +357,7 @@ namespace WebShopDAL.ConnectedLayer
                     int stock = (int)_sqlDtReader["Stock"];
                     int categoryID = (int)_sqlDtReader["CategoryID"];
 
-                    lsAllProduct.Add(new Product(productID, productBrand, priceUnit, productDescription, color, size, stock, categoryID));
+                    //lsAllProduct.Add(new Product(productID, productBrand, priceUnit, productDescription, color, size, stock, categoryID /*imageURL*/));
                 }
                 _sqlDtReader.Close();
 

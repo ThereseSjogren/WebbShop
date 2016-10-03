@@ -102,10 +102,20 @@ namespace Webprojekt1
         {
             if ((string)Session["UserName"] != null)
             {
+                List<ProductOrderInfoChartCart> orderList = new List<ProductOrderInfoChartCart>();
                 WbsDAL wbsDAL = new WbsDAL();
                 wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
                 List<Product> listChart = (List<Product>)Session["AddToChartCart"];
-
+                foreach (Product p in listChart)
+                {
+                    string imageURL = p.ImageURL;
+                    int productID = p.ProductID;
+                    string roductBrand = p.ProductBrand;
+                    decimal PriceUnit = p.PriceUnit;
+                    string ProductDescription = p.ProductDescription;
+                    string Color = p.Color;
+                    string Size = p.Size;
+                }
 
                 //Missing Code for Quantity
 
@@ -115,6 +125,7 @@ namespace Webprojekt1
                 foreach (Product p in listChart)
                 {
                     int productID = p.ProductID;
+
                     wbsDAL.InsertOrderProductTable(productID, orderID);
                 }
                 
