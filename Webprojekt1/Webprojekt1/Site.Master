@@ -15,7 +15,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="Content/font-awesome.css" rel="stylesheet" />
     <link href="Content/CartDropDown.css" rel="stylesheet" />
-    
+
 </head>
 <body>
     <form runat="server">
@@ -36,7 +36,7 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
-                
+
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
@@ -58,7 +58,7 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Women
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                               <li><a runat="server" href="Pages/Women.aspx">All products</a></li>
+                                <li><a runat="server" href="Pages/Women.aspx">All products</a></li>
                                 <li><a runat="server" href="Pages/Womenclothes/WomenTshirt.aspx">T-shirts</a></li>
                                 <li><a runat="server" href="Pages/Womenclothes/WomenSweatshirt.aspx">Sweatshirts</a></li>
                                 <li><a runat="server" href="Pages/Womenclothes/WomenJeans.aspx">Jeans</a></li>
@@ -70,7 +70,7 @@
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a runat="server" href="Pages/Male.aspx">All products</a></li>
-                               
+
                                 <li><a runat="server" href="Pages/MaleClothes/MaleTshirts.aspx">T-shirts</a></li>
 
                                 <li><a runat="server" href="Pages/MaleClothes/MaleSweatshirts.aspx">Sweatshirts</a></li>
@@ -87,7 +87,7 @@
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a runat="server" href="Pages/Child.aspx">All products</a></li>
-                               
+
                                 <li><a runat="server" href="Pages/ChildClothes/ChildTshirt.aspx">T-shirts</a></li>
                                 <li><a runat="server" href="Pages/ChildClothes/ChildSweatshirt.aspx">Sweatshirts</a></li>
                                 <li><a runat="server" href="Pages/ChildClothes/ChildJeans.aspx">Jeans</a></li>
@@ -129,55 +129,35 @@
                     </asp:LoginView>
                 </div>
 
-                <div id="shop" onclick="OpenShoppingCart_Click">
+                <div id="shop">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span>Shopping Cart<span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdown-cart" role="menu">
+                            
+                             <ul class="dropdown-menu dropdown-cart" role="menu">
                                 <li>
-                                    
-                                    <span class="item">
-                                        
-                                        <span class="item-left">
-                                             
-                                             <span class="item-right">
-                                                 <button class="btn btn-xs btn-danger pull-right" >X</button>
-                                                 <asp:ListView ID="_listViewChart" runat="server" DataKeyNames="ProductID">
+                                     <asp:ListView ID="_listViewChart" runat="server" DataKeyNames="ProductID">
                                                     <AlternatingItemTemplate>
                                                         <tr style="">
-                                                            <td>
+                                                           <td>
                                                                 <asp:Label ID="ProductIDLabel" runat="server" Text='<%# Eval("ProductID") %>' />
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="ProductBrandLabel" runat="server" Text='<%# Eval("ProductBrand") %>' />
+                                                            <td>
+                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
                                                             </td>
+                                                            <%--<td>
+                                                                <asp:TextBox ID="TextBoxQuantity" runat="server" Text='<%# Eval("Quantity") %>' />
+                                                            </td>--%>
                                                             <td>
                                                                 <asp:Label ID="ColorLabel" runat="server" Text='<%# Eval("Color") %>' />
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="SizeLabel" runat="server" Text='<%# Eval("Size") %>' />
                                                             </td>
-                                                            <td>
-                                                                <asp:Label ID="CategoryNameLabel" runat="server" Text='<%# Eval("CategoryName") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="RabattLabel" runat="server" Text='<%# Eval("Rabatt") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="TotalLabel" runat="server" Text='<%# Eval("Total") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_DiscountLabel" runat="server" Text='<%# Eval("TotalWithDiscount") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_TaxLabel" runat="server" Text='<%# Eval("TotalWithTax") %>' />
-                                                            </td>
+
+
                                                         </tr>
                                                     </AlternatingItemTemplate>
                                                     <%--<EditItemTemplate>
@@ -274,106 +254,74 @@
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="ProductBrandLabel" runat="server" Text='<%# Eval("ProductBrand") %>' />
+                                                            <td>
+                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
                                                             </td>
+                                                           <%-- <td>
+                                                                <asp:TextBox ID="TextBoxQuantity" runat="server" Text='<%# Eval("Quantity") %>' />
+                                                            </td>--%>
                                                             <td>
                                                                 <asp:Label ID="ColorLabel" runat="server" Text='<%# Eval("Color") %>' />
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="SizeLabel" runat="server" Text='<%# Eval("Size") %>' />
                                                             </td>
-                                                            <td>
-                                                                <asp:Label ID="CategoryNameLabel" runat="server" Text='<%# Eval("CategoryName") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="RabattLabel" runat="server" Text='<%# Eval("Rabatt") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="TotalLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_DiscountLabel" runat="server" Text='<%# Eval("TotalWithDiscount") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_TaxLabel" runat="server" Text='<%# Eval("TotalWithTax") %>' />
-                                                            </td>
+                                                            
+                                                               
+                                                            
                                                         </tr>
                                                     </ItemTemplate>
                                                     <LayoutTemplate>
-                                                                <div>
-                                                                    <table id="itemPlaceholderContainer" runat="server" class=".table-hover">
-                                                                        <tr runat="server" style="">
-                                                                            <th runat="server">Product ID</th>
-                                                                            <th runat="server">Product Brand</th>
-                                                                            <th runat="server">Color</th>
-                                                                            <th runat="server">Size</th>
-                                                                            <th runat="server">Category Name</th>
-                                                                            <th runat="server">Price Unit</th>
-                                                                            <th runat="server">Quantity</th>
-                                                                            <th runat="server">Discount</th>
-                                                                            <th runat="server">Price</th>
-                                                                            <th runat="server">Total with Discount</th>
-                                                                            <th runat="server">Total with Tax</th>
-                                                                        </tr>
-                                                                        <tr id="itemPlaceholder" runat="server">
-                                                                        </tr>
-                                                                    </table>
-                                                                </div>
+                                                        <div>
+                                                            <table id="itemPlaceholderContainer" runat="server" class=".table-hover">
+                                                                <tr runat="server" style="">
+                                                                    <th runat="server">Product ID</th>
+                                                                    <th runat="server">Product Brand</th>
+                                                                    <th runat="server">Price Unit</th>
+                                                                    <th runat="server">Quantity</th>
+                                                                    <th runat="server">Color</th>
+                                                                    <th runat="server">Size</th>                                   
+                                                                </tr>
+                                                                <tr id="itemPlaceholder" runat="server">
+                                                                </tr>
+                                                            </table>
+                                                        </div>
                                                     </LayoutTemplate>
                                                     <SelectedItemTemplate>
                                                         <tr style="">
-                                                            <td>
+                                                             <td>
                                                                 <asp:Label ID="ProductIDLabel" runat="server" Text='<%# Eval("ProductID") %>' />
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="ProductBrandLabel" runat="server" Text='<%# Eval("ProductBrand") %>' />
+                                                            <td>
+                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
                                                             </td>
+                                                            <%--<td>
+                                                                <asp:TextBox ID="TextBoxQuantity" runat="server" Text='<%# Eval("Quantity") %>' />
+                                                            </td>--%>
                                                             <td>
                                                                 <asp:Label ID="ColorLabel" runat="server" Text='<%# Eval("Color") %>' />
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="SizeLabel" runat="server" Text='<%# Eval("Size") %>' />
                                                             </td>
-                                                            <td>
-                                                                <asp:Label ID="CategoryNameLabel" runat="server" Text='<%# Eval("CategoryName") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="RabattLabel" runat="server" Text='<%# Eval("Rabatt") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="TotalLabel" runat="server" Text='<%# Eval("Total") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_DiscountLabel" runat="server" Text='<%# Eval("[TotalWithDiscount]") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_TaxLabel" runat="server" Text='<%# Eval("[TotalWithTax]") %>' />
-                                                            </td>
                                                         </tr>
                                                     </SelectedItemTemplate>
-                                                </asp:ListView>                                       
+                                                </asp:ListView>
+                                    <%--<span class="item">
+
+                                        <span class="item-left">
+
+                                            <span class="item-right">
+                                                
+                                               
                                             </span>
                                             <%--<img src="Picture" alt="" />--%>
-                                            <span class="item-info">
-                                               
-                                                 
-                                               
-                                                
-                                            </span>
+                                           <%-- <span class="item-info"></span>
                                         </span>
-                                    </span>
-                                   
+                                    </span>--%>
+                                    </li>
 
                                     <li class="divider"></li>
                                 <li><a href="#" class="button" onclick="ConfirmOrderShoppingCart_Click">Checkout</a></li>
@@ -382,7 +330,7 @@
                     </ul>
 
                 </div>
-               
+
             </div>
         </div>
 
