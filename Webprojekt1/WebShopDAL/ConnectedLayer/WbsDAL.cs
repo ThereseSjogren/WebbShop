@@ -132,11 +132,11 @@ namespace WebShopDAL.ConnectedLayer
         /// <param name="productID"></param>
         /// <param name="quantity"></param>
         /// <param name="customerID"></param>
-        public int InsertOrderProductTable(int productID, int quantity, int customerID)
+        public int InsertOrderProductTable(int productID, /*int quantity,*/ int orderID)
         {
-
+            int  quantity = 1;
             //SqlCommand _cmdInsertProductToOrderTable = new SqlCommand($"", _sqlConnection);
-            int orderID = InsertToOrderTbl(customerID);
+            
             using (SqlCommand _cmdInsertToOrderProductTbl = new SqlCommand($"INSERT INTO tblOrderProduct (ProductID,OrderID, Quantity) VALUES (@ProductID,@OrderID, @Quantity)", _sqlConnection))
             {
                 _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@ProductID", productID);
@@ -237,15 +237,35 @@ namespace WebShopDAL.ConnectedLayer
         //        cmd.ExecuteNonQuery();
         //    }
         //}
-        ////public void ProductSelectOptions(int id,string color, string size, int amount, int categoryID)//Get values from html form (customer)
-        ////{
-        ////    string sql = $"SELECT * FROM tblProduct   Color = {color}, Size = {size},Stock = {-amount}, CategodyID = {categoryID} Where ProductID = {id}";
+        public Product ProductSelectToCart(int id)//Get values from html form (customer)
+        {
+            Product productToCart = new Product();
+            string sql = $"SELECT * FROM tblProduct Where ProductID = {id}";
+            
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int productID = (int)reader["ProductID"];
+                    string productBrand = (string)reader["ProductBrand"];
+                    decimal priceUnit = (decimal)reader["PriceUnit"];
+                    string productDescription = (string)reader["ProductDescription"];
+                    string color = (string)reader["Color"];
+                    string size = (string)reader["Size"];
+                    int stock = (int)reader["Stock"];
+                    int categoryID = (int)reader["CategoryID"];
+                    productToCart = new Product(productID, productBrand, priceUnit, productDescription, color, size, stock, categoryID);
+                    
+                }
+                reader.Close();
+                reader.Dispose();
+                
+            }
+            return productToCart;
 
-        ////    using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
-        ////    {
-        ////        cmd.ExecuteNonQuery();
-        ////    }
-        ////} 
+        }
         public List<Product> lsDescriptionProduct(int id)
         {
             List<Product> lsAllProduct = new List<Product>();

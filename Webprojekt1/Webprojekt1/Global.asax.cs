@@ -6,6 +6,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using WebShopDAL.Models;
 
 namespace Webprojekt1
 {
@@ -17,5 +18,14 @@ namespace Webprojekt1
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+        protected void Session_Start(object sender, EventArgs e)
+        {
+            List<Product> list = new List<Product>();
+
+            Session["AddToChartCart"] = list;
+            Guid guid = Guid.NewGuid();
+            Session["GUID"] = guid;
+        }
+
     }
 }

@@ -16,14 +16,18 @@ namespace Webprojekt1.Pages
     {
         protected  List<ProductOrderInfoChartCart> listChart;
 
-        public void AddToChartCart(List<ProductOrderInfoChartCart> listChart)
+        public void AddToChartCart(Product p)
         {
             //Add list to Session
-                      
-            Session["AddToChartCart"] = listChart;
-            
+
+            //Session["AddToChartCart"] = p;
+            List<Product> _productList = new List<Product>();
+            _productList = (List<Product>)Session["AddToChartCart"];
+            _productList.Add(p);
+            Session["AddToChartCart"] = _productList;
+
             #region FirstCode
-            //DataTable newDt = new DataTable();
+
             //newDt = Session["AddToChartCart"] as DataTable;
             //foreach (DataRow row in newDt.Rows)
             //{
@@ -57,46 +61,55 @@ namespace Webprojekt1.Pages
 
         protected void _btnAddToChart_Click(object sender, EventArgs e)
         {
+
             WbsDAL wbsDAL = new WbsDAL();
             wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
 
+
+            Product p = new Product();
+            
+            
             //Get all product attributes to be able to call the product
             string description = "Fine brand";
-            string category ="T-Shirt";         
+            string category = "T-Shirt";
             string gender = _dropDownGender.SelectedValue.ToString();
             string color = _dropDownColor.SelectedValue.ToString();
             string size = _dropDownSize.SelectedValue.ToString();
             int quantity = Int32.Parse(_dropDownQuantity.SelectedValue);
-
-            //Get ProductID
             int productID = wbsDAL.GetProduct(description, category, gender, color, size);
-            
-            //Get DataTable with all Info
-            
-            if (Session["UserName"] != null)
-            {
-                listChart = wbsDAL.GetProductInfo(productID, category, gender, color, size, quantity, 1);
-                
-                AddToChartCart(listChart); 
-            }
-            else
-            {
-                listChart = wbsDAL.GetProductInfo(productID, category, gender, color, size, quantity, 2);
-                AddToChartCart(listChart);
-            }
-            Response.Redirect("../Default");
+            p = wbsDAL.ProductSelectToCart(productID);
 
-            //////////////////////////////////////////////////////////////////////////////////////////////
-            //    Should insert the order in Maste.Site.cs (shoppingCart) TODO  / Needs to reLogic it   //
-            //////////////////////////////////////////////////////////////////////////////////////////////
+            AddToChartCart(p);
 
-            ////Check userName to be able to get CustomerID
-            //string userName = (string)Session["UserName"];
-            ////Get CustomerID to be able to get OrderID
-            //int customerID = wbsDAL.GetCustomerLoggedID(userName);
-            ////Get OrderID and insert into tblOrderProduct
-            //int orderID = wbsDAL.InsertOrderProductTable(productID, quantity, customerID);
-            //Response.Redirect("../OrderRec.aspx");
+            //    //Get ProductID
+
+
+            //    ////Get DataTable with all Info
+
+            //if (Session["UserName"] != null)
+            //{
+            //    listChart = wbsDAL.GetProductInfo(productID, category, gender, color, size, quantity, 1);
+
+            //    AddToChartCart(listChart); 
+            //}
+            //else
+            //{
+            //    listChart = wbsDAL.GetProductInfo(productID, category, gender, color, size, quantity, 2);
+            //    AddToChartCart(listChart);
+            //}
+            //Response.Redirect("../Default");
+
+            //    //////////////////////////////////////////////////////////////////////////////////////////////
+            //    //    Should insert the order in Maste.Site.cs (shoppingCart) TODO  / Needs to reLogic it   //
+            //    //////////////////////////////////////////////////////////////////////////////////////////////
+
+            //    ////Check userName to be able to get CustomerID
+            //    //string userName = (string)Session["UserName"];
+            //    ////Get CustomerID to be able to get OrderID
+            //    //int customerID = wbsDAL.GetCustomerLoggedID(userName);
+            //    ////Get OrderID and insert into tblOrderProduct
+            //    //int orderID = wbsDAL.InsertOrderProductTable(productID, quantity, customerID);
+            //    //Response.Redirect("../OrderRec.aspx");
         }
     }
 }
