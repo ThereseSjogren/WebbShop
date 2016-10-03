@@ -9,7 +9,7 @@
     <title><%: Page.Title %> - My ASP.NET Application</title>
 
     <asp:PlaceHolder runat="server">
-        <%:Scripts.Render("~/bundles/modernizr") %>
+       <%:Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -140,7 +140,7 @@
                                         
                                         <span class="item-left">
                                              
-                                             <span class="item-right">
+                                             <span class="item-center">
                                                  <button class="btn btn-xs btn-danger pull-right" >X</button>
                                                  <asp:ListView ID="_listViewChart" runat="server" DataKeyNames="ProductID">
                                                     <AlternatingItemTemplate>
@@ -221,13 +221,7 @@
                                                             </td>
                                                         </tr>
                                                     </EditItemTemplate>--%>
-                                                    <EmptyDataTemplate>
-                                                        <table runat="server" style="">
-                                                            <tr>
-                                                                <td>No data was returned.</td>
-                                                            </tr>
-                                                        </table>
-                                                    </EmptyDataTemplate>
+                                                    <%-- Empty let it beeeeeeee --%>
                                                     <%--<InsertItemTemplate>
                                                         <tr style="">
                                                             <td>
@@ -361,16 +355,24 @@
                                                                 <asp:Label ID="Total_with_TaxLabel" runat="server" Text='<%# Eval("[TotalWithTax]") %>' />
                                                             </td>
                                                         </tr>
+                                                        <EmptyDataTemplate>
+                                                        <table runat="server" style="">
+                                                            <tr>
+                                                                <td>No data was returned.</td>
+                                                            </tr>
+                                                        </table>
+                                                    </EmptyDataTemplate>
                                                     </SelectedItemTemplate>
                                                 </asp:ListView>                                       
                                             </span>
                                             <%--<img src="Picture" alt="" />--%>
-                                            <span class="item-info">
+                                           <%-- <span class="item-info">
                                                
                                                  
                                                
                                                 
-                                            </span>
+                                            </span>--%>
+
                                         </span>
                                     </span>
                                    

@@ -354,6 +354,7 @@
     <Content Include="Pages\ShoppingCartWomen\WomenCartSweatShirt\WSweatShirt2.aspx" />
     <Content Include="Pages\ShoppingCartWomen\WomenCartTShirt\WTShirt1.aspx" />
     <Content Include="Pages\ShoppingCartWomen\WomenCartTShirt\WTShirt2.aspx" />
+    <Content Include="Pages\TestInsertProducts.aspx" />
     <Content Include="Pages\Tests\Login.aspx" />
     <Content Include="Pages\Tests\Registration.aspx" />
     <Content Include="Pages\Tests\ProceedOrder.aspx" />
@@ -1118,6 +1119,13 @@
     </Compile>
     <Compile Include="Pages\ShoppingCartWomen\WomenCartTShirt\WTShirt2.aspx.designer.cs">
       <DependentUpon>WTShirt2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestInsertProducts.aspx.cs">
+      <DependentUpon>TestInsertProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TestInsertProducts.aspx.designer.cs">
+      <DependentUpon>TestInsertProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Tests\TestProductFiltering.aspx.cs">
       <DependentUpon>TestProductFiltering.aspx</DependentUpon>

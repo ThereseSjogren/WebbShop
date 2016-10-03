@@ -27,7 +27,7 @@ h1{
     float: left;
 }
 
-.product-image img {
+/*.product-image img {
    
     background-size: cover;
     background-position: center top;
@@ -35,14 +35,14 @@ h1{
     min-height: 450px;
     margin-top:60px;
   
-}
+}*/
 
 
 .product-info {
     padding: 0px 8%;
 }
 
-    .product-info .select-dropdown {
+.product-info .select-dropdown {
         display: inline-block;
         margin-right: 10px;
         position: relative;
@@ -50,7 +50,7 @@ h1{
         float: left;
     }
 
-    .product-info select {
+/*.product-info select {
         cursor: pointer;
         margin-bottom: 20px;
         padding: 12px 92px 12px 15px;
@@ -138,4 +138,4 @@ th{
 }
 span{
     color:black;
-}
+}*/
