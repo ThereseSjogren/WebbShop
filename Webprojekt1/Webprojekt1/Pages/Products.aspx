@@ -11,16 +11,20 @@
                     </a>
                 </li>
                 <li>
-                    <a href="Tshirt.aspx">T-Shirt</a>
+                    <a href="MaleClothes/MaleTshirts.aspx">T-Shirt</a>
+                    <%--<a href="Tshirt.aspx">T-Shirt</a>--%>
                 </li>
                 <li>
-                    <a href="Sweatshirt.aspx">Sweatshirt</a>
+                    <a href="MaleClothes/MaleSweatshirts.aspx">Sweatshirt</a>
+                    <%--<a href="Sweatshirt.aspx">Sweatshirt</a>--%>
                 </li>
                 <li>
-                    <a href="Trouses.aspx">Jeans</a>
+                    <a href="MaleClothes/MaleJeans.aspx">Jeans</a>
+                    <%--<a href="Trouses.aspx">Jeans</a>--%>
                 </li>
                 <li>
-                  <a href="Jackets.aspx">Jacket</a>
+                    <a href="MaleClothes/MaleJackets.aspx">Jacket</a>
+                  <%--<a href="Jackets.aspx">Jacket</a>--%>
                 </li>
             </ul>
         </div>
