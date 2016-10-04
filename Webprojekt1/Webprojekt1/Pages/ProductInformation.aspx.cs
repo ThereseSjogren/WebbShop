@@ -78,7 +78,7 @@ namespace Webprojekt1.Pages
             Product p = new Product();
             WbsDAL wbs = new WbsDAL();
             wbs.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
-            p = wbs.ProductSelectToCart();
+            p = wbs.ProductSelectToCart(ProductID);
 
             number = Decimal.ToInt32(p.PriceUnit);
             StringBuilder markupHTML = new StringBuilder("");
