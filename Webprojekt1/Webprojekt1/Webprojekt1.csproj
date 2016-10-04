@@ -270,6 +270,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CartDropDown.css" />
     <Content Include="Content\Childstyle.css" />
+    <Content Include="Content\ConFirmOrderStyle.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\OrderRec.css" />
@@ -297,6 +298,7 @@
     <Content Include="Pages\ChildClothes\ChildJeans.aspx" />
     <Content Include="Pages\ChildClothes\ChildSweatshirt.aspx" />
     <Content Include="Pages\ChildClothes\ChildTshirt.aspx" />
+    <Content Include="Pages\ConfirmOrder.aspx" />
     <Content Include="Pages\Male.aspx" />
     <Content Include="Pages\MaleClothes\MaleJackets.aspx" />
     <Content Include="Pages\MaleClothes\MaleJeans.aspx" />
@@ -712,6 +714,13 @@
     </Compile>
     <Compile Include="Pages\ChildClothes\ChildTshirt.aspx.designer.cs">
       <DependentUpon>ChildTshirt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ConfirmOrder.aspx.cs">
+      <DependentUpon>ConfirmOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ConfirmOrder.aspx.designer.cs">
+      <DependentUpon>ConfirmOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Male.aspx.cs">
       <DependentUpon>Male.aspx</DependentUpon>
