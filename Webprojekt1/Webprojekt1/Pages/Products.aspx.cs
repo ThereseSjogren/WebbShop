@@ -12,6 +12,7 @@ using System.Data;
 using System.Web.ModelBinding;
 
 
+
 namespace Webprojekt1
 {
     public partial class Products : System.Web.UI.Page
@@ -42,7 +43,7 @@ namespace Webprojekt1
                                     $"<h2 class=\"title\">{p.ProductBrand}</h2>" +
                                  $"</div>" +
                                  $"<div class=\"btn\">" +
-                                   $"<a href=\"ProductInformation.aspx?ProductID={p.ProductID}\">More Info<br />" +
+                                   $"<a href=\"ProductInformation.aspx?ProductID<%:Item.ProductID%>\">More Info<br />" +
                                      $"{number}SEK" +
                                    $"</a>" +
                                  $"</div>" +
@@ -51,6 +52,28 @@ namespace Webprojekt1
             }
             InsertedProducts.InnerHtml = markupHTML;
         }
+        //public IQueryable<Products> GetProducts([QueryString("id")] int? ProductID)
+        //{
+           
+        //    WbsDAL wbs = new WbsDAL();
+        //    wbs.OpenConnection("Data Source=.;Initial Catalog=WebbShop;Integrated Security=True");
+        //    string
+        //    using (resource)
+        //    {
+
+        //    }
+        //    IQueryable query = (IQueryable)wbs.GetListOfAllProducts();
+        //    if (ProductID.HasValue && ProductID > 0)
+        //    {
+                
+        //        foreach (Product p in query)
+        //        {
+                    
+        //        }
+        //    }
+        //    return query;
+
+        //}
 
     }
 
