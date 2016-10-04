@@ -21,10 +21,12 @@ namespace Webprojekt1
         protected void Session_Start(object sender, EventArgs e)
         {
             List<Product> list = new List<Product>();
+            List<Product> searchedlist = new List<Product>();
 
             Session["AddToChartCart"] = list;
             Guid guid = Guid.NewGuid();
             Session["GUID"] = guid;
+            Session["SearchedProduct"] = searchedlist;
         }
 
     }

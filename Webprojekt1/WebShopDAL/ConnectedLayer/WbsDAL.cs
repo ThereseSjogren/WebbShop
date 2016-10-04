@@ -616,6 +616,46 @@ namespace WebShopDAL.ConnectedLayer
             return productJacketsList;
         }
         #endregion
+        #region SearchFilter
+        public List<Product> GetSearchProduct(string input)
+        {
+
+            List<Product> productSearch = new List<Product>();
+            //string getProduct = $"SELECT p.ProductID p.ProductBrand, op.Quantity, p.PriceUnit, o. p.FROM tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID  WHERE CategoryName= '{category}' AND Gender= '{gender}' AND Color = '{color}' AND Size = '{size}' ";
+            using (SqlCommand cmd = new SqlCommand("sp_SearchField", _sqlConnection))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SearchInput", input);
+                
+
+                SqlDataReader dataReader = cmd.ExecuteReader();//Here is the issue
+                                                               //dataTable.Load(dataReader);
+                                                               //dataReader.Close();
+                                                               //dataReader.Dispose();
+
+                while (dataReader.Read())
+                {
+
+                    productSearch.Add(new Product
+                    {
+                        ImageURL = (string)dataReader["ImageURL"],
+                        ProductID = (int)dataReader["ProductID"],
+                        ProductBrand = (string)dataReader["ProductBrand"],
+                        PriceUnit = (decimal)dataReader["PriceUnit"],
+                        ProductDescription = (string)dataReader["ProductDescription"],
+                        Color = (string)dataReader["Color"],
+                        Size = (string)dataReader["Size"],
+                        Stock = (int)dataReader["Stock"],
+                        CategoryID = (int)dataReader["CategoryID"]
+                    });
+                }
+                dataReader.Close();
+                dataReader.Dispose();
+            }
+            return productSearch;
+
+        }
+        #endregion
 
 
         #region ChartQueries

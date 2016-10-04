@@ -360,6 +360,7 @@
     <Content Include="Pages\Tests\Login.aspx" />
     <Content Include="Pages\Tests\Registration.aspx" />
     <Content Include="Pages\Tests\ProceedOrder.aspx" />
+    <Content Include="SearchResult.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\ProductInformation.aspx" />
     <Content Include="Pages\Tests\TestProductFiltering.aspx" />
@@ -1210,6 +1211,13 @@
     </Compile>
     <Compile Include="Pages\Tests\ProceedOrder.aspx.designer.cs">
       <DependentUpon>ProceedOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResult.aspx.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResult.aspx.designer.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

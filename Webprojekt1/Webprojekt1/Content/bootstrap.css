@@ -124,7 +124,7 @@ html {
 
 body {
     margin: 0;
-    background-image: url('../Pictures/oldwhite.jpg');
+    background-image: url('../Images/oldwhite.jpg');
 }
 
 a:focus {
@@ -4593,6 +4593,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-nav > li > a {
   color: #999999;
+    top: 0px;
+    left: -9px;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
