@@ -108,8 +108,8 @@
                     <div class="box1">
                         <div class="container-1">
                         
-                            <asp:TextBox ID="txtSearchbox" runat="server"></asp:TextBox>
-                                <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click"  />
+                            <asp:TextBox ID="txtSearchbox" runat="server" CssClass="buttonsearch" ></asp:TextBox>
+                                <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="buttonsearch"  />
                             <%--<input type="search" id="search" placeholder="Search..." />--%>
                         </div>
                     </div>
@@ -333,6 +333,7 @@
                                             </span>
                                         </span>
                                     </span>
+                                        </span>
                                    
 
                                     <li class="divider"></li>

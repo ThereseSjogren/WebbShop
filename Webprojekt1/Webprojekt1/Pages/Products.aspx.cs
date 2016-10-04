@@ -34,10 +34,11 @@ namespace Webprojekt1
             {
                 number = Decimal.ToInt32(p.PriceUnit);
                 markupHTML += $"<div class=\"col-md-3 box\">" +
-                                 $"<div class =\"thumbnail\" >" +
+                               $"<div class=\"cover left\">"+
+                                 $"<div class =\"show show-second\" >" +
                                     $"<img src =\"/Images/{p.ImageURL}\" alt =\"Generic placeholder thumbnail\">" +
                                  $"</div>" +                                
-                                 $"<div class=\"cover left\">" +
+                                 $"<div class=\"mask\">" +
                                  $"<div class = \"caption\">" +
                                     $"<h3>{p.ProductBrand}</h3>" +
                                     $"<h2 class=\"title\">{p.ProductBrand}</h2>" +
@@ -49,6 +50,22 @@ namespace Webprojekt1
                                  $"</div>" +
                                $"</div>" +
                               $"</div>";
+
+        //              < div class="col-1-4">
+        //    <div class="cover left">
+        //        <div class="show show-second">
+        //            <img src = "../../../Pictures/child/T-shirt/77.jpg" />
+
+        //            < div class="mask">
+        //                <h2>Helly Hansen</h2>
+        //                <p>$80.00</p>
+        //                <a href = "ShoppingCartMen/MenCartTShirt/MTshirt4.aspx" class="more">More info</a>
+        //            </div>
+        //        </div>
+        //    </div>
+        //</div>
+
+
             }
             InsertedProducts.InnerHtml = markupHTML;
         }

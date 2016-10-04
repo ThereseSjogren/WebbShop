@@ -656,6 +656,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Pages\Child.aspx.cs">
       <DependentUpon>Child.aspx</DependentUpon>

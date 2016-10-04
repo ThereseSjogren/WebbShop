@@ -2,7 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../Scripts/Filterbox.js"></script>
-    <link href="../Content/ProductStyle.css" rel="stylesheet" type="text/css" />
+  <%--  <link href="../Content/ProductStyle.css" rel="stylesheet" type="text/css" />--%>
+    <link href="../Content/Childstyle.css" rel="stylesheet" />
+
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
