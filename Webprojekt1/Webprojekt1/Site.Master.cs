@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using WebShopDAL.Models;
 using WebShopDAL.ConnectedLayer;
+using System.Data.SqlClient;
 
 namespace Webprojekt1
 {
@@ -97,6 +98,19 @@ namespace Webprojekt1
             //}
 
             #endregion
+        }
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchField();
+        }
+        protected void SearchField()
+        {
+            List<Product> searchedProduct = new List<Product>();
+            WbsDAL wbsdal = new WbsDAL();
+            wbsdal.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
+            searchedProduct=wbsdal.GetSearchProduct(txtSearchbox.Text);
+            Session["SearchedProduct"] = searchedProduct;
+            Response.Redirect("~/SearchResult.aspx");
         }
         protected void ConfirmOrderShoppingCart_Click(object sender, EventArgs e) //TODO!!!!!!!
         {
