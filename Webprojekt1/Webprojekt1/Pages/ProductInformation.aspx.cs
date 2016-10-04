@@ -21,7 +21,7 @@ namespace Webprojekt1.Pages
         {
             //Add list to Session
 
-            
+
             List<Product> _productList = new List<Product>();
             _productList = (List<Product>)Session["AddToChartCart"];
             _productList.Add(p);
@@ -56,6 +56,19 @@ namespace Webprojekt1.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //////////////////////////////////////////////////////////////////
+            //  Request query string configured in all sites with product   //
+            //////////////////////////////////////////////////////////////////
+
+            string productID = string.Empty;
+            if (!string.IsNullOrEmpty(Request.QueryString["ProductID"]))
+            {
+                ProductID = Request.QueryString["ProductID"];
+            }
+            else
+            {
+
+            }
             ////////////////////////
             //  LOAD Product //
             ////////////////////////
@@ -65,52 +78,47 @@ namespace Webprojekt1.Pages
             Product p = new Product();
             WbsDAL wbs = new WbsDAL();
             wbs.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
+            p = wbs.ProductSelectToCart();
 
             number = Decimal.ToInt32(p.PriceUnit);
             StringBuilder markupHTML = new StringBuilder("");
             markupHTML.Append("<div class=\"product group\">");
-                markupHTML.Append("<div class =\"thumbnail\" >");
-                    markupHTML.Append("<img src =\"/Images/" + p.ImageURL + "\" alt=\"Generic placeholder thumbnail\">");
-                markupHTML.Append("</div>");
-                markupHTML.Append("<div class = \"caption\">");
-                    markupHTML.Append("<h3></h3>");
-                    markupHTML.Append("<span>"+ p.Size +"</span");
-                    markupHTML.Append("<h2 class=\"title\">" + p.ProductBrand  + "</h2>");
-                markupHTML.Append("</div>");
-                markupHTML.Append("<div class=\"col-1-2 product-info\">");
-                    markupHTML.Append("<h1>" + p.ProductBrand + "</h1>");
-                    markupHTML.Append("<br />");
-                    markupHTML.Append("" + p.ProductDescription + "");
-                    markupHTML.Append("<br />");
-                    markupHTML.Append("<h3>" + number + "SEK</h3>");
-                    markupHTML.Append("<asp:DropDownList ID=\"_dropDownQuantity\" runat=\"server\" Width=\"180px\">");
-                    markupHTML.Append("<asp:ListItem>Quantity</asp:ListItem>");
-                    markupHTML.Append("<asp:ListItem>1</asp:ListItem>");
-                    markupHTML.Append("<asp:ListItem>2</asp:ListItem>");
-                    markupHTML.Append("<asp:ListItem>3</asp:ListItem>");
-                    markupHTML.Append("<asp:ListItem>4</asp:ListItem>");
-                    markupHTML.Append("<asp:ListItem>5</asp:ListItem>");
-                    markupHTML.Append("</asp:DropDownList>");
-                    markupHTML.Append("<br />");
-                markupHTML.Append("<div class=\"add-btn\"  Text=\"Add to cart\"  OnClick=\"_btnAddToChart_Click\" runat=\"server\">");
-                markupHTML.Append("</div>");
+            markupHTML.Append("<div class =\"thumbnail\" >");
+            markupHTML.Append("<img src =\"/Images/" + p.ImageURL + "\" alt=\"Generic placeholder thumbnail\">");
             markupHTML.Append("</div>");
+            markupHTML.Append("<div class = \"caption\">");
+            markupHTML.Append("<h3></h3>");
+            markupHTML.Append("<span>" + p.Size + "</span");
+            markupHTML.Append("<h2 class=\"title\">" + p.ProductBrand + "</h2>");
+            markupHTML.Append("</div>");
+            markupHTML.Append("<div class=\"col-1-2 product-info\">");
+            markupHTML.Append("<h1>" + p.ProductBrand + "</h1>");
+            markupHTML.Append("<br />");
+            markupHTML.Append("" + p.ProductDescription + "");
+            markupHTML.Append("<br />");
+            markupHTML.Append("<h3>" + number + "SEK</h3>");
+            markupHTML.Append("<br />");
+            markupHTML.Append("<div class=\"add-btn\"  Text=\"Add to cart\"  OnClick=\"_btnAddToChart_Click\" runat=\"server\">");
+            markupHTML.Append("</div>");
+            markupHTML.Append("</div>");
+
 
 
             InsertedProduct.InnerHtml = markupHTML.ToString();
 
-           
-            
+
+
 
         }
 
-        //protected void _btnAddToChart_Click()
-        //{
-        //    int quantity = Int32.Parse(_dropDownQuantity.SelectedValue);
-        //    WbsDAL wbsDAL = new WbsDAL();
-        //    wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
-        //    Product p = new Product();
-        //    p = wbsDAL.GetProductForProdIformation();
+        protected void _btnAddToChart_Click()
+        {
+
+            //int quantity = Int32.Parse(_dropDownQuantity.SelectedValue);
+            //WbsDAL wbsDAL = new WbsDAL();
+            //wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
+            //Product p = new Product();
+            //p = wbsDAL.GetProductForProdIformation();
 
 
             //    //Get all product attributes to be able to call the product
@@ -155,5 +163,7 @@ namespace Webprojekt1.Pages
             //    //int orderID = wbsDAL.InsertOrderProductTable(productID, quantity, customerID);
             //    //Response.Redirect("../OrderRec.aspx");
             //}
+            //}
         }
+    }
 }
