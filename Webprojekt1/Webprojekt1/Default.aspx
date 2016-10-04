@@ -13,19 +13,19 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-        <img src="Pictures/1920x800clock.jpg" alt="...">
+        <img src="Images/1920x800clock.jpg" alt="...">
       <div class="carousel-caption">
         ...
       </div>
     </div>
     <div class="item">
-        <img src="Pictures/1920x800.jpeg"  alt="...">
+        <img src="Images/1920x800.jpeg"  alt="...">
       <div class="carousel-caption">
         ...
       </div>
     </div>
    <div class="item">
-       <img src="Pictures/1920x800Shoos.jpeg"  alt="...">
+       <img src="Images/1920x800Shoos.jpeg"  alt="...">
       <div class="carousel-caption">
         ...
       </div>
@@ -48,25 +48,25 @@
         <div class="col-md-3">
             <h2>Jeans</h2>
             <a href="pages/Products.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/Jeans640.jpg"  alt="...." />
+                <img src="Images/Jeans640.jpg"  alt="...." />
                     </a>
         </div>
         <div class="col-md-3">
             <h2>T-shirts</h2>
             <a href="pages/Tshirt.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/shirt.jpg"  alt="...." />
+                <img src="Images/shirt.jpg"  alt="...." />
                     </a>
         </div>
         <div class="col-md-3">
             <h2>Jackets</h2>
             <a href="pages/Jackets.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/WinterHats.jpeg" alt="...." />
+                <img src="Images/WinterHats.jpeg" alt="...." />
                     </a>
         </div>
         <div class="col-md-3">
             <h2>Sweaters</h2>
             <a href="pages/Sweatshirt.aspx" class="thumbnail home-thumb">
-                <img src="Pictures/Sweater.jpeg" alt="...." />
+                <img src="Images/Sweater.jpeg" alt="...." />
                     </a>
         </div>
     </div>
