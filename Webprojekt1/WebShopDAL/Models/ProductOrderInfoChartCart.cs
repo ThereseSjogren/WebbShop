@@ -8,6 +8,7 @@ namespace WebShopDAL.Models
 {
     public class ProductOrderInfoChartCart
     {
+        public string ImageURL { get; set; }
         public int ProductID { get; set; }
         public string ProductBrand { get; set; }
         public string Color { get; set; }
@@ -28,8 +29,9 @@ namespace WebShopDAL.Models
         {
 
         }
-        public ProductOrderInfoChartCart(int productID, string brand, string color, string size, string categoryName, decimal priceUnit, int quantity, int rabatt,  decimal price, decimal totalWithDiscount, decimal totalWithTax)
+        public ProductOrderInfoChartCart(string imageURL, int productID, string brand, string color, string size, string categoryName, decimal priceUnit, int quantity, int rabatt,  decimal price, decimal totalWithDiscount, decimal totalWithTax)
         {
+            ImageURL = imageURL;
             ProductID = productID;
             ProductBrand = brand;
             Color = color;
@@ -43,15 +45,6 @@ namespace WebShopDAL.Models
             TotalWithTax = totalWithTax;
 
         }
-        public void AddProductToChart(ProductOrderInfoChartCart Product)
-        {
-
-        }
-        public void DeleteProductFromChart(List<ProductOrderInfoChartCart> chartList, int productID)
-        {
-            chartList.Select(x => x.ProductID == productID);
-            //chartList.RemoveAt(x);
-
-        }
+        
     }
 }

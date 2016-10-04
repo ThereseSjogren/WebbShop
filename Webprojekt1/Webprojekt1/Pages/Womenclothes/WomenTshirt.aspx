@@ -4,6 +4,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../Scripts/Filterbox.js"></script>
     <link href="../../Content/Childstyle.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/ProductStyle.css" rel="stylesheet" />
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -27,8 +28,10 @@
         </div>
         <div class="container">
             <div class="row">
-             
-                <div class="btn-group show-on-hover">
+              <div id="InsertedProductsTs" runat="server" >
+                  <p class="lead">Women T-Shirt</p>
+            </div>
+                <%--<div class="btn-group show-on-hover">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                         Size <span class="caret"></span>
                     </button>
@@ -48,14 +51,14 @@
                         <li><a href="#">Blue</a></li>
                         <li><a href="#">Yellow</a></li>
                     </ul>
-                </div>
+                </div>--%>
             </div>
         </div>
 
-
+ </div>
 
       
-            <div class="col-1-4">
+            <%--<div class="col-1-4">
                 <div class="cover left">
                     <div class="show show-second">
                         <img src="../../Pictures/women/T-shirt/t-shirt-women-12.jpg" />
@@ -86,10 +89,10 @@
                     </div>
 
                 </div>
-            </div>
+            </div>--%>
 
        
-    </div>
+   
 </asp:Content>
 
 

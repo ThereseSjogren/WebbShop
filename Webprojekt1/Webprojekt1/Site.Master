@@ -129,10 +129,11 @@
                     </asp:LoginView>
                 </div>
 
-                <div id="shop" onclick="OpenShoppingCart_Click">
+                <div id="shop">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span>Shopping Cart<span class="caret"></span></a>
+                            
                             <ul class="dropdown-menu dropdown-cart" role="menu">
                                 <li>
                                     
@@ -140,7 +141,7 @@
                                         
                                         <span class="item-left">
                                              
-                                             <span class="item-right">
+                                             <span class="item-center">
                                                  <button class="btn btn-xs btn-danger pull-right" >X</button>
                                                  <asp:ListView ID="_listViewChart" runat="server" DataKeyNames="ProductID">
                                                     <AlternatingItemTemplate>
@@ -150,34 +151,20 @@
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="ProductBrandLabel" runat="server" Text='<%# Eval("ProductBrand") %>' />
+                                                            <td>
+                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
                                                             </td>
+                                                            <%--<td>
+                                                                <asp:TextBox ID="TextBoxQuantity" runat="server" Text='<%# Eval("Quantity") %>' />
+                                                            </td>--%>
                                                             <td>
                                                                 <asp:Label ID="ColorLabel" runat="server" Text='<%# Eval("Color") %>' />
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="SizeLabel" runat="server" Text='<%# Eval("Size") %>' />
                                                             </td>
-                                                            <td>
-                                                                <asp:Label ID="CategoryNameLabel" runat="server" Text='<%# Eval("CategoryName") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="RabattLabel" runat="server" Text='<%# Eval("Rabatt") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="TotalLabel" runat="server" Text='<%# Eval("Total") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_DiscountLabel" runat="server" Text='<%# Eval("TotalWithDiscount") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_TaxLabel" runat="server" Text='<%# Eval("TotalWithTax") %>' />
-                                                            </td>
+
+
                                                         </tr>
                                                     </AlternatingItemTemplate>
                                                     <%--<EditItemTemplate>
@@ -221,13 +208,7 @@
                                                             </td>
                                                         </tr>
                                                     </EditItemTemplate>--%>
-                                                    <EmptyDataTemplate>
-                                                        <table runat="server" style="">
-                                                            <tr>
-                                                                <td>No data was returned.</td>
-                                                            </tr>
-                                                        </table>
-                                                    </EmptyDataTemplate>
+                                                    <%-- Empty let it beeeeeeee --%>
                                                     <%--<InsertItemTemplate>
                                                         <tr style="">
                                                             <td>
@@ -274,34 +255,21 @@
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="ProductBrandLabel" runat="server" Text='<%# Eval("ProductBrand") %>' />
+                                                            <td>
+                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
                                                             </td>
+                                                           <%-- <td>
+                                                                <asp:TextBox ID="TextBoxQuantity" runat="server" Text='<%# Eval("Quantity") %>' />
+                                                            </td>--%>
                                                             <td>
                                                                 <asp:Label ID="ColorLabel" runat="server" Text='<%# Eval("Color") %>' />
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="SizeLabel" runat="server" Text='<%# Eval("Size") %>' />
                                                             </td>
-                                                            <td>
-                                                                <asp:Label ID="CategoryNameLabel" runat="server" Text='<%# Eval("CategoryName") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="RabattLabel" runat="server" Text='<%# Eval("Rabatt") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="TotalLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_DiscountLabel" runat="server" Text='<%# Eval("TotalWithDiscount") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_TaxLabel" runat="server" Text='<%# Eval("TotalWithTax") %>' />
-                                                            </td>
+                                                            
+                                                               
+                                                            
                                                         </tr>
                                                     </ItemTemplate>
                                                     <LayoutTemplate>
@@ -310,15 +278,10 @@
                                                                         <tr runat="server" style="">
                                                                             <th runat="server">Product ID</th>
                                                                             <th runat="server">Product Brand</th>
+                                                                    <th runat="server">Price Unit</th>
+                                                                    <th runat="server">Quantity</th>
                                                                             <th runat="server">Color</th>
                                                                             <th runat="server">Size</th>
-                                                                            <th runat="server">Category Name</th>
-                                                                            <th runat="server">Price Unit</th>
-                                                                            <th runat="server">Quantity</th>
-                                                                            <th runat="server">Discount</th>
-                                                                            <th runat="server">Price</th>
-                                                                            <th runat="server">Total with Discount</th>
-                                                                            <th runat="server">Total with Tax</th>
                                                                         </tr>
                                                                         <tr id="itemPlaceholder" runat="server">
                                                                         </tr>
@@ -332,43 +295,37 @@
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="ProductBrandLabel" runat="server" Text='<%# Eval("ProductBrand") %>' />
+                                                            <td>
+                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
                                                             </td>
+                                                            <%--<td>
+                                                                <asp:TextBox ID="TextBoxQuantity" runat="server" Text='<%# Eval("Quantity") %>' />
+                                                            </td>--%>
                                                             <td>
                                                                 <asp:Label ID="ColorLabel" runat="server" Text='<%# Eval("Color") %>' />
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="SizeLabel" runat="server" Text='<%# Eval("Size") %>' />
                                                             </td>
-                                                            <td>
-                                                                <asp:Label ID="CategoryNameLabel" runat="server" Text='<%# Eval("CategoryName") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="PriceUnitLabel" runat="server" Text='<%# Eval("PriceUnit") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="RabattLabel" runat="server" Text='<%# Eval("Rabatt") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="TotalLabel" runat="server" Text='<%# Eval("Total") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_DiscountLabel" runat="server" Text='<%# Eval("[TotalWithDiscount]") %>' />
-                                                            </td>
-                                                            <td>
-                                                                <asp:Label ID="Total_with_TaxLabel" runat="server" Text='<%# Eval("[TotalWithTax]") %>' />
-                                                            </td>
                                                         </tr>
+                                                        <EmptyDataTemplate>
+                                                        <table runat="server" style="">
+                                                            <tr>
+                                                                <td>No data was returned.</td>
+                                                            </tr>
+                                                        </table>
+                                                    </EmptyDataTemplate>
                                                     </SelectedItemTemplate>
                                                 </asp:ListView>                                       
                                             </span>
                                             <%--<img src="Picture" alt="" />--%>
                                             <span class="item-info">
                                                
+                                        <span class="item-left">
                                                  
+                                            <span class="item-right">
                                                
+                                            </span>--%>
                                                 
                                             </span>
                                         </span>

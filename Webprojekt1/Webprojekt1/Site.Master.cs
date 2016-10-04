@@ -19,7 +19,7 @@ namespace Webprojekt1
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
-        private List<ProductOrderInfoChartCart> listChart;
+        //private List<ProductOrderInfoChartCart> listChart;
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -74,41 +74,12 @@ namespace Webprojekt1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //listChart = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
-            //_listViewChart.DataSource = listChart;
-            //_listViewChart.DataBind();
-            //if (Session["AddToChartCart"] == null)
-            //{
-                listChart = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
-                _listViewChart.DataSource = listChart;
-                _listViewChart.DataBind();
+            List<Product> _productList = new List<Product>();
+            _productList = (List<Product>)Session["AddToChartCart"];
 
-                #region LargeVersionCode
-                //string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
+            _listViewChart.DataSource = _productList;
+            _listViewChart.DataBind();
 
-                //DataTable newDt = (DataTable)Session["AddToChartCart"];
-
-                //foreach (DataRow row in newDt.Rows)
-                //{
-
-                //    int productID = (int)row["ProductID"];
-                //    string brand = (string)row["ProductBrand"];
-                //    string color = (string)row["Color"];
-                //    string size = (string)row["Size"];
-                //    string categoryName = (string)row["CategoryName"];
-                //    decimal priceUnit = (decimal)row["PriceUnit"];
-                //    int quantity = (int)row["Quantity"];
-                //    int rabatt = (int)row["Rabatt"];
-                //    decimal price = (decimal)row["Total"];
-                //    decimal totalWithDiscount = (decimal)row["Total with Discount"];
-                //    decimal totalWithTax = (decimal)row["Total with Tax"];
-
-
-                //    sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>"; 
-                //}
-                //_lblShowCart.Text = sessionInfo; 
-                #endregion
-            //}
 
 
             #region FirstCode
@@ -127,80 +98,47 @@ namespace Webprojekt1
 
             #endregion
         }
-        protected void ConfirmOrderShoppingCart_Click(object sender, EventArgs e)
+        protected void ConfirmOrderShoppingCart_Click(object sender, EventArgs e) //TODO!!!!!!!
         {
             if ((string)Session["UserName"] != null)
             {
+                List<ProductOrderInfoChartCart> orderList = new List<ProductOrderInfoChartCart>();
                 WbsDAL wbsDAL = new WbsDAL();
                 wbsDAL.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
-                foreach (var p in listChart)
+                List<Product> listChart = (List<Product>)Session["AddToChartCart"];
+                foreach (Product p in listChart)
                 {
-                    //Decreasing in DB the 
-                    p.Quantity = -p.Quantity;
-                    string userName = (string)Session["UserName"];
-                    int customerID = wbsDAL.GetCustomerLoggedID(userName);
-                    int orderID = wbsDAL.InsertOrderProductTable(p.ProductID, p.Quantity, customerID);
-                    Response.Redirect("/Pages/OrderRec.aspx");
+                    string imageURL = p.ImageURL;
+                    int productID = p.ProductID;
+                    string roductBrand = p.ProductBrand;
+                    decimal PriceUnit = p.PriceUnit;
+                    string ProductDescription = p.ProductDescription;
+                    string Color = p.Color;
+                    string Size = p.Size;
                 }
+
+                //Missing Code for Quantity
+
+                string userName = (string)Session["UserName"];
+                int customerID = wbsDAL.GetCustomerLoggedID(userName);
+                int orderID = wbsDAL.InsertToOrderTbl(customerID);
+                foreach (Product p in listChart)
+                {
+                    int productID = p.ProductID;
+
+                    wbsDAL.InsertOrderProductTable(productID, orderID);
+                }
+                
             }
+
             else
-                Response.Redirect("/Pages/AnonymousUserDetails");
+            {
+                Response.Redirect("~/Pages/ConfirmOrder");
+            }
+
+
 
         }
-        protected void OpenShoppingCart_Click(object sender, EventArgs e)
-        {
-            
-            #region FirstCode
-            //string sessionInfo = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tQuantity\tDiscount\tPrice\tTotal With Discount\tTotal With Tax";
-
-            //DataTable newDt = Session["AddToChartCart"] as DataTable;
-
-            //foreach (DataRow row in newDt.Rows)
-            //{
-
-            //    int productID = (int)row["ProductID"];
-            //    string brand = (string)row["ProductBrand"];
-            //    string color = (string)row["Color"];
-            //    string size = (string)row["Size"];
-            //    string categoryName = (string)row["CategoryName"];
-            //    decimal priceUnit = (decimal)row["PriceUnit"];
-            //    int quantity = (int)row["Quantity"];
-            //    int rabatt = (int)row["Rabatt"];
-            //    decimal price = (decimal)row["Total"];
-            //    decimal totalWithDiscount = (decimal)row["Total with Discount"];
-            //    decimal totalWithTax = (decimal)row["Total with Tax"];
-
-
-            //    sessionInfo += $" <li>{productID}\t{brand}\t{color}\t{size}\t{categoryName}\t{priceUnit}\t{quantity}\t{rabatt}\t{price}\t{totalWithDiscount}\t{totalWithTax}</li>";
-
-            //}
-            //_lblShowCart.Text = sessionInfo;
-            //------------------------------------------------------------------------------------------------------
-            //if (Session["AddToChartCart"] != null)
-            //{
-            //    string infoChart = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tRabattID\tQuantity\tPrice\tTotal With Discount\tTotal With Tax";
-            //    List<ProductOrderInfoChartCart> myChartList = new List<ProductOrderInfoChartCart>();
-            //    myChartList = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
-            //    foreach (var p in myChartList)
-            //    {
-            //        infoChart += $"<li>{p.ProductID}\t{p.Brand}\t{p.Color}\t{p.Size}t{p.CategoryName}\t{p.PriceUnit}\t{p.RabattID}\t{p.Quantity}\t{p.Price}\t{p.TotalWithDiscount}\t{p.TotalWithTax}</li>";
-            //        _lblShowCart.Text = infoChart;
-            //    }
-            //}
-            //else
-            //{
-            //    string infoChart = $"ProductID\tBrand\tColor\tSize\tCategoryName\tPrice Unit\tRabattID\tQuantity\tPrice\tTotal With Discount\tTotal With Tax";
-            //    List<ProductOrderInfoChartCart> myChartList = new List<ProductOrderInfoChartCart>();
-            //    myChartList = (List<ProductOrderInfoChartCart>)Session["AddToChartCart"];
-            //    foreach (var p in myChartList)
-            //    {
-            //        infoChart += $"<li>{p.ProductID}\t{p.Brand}\t{p.Color}\t{p.Size}t{p.CategoryName}\t{p.PriceUnit}\t{p.RabattID}\t{p.Quantity}\t{p.Price}\t{p.TotalWithDiscount}\t{p.TotalWithTax}</li>";
-            //        _lblShowCart.Text = infoChart;
-            //    }
-            //} 
-            #endregion
-        }
-
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);

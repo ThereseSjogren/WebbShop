@@ -14,7 +14,14 @@ namespace WebShopDAL.ConnectedLayer
     public class WbsDAL
     {
         private SqlConnection _sqlConnection = null;
+        public List<Product> ProductList { get; set; }
+        public List<Category> CategoryList { get; set; }
 
+        public WbsDAL()
+        {
+            ProductList = new List<Product>();
+            CategoryList = new List<Category>();
+        }
 
         public void OpenConnection(string connectionString)
         {
@@ -28,7 +35,7 @@ namespace WebShopDAL.ConnectedLayer
         //Registrate Customer
         public void InsertCustomer(Customer c)
         {
-            string sql = $"Insert into tblCustomer (FirstName, LastName, Email, Address, UserName, Password, RabattID) Values ('{c.FirstName}', '{c.LastName}','{c.Email}','{c.Address}','{c.UserName}', '{c.Password}',  '{c.ZipCodeID}','{c.RabattID}')";
+            string sql = $"Insert into tblCustomer (FirstName, LastName, Email, Address, UserName, Password, RabattID, ZipCode) Values ({c.FirstName}, {c.LastName},{c.Email},{c.Address},{c.UserName}, {c.Password},{c.RabattID}, {c.ZipCode})";
 
             using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
             {
@@ -44,6 +51,573 @@ namespace WebShopDAL.ConnectedLayer
                 cmd.ExecuteNonQuery();
             }
         }
+
+        #region 1_AllProductSiteRequest(request for Products.aspx)
+        public List<Product> GetListOfAllProducts()
+        {
+            List<Product> productList = new List<Product>();
+            string sql = $"Select * From tblProduct";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productList.Add(new Product
+                    {
+
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+
+                    });
+
+
+                }
+                reader.Close();
+                reader.Dispose();
+            }
+            return productList;
+        }
+        #endregion
+        #region 2_ProductInformationRequest(request for ProductInformation.aspx)
+        public Product GetProductForProdIformation(int productID)
+        {
+            Product p = new Product();
+            string sql = $"Select * From tblProduct Where ProductID = {productID}";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    p.ImageURL = (string)reader["ImageURL"];
+                    p.ProductID = (int)reader["ProductID"];
+                    p.ProductBrand = (string)reader["ProductBrand"];
+                    p.PriceUnit = (decimal)reader["PriceUnit"];
+                    p.ProductDescription = (string)reader["ProductDescription"];
+                    p.Color = (string)reader["Color"];
+                    p.Size = (string)reader["Size"];
+                    p.Stock = (int)reader["Stock"];
+                    p.CategoryID = (int)reader["CategoryID"];
+                }
+                reader.Close();
+                reader.Dispose();
+            }
+            return p;
+        }
+
+
+
+        #endregion
+        #region 3_FilterAllWomanCategories
+        public List<Product> GetAllWoman()
+        {
+            List<Product> productAllWomanList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where Gender = 'Female'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productAllWomanList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productAllWomanList;
+        }
+        public List<Product> GetTShirtWoman()
+        {
+            List<Product> productTShirtWomanList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Female' AND c.CategoryName = 'T-Shirt'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productTShirtWomanList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productTShirtWomanList;
+        }
+        public List<Product> GetSweatshirtWoman()
+        {
+            List<Product> productSweatshirtWomanList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Female' AND c.CategoryName = 'Sweatshirt'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productSweatshirtWomanList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productSweatshirtWomanList;
+        }
+        public List<Product> GetJeansWoman()
+        {
+            List<Product> productJeansWomanList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Female' AND c.CategoryName = 'Jeans'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productJeansWomanList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productJeansWomanList;
+        }
+        public List<Product> GetJacketsWoman()
+        {
+            List<Product> productJacketsWomanList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Female' AND c.CategoryName = 'Jeans'";
+            using (SqlCommand cmd = new SqlCommand(sql,_sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productJacketsWomanList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productJacketsWomanList;
+        }
+        #endregion
+        #region 4_FilterAllMenCategories
+        public List<Product> GetAllMan()
+        {
+            List<Product> productAllManList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where Gender = 'Male'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productAllManList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productAllManList;
+        }
+        public List<Product> GetTShirtMan()
+        {
+            List<Product> productTShirtManList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Male' AND c.CategoryName = 'T-Shirt'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productTShirtManList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productTShirtManList;
+        }
+        public List<Product> GetSweatshirtMan()
+        {
+            List<Product> productSweatshirtManList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Male' AND c.CategoryName = 'Sweatshirt'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productSweatshirtManList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productSweatshirtManList;
+        }
+        public List<Product> GetJeansMan()
+        {
+            List<Product> productJeansManList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Male' AND c.CategoryName = 'Jeans'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productJeansManList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productJeansManList;
+        }
+        public List<Product> GetJacketsMan()
+        {
+            List<Product> productJacketsManList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Male' AND c.CategoryName = 'Jeans'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productJacketsManList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productJacketsManList;
+        }
+        #endregion
+        #region 5_FilterAllChildCategories
+        public List<Product> GetAllChild()
+        {
+            List<Product> productAllChildList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where Gender = 'Child'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productAllChildList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productAllChildList;
+        }
+        public List<Product> GetTShirtChild()
+        {
+            List<Product> productTShirtChildList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Child' AND c.CategoryName = 'T-Shirt'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productTShirtChildList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productTShirtChildList;
+        }
+        public List<Product> GetSweatshirtChild()
+        {
+            List<Product> productSweatshirtChildList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Child' AND c.CategoryName = 'Sweatshirt'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productSweatshirtChildList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productSweatshirtChildList;
+        }
+        public List<Product> GetJeansChild()
+        {
+            List<Product> productJeansChildList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Child' AND c.CategoryName = 'Jeans'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productJeansChildList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productJeansChildList;
+        }
+        public List<Product> GetJacketsChild()
+        {
+            List<Product> productJacketsChildList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Child' AND c.CategoryName = 'Jeans'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productJacketsChildList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productJacketsChildList;
+        }
+        #endregion
+        #region 6_FilterByCategory
+        public List<Product> GetAllTShirt()
+        {
+            List<Product> productTShirtList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.CategoryName = 'T-Shirt'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productTShirtList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productTShirtList;
+        }
+        public List<Product> GetAllSweatshirt()
+        {
+            List<Product> productSweatshirtList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.CategoryName = 'Sweatshirt'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productSweatshirtList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productSweatshirtList;
+        }
+        public List<Product> GetAllJeans()
+        {
+            List<Product> productJeansList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.CategoryName = 'Jeans'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productJeansList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productJeansList;
+        }
+        public List<Product> GetAllJackets()
+        {
+            List<Product> productJacketsList = new List<Product>();
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.CategoryName = 'Jacket'";
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productJacketsList.Add(new Product
+                    {
+                        ImageURL = (string)reader["ImageURL"],
+                        ProductID = (int)reader["ProductID"],
+                        ProductBrand = (string)reader["ProductBrand"],
+                        PriceUnit = (decimal)reader["PriceUnit"],
+                        ProductDescription = (string)reader["ProductDescription"],
+                        Color = (string)reader["Color"],
+                        Size = (string)reader["Size"],
+                        Stock = (int)reader["Stock"],
+                        CategoryID = (int)reader["CategoryID"]
+                    });
+                }
+
+            }
+            return productJacketsList;
+        }
+        #endregion
+
+
         #region ChartQueries
         public List<ProductOrderInfoChartCart> GetProductInfo(int productID, string category, string gender, string color, string size, int quantity, int rabattID)
         {
@@ -62,13 +636,13 @@ namespace WebShopDAL.ConnectedLayer
                 cmd.Parameters.AddWithValue("@RabattID", rabattID);
 
                 SqlDataReader dataReader = cmd.ExecuteReader();//Here is the issue
-                //dataTable.Load(dataReader);
-                //dataReader.Close();
-                //dataReader.Dispose();
-                
+                                                               //dataTable.Load(dataReader);
+                                                               //dataReader.Close();
+                                                               //dataReader.Dispose();
+
                 while (dataReader.Read())
                 {
-                    
+
                     productOrderInfo.Add(new ProductOrderInfoChartCart
                     {
                         ProductID = (int)dataReader["ProductID"],
@@ -78,11 +652,11 @@ namespace WebShopDAL.ConnectedLayer
                         CategoryName = (string)dataReader["CategoryName"],
                         PriceUnit = (decimal)dataReader["PriceUnit"],
                         Quantity = (int)dataReader["Quantity"],
-                        Rabatt = (int)dataReader["Rabatt"],                                               
+                        Rabatt = (int)dataReader["Rabatt"],
                         Price = (decimal)dataReader["Total"],
                         TotalWithDiscount = (decimal)dataReader["Total with Discount"],
                         TotalWithTax = (decimal)dataReader["Total with Tax"]
-                });
+                    });
                 }
                 dataReader.Close();
                 dataReader.Dispose();
@@ -125,18 +699,18 @@ namespace WebShopDAL.ConnectedLayer
         }
 
 
-       
+
         /// <summary>
         /// Calls InsertToOrderTbl(customerID) and creates a new row in ProductOrder table
         /// </summary>
         /// <param name="productID"></param>
         /// <param name="quantity"></param>
         /// <param name="customerID"></param>
-        public int InsertOrderProductTable(int productID, int quantity, int customerID)
+        public int InsertOrderProductTable(int productID, /*int quantity,*/ int orderID)
         {
-
+            int quantity = 1;
             //SqlCommand _cmdInsertProductToOrderTable = new SqlCommand($"", _sqlConnection);
-            int orderID = InsertToOrderTbl(customerID);
+
             using (SqlCommand _cmdInsertToOrderProductTbl = new SqlCommand($"INSERT INTO tblOrderProduct (ProductID,OrderID, Quantity) VALUES (@ProductID,@OrderID, @Quantity)", _sqlConnection))
             {
                 _cmdInsertToOrderProductTbl.Parameters.AddWithValue("@ProductID", productID);
@@ -169,7 +743,7 @@ namespace WebShopDAL.ConnectedLayer
         {
             try
             {
-                
+
                 int productID = 0;
                 using (SqlCommand cmd = new SqlCommand("sp_GetProduct", _sqlConnection))
                 {
@@ -181,20 +755,20 @@ namespace WebShopDAL.ConnectedLayer
                     cmd.Parameters.AddWithValue("@Size", size);
                     productID = (int)cmd.ExecuteScalar();
 
-                    
+
                     return productID;
-                   
+
 
 
 
 
                 }
-                
+
             }
             catch (SqlException ex)
             {
 
-               throw(ex);
+                throw (ex);
             }
         }
         #endregion
@@ -237,15 +811,37 @@ namespace WebShopDAL.ConnectedLayer
         //        cmd.ExecuteNonQuery();
         //    }
         //}
-        ////public void ProductSelectOptions(int id,string color, string size, int amount, int categoryID)//Get values from html form (customer)
-        ////{
-        ////    string sql = $"SELECT * FROM tblProduct   Color = {color}, Size = {size},Stock = {-amount}, CategodyID = {categoryID} Where ProductID = {id}";
+        public Product ProductSelectToCart(int id)//Get values from html form (customer)
+        {
+            Product productToCart = new Product();
+            string sql = $"SELECT * FROM tblProduct Where ProductID = {id}";
 
-        ////    using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
-        ////    {
-        ////        cmd.ExecuteNonQuery();
-        ////    }
-        ////} 
+            using (SqlCommand cmd = new SqlCommand(sql, _sqlConnection))
+            {
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string imageURL = (string)reader["ImageURL"];
+                    int productID = (int)reader["ProductID"];
+                    string productBrand = (string)reader["ProductBrand"];
+                    decimal priceUnit = (decimal)reader["PriceUnit"];
+                    string productDescription = (string)reader["ProductDescription"];
+                    string color = (string)reader["Color"];
+                    string size = (string)reader["Size"];
+                    int stock = (int)reader["Stock"];
+                    int categoryID = (int)reader["CategoryID"];
+
+                    productToCart = new Product(imageURL, productID, productBrand, priceUnit, productDescription, color, size, stock, categoryID);
+
+                }
+                reader.Close();
+                reader.Dispose();
+
+            }
+            return productToCart;
+
+        }
         public List<Product> lsDescriptionProduct(int id)
         {
             List<Product> lsAllProduct = new List<Product>();
@@ -273,7 +869,7 @@ namespace WebShopDAL.ConnectedLayer
 
 
 
-        }
+        }//NOT IN USE
 
         public List<Product> GetProducts()
         {
@@ -284,6 +880,7 @@ namespace WebShopDAL.ConnectedLayer
                 SqlDataReader _sqlDtReader = cmd.ExecuteReader();
                 while (_sqlDtReader.Read())
                 {
+
                     int productID = (int)_sqlDtReader["ProductID"];
                     string productBrand = (string)_sqlDtReader["ProductBrand"];
                     decimal priceUnit = (decimal)_sqlDtReader["PriceUnit"];
@@ -293,7 +890,7 @@ namespace WebShopDAL.ConnectedLayer
                     int stock = (int)_sqlDtReader["Stock"];
                     int categoryID = (int)_sqlDtReader["CategoryID"];
 
-                    lsAllProduct.Add(new Product(productID, productBrand, priceUnit, productDescription, color, size, stock, categoryID));
+                    //lsAllProduct.Add(new Product(productID, productBrand, priceUnit, productDescription, color, size, stock, categoryID /*imageURL*/));
                 }
                 _sqlDtReader.Close();
 
@@ -304,7 +901,7 @@ namespace WebShopDAL.ConnectedLayer
         public int ReturnUserLogedIn(string userName, string password)
         {
             int customerID = 0;
-            
+
             //Check if user name is an email or a proper userName
             if (userName.Contains("@"))
             {
@@ -328,7 +925,7 @@ namespace WebShopDAL.ConnectedLayer
                                 using (SqlCommand comPassword2 = new SqlCommand(checkPasswordQuery, _sqlConnection))
                                 {
                                     customerID = (int)comPassword2.ExecuteScalar();
-                                   
+
                                     //Session["NewUserEmail"] = email;
                                     //("Password is correct");
                                     //Response.Redirect("../Products.aspx");                                                            
@@ -367,7 +964,7 @@ namespace WebShopDAL.ConnectedLayer
                                 using (SqlCommand comPassword2 = new SqlCommand(checkPasswordQuery, _sqlConnection))
                                 {
                                     customerID = (int)comPassword2.ExecuteScalar();
-                                   
+
                                     //Session["New"] = userName;
                                     //("Password is correct");
                                     //Response.Redirect("../Products.aspx");                          
@@ -582,5 +1179,5 @@ namespace WebShopDAL.ConnectedLayer
 
 
     }
-    
+
 }

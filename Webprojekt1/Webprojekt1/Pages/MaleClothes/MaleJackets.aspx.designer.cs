@@ -11,5 +11,14 @@ namespace Webprojekt1.Pages.MaleClothes {
     
     
     public partial class MaleJackets {
+        
+        /// <summary>
+        /// InsertedMaleJackets control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl InsertedMaleJackets;
     }
 }

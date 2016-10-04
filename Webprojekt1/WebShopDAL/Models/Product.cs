@@ -17,6 +17,13 @@ namespace WebShopDAL.Models
         public int Stock { get; set; }
 
         public int CategoryID { get; set; }
+        public string ImageURL { get; set; }
+
+        public List<Category> CategoryProductList { get; set; }
+        public Product()
+        {
+
+        }
 
         public Product( string productBrand, decimal priceUnit, string description, string color, string size) //For every picture from products
         {
@@ -36,17 +43,31 @@ namespace WebShopDAL.Models
             Size = size;
         }
 
-        public Product(int productID,string productBrand,decimal priceUnit,string description, string color, string size, int stock, int categoryID)
+        public Product(int productID,string productBrand,decimal priceUnit,string description, string color, string size, int stock, int categoryID, string imageURL)
         {
-            this.ProductID = productID;
-            this.ProductBrand = productBrand;
+            ProductID = productID;
+            ProductBrand = productBrand;
             this.PriceUnit = priceUnit;
             this.ProductDescription = description;
             this.Color = color;
             this.Size = size;
             this.Stock = stock;
             this.CategoryID = categoryID;
+            ImageURL = imageURL;
 
+        }
+
+        public Product(string imageURL, int productID, string productBrand, decimal priceUnit, string productDescription, string color, string size, int stock, int categoryID)
+        {
+            ImageURL = imageURL;
+            ProductID = productID;
+            ProductBrand = productBrand;
+            PriceUnit = priceUnit;
+            ProductDescription = productDescription;
+            Color = color;
+            Size = size;
+            Stock = stock;
+            CategoryID = categoryID;
         }
     }
 }
