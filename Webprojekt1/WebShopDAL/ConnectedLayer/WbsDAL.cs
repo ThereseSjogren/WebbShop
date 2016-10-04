@@ -617,48 +617,7 @@ namespace WebShopDAL.ConnectedLayer
         }
         #endregion
         #region SearchFilter
-        //public List<Product> GetSearchProduct(int productID, string category, string gender, string color, string size, int quantity, int rabattID)
-        //{
-
-        //    List<Product> searchProduct = new List<Product>();
-        //    //string getProduct = $"SELECT p.ProductID p.ProductBrand, op.Quantity, p.PriceUnit, o. p.FROM tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID  WHERE CategoryName= '{category}' AND Gender= '{gender}' AND Color = '{color}' AND Size = '{size}' ";
-        //    using (SqlCommand cmd = new SqlCommand("sp_SearchField", _sqlConnection))
-        //    {
-        //        cmd.CommandType = CommandType.StoredProcedure;
-        //        cmd.Parameters.AddWithValue("@ProductID", productID);
-        //        cmd.Parameters.AddWithValue("@Category", category);
-        //        cmd.Parameters.AddWithValue("@Gender", gender);
-        //        cmd.Parameters.AddWithValue("@Color", color);
-        //        cmd.Parameters.AddWithValue("@Size", size);
-        //        cmd.Parameters.AddWithValue("@Quantity", quantity);
-        //        cmd.Parameters.AddWithValue("@RabattID", rabattID);
-
-        //        SqlDataReader dataReader = cmd.ExecuteReader();//Here is the issue
-        //                                                       //dataTable.Load(dataReader);
-        //                                                       //dataReader.Close();
-        //                                                       //dataReader.Dispose();
-
-        //        while (dataReader.Read())
-        //        {
-
-        //            searchProduct.Add(new Product
-        //            {
-        //                ProductID = (int)dataReader["ProductID"],
-        //                ProductBrand = (string)dataReader["ProductBrand"],
-        //                Color = (string)dataReader["Color"],
-        //                Size = (string)dataReader["Size"],
-        //                CategoryName = (string)dataReader["CategoryName"],
-        //                PriceUnit = (decimal)dataReader["PriceUnit"],
-        //                Price = (decimal)dataReader["Total"],
-                        
-        //            });
-        //        }
-        //        dataReader.Close();
-        //        dataReader.Dispose();
-        //    }
-        //    return searchProduct;
-
-        //}
+      
         #endregion
 
 

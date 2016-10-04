@@ -24,6 +24,10 @@ namespace WebShopDAL.Models
         {
 
         }
+        public Product(string productBrand, string productdescription,string color, string size, string gender, string categoryname)
+        {
+
+        }
 
         public Product( string productBrand, decimal priceUnit, string description, string color, string size) //For every picture from products
         {
