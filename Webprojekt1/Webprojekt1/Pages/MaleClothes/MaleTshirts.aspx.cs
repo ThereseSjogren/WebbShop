@@ -11,12 +11,44 @@ using WebShopDAL.Models;
 using System.Data;
 using System.Web.ModelBinding;
 
+
 namespace Webprojekt1.Pages.MaleClothes
 {
     public partial class MaleTshirts : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ////////////////////////
+            //  LOAD All Products //
+            ////////////////////////
+
+            int number;
+            string markupHTML = "";
+            List<Product> allMaleTshirtList = new List<Product>();
+            WbsDAL wbs = new WbsDAL();
+            wbs.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
+            allMaleTshirtList = wbs.GetTShirtMan();
+            foreach (Product p in allMaleTshirtList)
+            {
+                number = Decimal.ToInt32(p.PriceUnit);
+                markupHTML += $"<div class=\"col-md-3 box\">" +
+                                 $"<div class =\"thumbnail\" >" +
+                                    $"<img src =\"/Images/{p.ImageURL}\" alt =\"Generic placeholder thumbnail\">" +
+                                 $"</div>" +
+                                 $"<div class=\"cover left\">" +
+                                 $"<div class = \"caption\">" +
+                                    $"<h3>{p.ProductBrand}</h3>" +
+                                    $"<h2 class=\"title\">{p.ProductBrand}</h2>" +
+                                 $"</div>" +
+                                 $"<div class=\"btn\">" +
+                                   $"<a href=\"ProductInformation.aspx?ProductID={p.ProductID}\">More Info<br />" +
+                                     $"{number}SEK" +
+                                   $"</a>" +
+                                 $"</div>" +
+                               $"</div>" +
+                              $"</div>";
+            }
+            InsertedProducts.InnerHtml = markupHTML;
 
         }
         protected void CreateFilter_Click(object sender, EventArgs e)

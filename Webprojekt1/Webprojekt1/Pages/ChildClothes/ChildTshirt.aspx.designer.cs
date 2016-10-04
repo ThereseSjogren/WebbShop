@@ -11,5 +11,14 @@ namespace Webprojekt1.Pages.ChildClothes {
     
     
     public partial class ChildTshirt {
+        
+        /// <summary>
+        /// InsertedChildTshirt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl InsertedChildTshirt;
     }
 }

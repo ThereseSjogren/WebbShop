@@ -42,7 +42,7 @@ namespace Webprojekt1
                                     $"<h2 class=\"title\">{p.ProductBrand}</h2>" +
                                  $"</div>" +
                                  $"<div class=\"btn\">" +
-                                   $"<a href=\"ProductInformation.aspx?{p.ProductID}\">More Info<br />" +
+                                   $"<a href=\"ProductInformation.aspx?ProductID={p.ProductID}\">More Info<br />" +
                                      $"{number}SEK" +
                                    $"</a>" +
                                  $"</div>" +
@@ -50,9 +50,6 @@ namespace Webprojekt1
                               $"</div>";
             }
             InsertedProducts.InnerHtml = markupHTML;
-
-
-
         }
 
     }
