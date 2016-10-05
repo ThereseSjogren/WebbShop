@@ -38,13 +38,10 @@ namespace Webprojekt1
                                $"<div class=\"cover left\">"+
                                  $"<div class =\"show show-second\" >" +
                                     $"<img src =\"/Images/{p.ImageURL}\" alt =\"Generic placeholder thumbnail\">" +
-<<<<<<< HEAD
-                                 $"</div>" +
-                                 //$"<div class=\"cover left\">" +
-=======
+
                                  $"</div>" +                                
                                  $"<div class=\"mask\">" +
->>>>>>> 0b2811b59a773a6745ac4d6fc346f1d0e0c86142
+
                                  $"<div class = \"caption\">" +
                                     $"<h3>{p.ProductBrand}</h3>" +
                                     //$"<h2 class=\"title\">{p.ProductBrand}</h2>" +

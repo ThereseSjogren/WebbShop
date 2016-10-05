@@ -128,7 +128,7 @@
                     <div class="btn">
                         <a href="ShoppingCart.aspx">Info<br />
                             40 $
-                        </a>
+                       
                     </div>
                 </div>
             </div>

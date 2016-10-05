@@ -20,20 +20,20 @@ namespace Webprojekt1
         }
         protected void Session_Start(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             List<CartItem> list = new List<CartItem>();
 
             Session["AddToChartCart"] = list;
             
-=======
-            List<Product> list = new List<Product>();
+
+            
             List<Product> searchedlist = new List<Product>();
 
-            Session["AddToChartCart"] = list;
+            
             Guid guid = Guid.NewGuid();
             Session["GUID"] = guid;
             Session["SearchedProduct"] = searchedlist;
->>>>>>> 0b2811b59a773a6745ac4d6fc346f1d0e0c86142
+
         }
 
     }

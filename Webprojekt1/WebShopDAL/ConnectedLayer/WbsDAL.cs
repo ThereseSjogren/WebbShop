@@ -617,11 +617,11 @@ namespace WebShopDAL.ConnectedLayer
             return productJacketsList;
         }
         #endregion
-<<<<<<< HEAD
+
         #region ShoppingCart
         
         #endregion
-=======
+
         #region SearchFilter
         public List<Product> GetSearchProduct(string input)
         {
@@ -663,7 +663,7 @@ namespace WebShopDAL.ConnectedLayer
         }
         #endregion
 
->>>>>>> 0b2811b59a773a6745ac4d6fc346f1d0e0c86142
+
 
         #region ChartQueries
         public List<ProductOrderInfoChartCart> GetProductInfo(int productID, string category, string gender, string color, string size, int quantity, int rabattID)

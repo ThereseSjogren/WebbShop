@@ -62,23 +62,23 @@ namespace Webprojekt1.Pages
             //  Request query string configured in all sites with product   //
             //////////////////////////////////////////////////////////////////
 
-            string productID = string.Empty;
-            if (!string.IsNullOrEmpty(Request.QueryString["ProductID"]))
-            {
-                ProductID = Request.QueryString["ProductID"];
-            }
-            else
-            {
+            //string productID = string.Empty;
+            //if (!string.IsNullOrEmpty(Request.QueryString["ProductID"]))
+            //{
+            //    ProductID = Request.QueryString["ProductID"];
+            //}
+            //else
+            //{
 
-            }
-            ////////////////////////
-            //      Retrieve ProductID 
-            ////////////////////////
-            NameValueCollection qscoll = HttpUtility.ParseQueryString(Page.ClientQueryString);
-            string productToList = HttpUtility.ParseQueryString(Page.ClientQueryString).Get("ProductID");
-            int productID;
-            Int32.TryParse(productToList, out productID);
-            //      productToDisplay.category = qscoll.Get("field1");
+            //}
+            //////////////////////////
+            ////      Retrieve ProductID 
+            //////////////////////////
+            //NameValueCollection qscoll = HttpUtility.ParseQueryString(Page.ClientQueryString);
+            //string productToList = HttpUtility.ParseQueryString(Page.ClientQueryString).Get("ProductID");
+            //int productID;
+            //Int32.TryParse(productToList, out productID);
+            ////      productToDisplay.category = qscoll.Get("field1");
 
             List<Product> listOfProduct;
             int number;
@@ -86,17 +86,17 @@ namespace Webprojekt1.Pages
             
             WbsDAL wbs = new WbsDAL();
             wbs.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
-<<<<<<< HEAD
+
             listOfProduct = wbs.GetListOfAllProducts();
-=======
-            p = wbs.ProductSelectToCart(ProductID);
->>>>>>> 0b2811b59a773a6745ac4d6fc346f1d0e0c86142
+
+            
+
 
             ////////////////////////
             //  LOAD Product //
             ////////////////////////
             StringBuilder markupHTML = new StringBuilder("");
-<<<<<<< HEAD
+
             foreach (Product p  in listOfProduct)
             {
                 number = Decimal.ToInt32(p.PriceUnit);
@@ -125,28 +125,10 @@ namespace Webprojekt1.Pages
                 markupHTML.Append("</div>");
                  
             }
-=======
-            markupHTML.Append("<div class=\"product group\">");
-            markupHTML.Append("<div class =\"thumbnail\" >");
-            markupHTML.Append("<img src =\"/Images/" + p.ImageURL + "\" alt=\"Generic placeholder thumbnail\">");
-            markupHTML.Append("</div>");
-            markupHTML.Append("<div class = \"caption\">");
-            markupHTML.Append("<h3></h3>");
-            markupHTML.Append("<span>" + p.Size + "</span");
-            markupHTML.Append("<h2 class=\"title\">" + p.ProductBrand + "</h2>");
-            markupHTML.Append("</div>");
-            markupHTML.Append("<div class=\"col-1-2 product-info\">");
-            markupHTML.Append("<h1>" + p.ProductBrand + "</h1>");
-            markupHTML.Append("<br />");
-            markupHTML.Append("" + p.ProductDescription + "");
-            markupHTML.Append("<br />");
-            markupHTML.Append("<h3>" + number + "SEK</h3>");
-            markupHTML.Append("<br />");
-            markupHTML.Append("<div class=\"add-btn\"  Text=\"Add to cart\"  OnClick=\"_btnAddToChart_Click\" runat=\"server\">");
-            markupHTML.Append("</div>");
-            markupHTML.Append("</div>");
 
->>>>>>> 0b2811b59a773a6745ac4d6fc346f1d0e0c86142
+           
+
+
 
 
             InsertedProduct.InnerHtml = markupHTML.ToString();
