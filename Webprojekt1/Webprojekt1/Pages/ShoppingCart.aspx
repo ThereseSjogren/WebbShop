@@ -1,81 +1,47 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShoppingCart.aspx.cs" Inherits="Webprojekt1.ShoppingCart" %>
-
-
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <link href="../Content/ShoppingCartStyle.css" rel="stylesheet" type="text/css" />
-
-    <div class="product group">
-        <div class="col-md-3 product-image">
-            <div class="bg"></div>
-            <div class="indicator">
-                <div class="dot one"></div>
-                <div class="dot two"></div>
-                <div class="dot three"></div>
-            </div>
-        </div>
-        <div class="col-md-3 product-info">
-            <h1>T-shirt
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShoppingCart.aspx.cs" Inherits="Webprojekt1.ShoppingCart1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="Container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div id="ShoppingCartTitle" runat="server" class="ContentHead">
+                    <h1>Shopping Cart</h1>
+                </div>
+                <asp:GridView ID="CartList" runat="server" AutoGenerateColumns="False" ShowFooter="True" GridLines="Vertical" CellPadding="4"
+                    ItemType="WebShopDAL.Models.CartItem" SelectMethod="GetShoppingCartItems"
+                    CssClass="table table-striped table-bordered">
+                    <Columns>
+                        <asp:BoundField DataField="ProductID" HeaderText="ID" SortExpression="ProductID" />
+                        <asp:BoundField DataField="Product.ProductName" HeaderText="Name" />
+                        <asp:BoundField DataField="Product.UnitPrice" HeaderText="Price (each)" DataFormatString="{0:c}" />
+                        <asp:TemplateField HeaderText="Quantity">
+                            <ItemTemplate>
+                                <asp:TextBox ID="PurchaseQuantity" Width="40" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Item Total">
+                            <ItemTemplate>
+                                <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) *  Convert.ToDouble(Item.Product.PriceUnit)))%>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Remove Item">
+                            <ItemTemplate>
+                                <asp:CheckBox ID="Remove" runat="server"></asp:CheckBox>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+                <div>
+                    <p></p>
+                    <strong>
+                        <asp:Label ID="LabelTotalText" runat="server" Text="Order Total: "></asp:Label>
+                        <asp:Label ID="lblTotal" runat="server" EnableViewState="false"></asp:Label>
+                    </strong>
+                </div>
                 <br />
-                Tommy Hilfiger
-            </h1>
-            <h3>$40</h3>
-            <div class="select-dropdown">
-                <select>
-                    <option value="size">Size</option>
-                    <option value="size">Small</option>
-                    <option value="size">Medium</option>
-                    <option value="size">Large</option>
-            
-                </select>
             </div>
-            <div class="select-dropdown">
-                <select>
-                    <option value="quantity">Quantity</option>
-                    <option value="quantity">1</option>
-                    <option value="quantity">2</option>
-                    <option value="quantity">3</option>
-                    <option value="quantity">4</option>
-                    <option value="quantity">5</option>
-                    <option value="quantity">6</option>
-                    <option value="quantity">7</option>
-                    <option value="quantity">8</option>
-                    <option value="quantity">9</option>
-                </select>
-            </div>
-            <div class="select-dropdown">
-                <select>
-                    <option value="color">Color</option>
-                    <option value="color">Black</option>
-                    <option value="color">Yellow</option>
-                    <option value="color">Blue</option>
-                </select>
-            </div>
-            <a href="#" class="add-btn">Add to cart</a>
-            <p>
-                Thomas Jacob Hilfiger founded his eponymous
-                 label Tommy Hilfiger in 1985, expanding the 
-                line to include clothing, accessories, luggage
-                 and fragrance. Known for his classic American 
-                outlook and signature 'preppy with a twist' 
-                aesthetic, Tommy Hilfiger's timeless red, white 
-                and blue logo is seen across an edit of accessories, 
-                sunglasses and underwear.
-            </p>
-
-            <ul>
-                <li>Soft-touch jersey</li>
-                <li>Crew-neck</li>
-                <li>Plain design</li>
-                <li>Logo detail </li>
-                <li>95% Cotton, 5% Elastane</li>
-                <li>Machine wash</li>
-                <li>Our model wears a size Medium</li>
-            </ul>
-
+            <div class="col-md-3"></div>
         </div>
 
-
-    
-        </div>
-
+    </div>
 </asp:Content>

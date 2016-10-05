@@ -44,6 +44,7 @@
     <Compile Include="ConnectedLayer\ProductDAL.cs" />
     <Compile Include="ConnectedLayer\ShoppingCartDAL.cs" />
     <Compile Include="ConnectedLayer\WbsDAL.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Order.cs" />

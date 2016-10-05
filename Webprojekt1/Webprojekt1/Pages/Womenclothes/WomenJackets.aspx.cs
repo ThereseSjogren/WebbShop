@@ -37,7 +37,7 @@ namespace Webprojekt1.Pages.Womenclothes
                                     $"<h2 class=\"title\">{p.ProductBrand}</h2>" +
                                  $"</div>" +
                                  $"<div class=\"btn\">" +
-                                   $"<a href=\"ProductInformation.aspx?ProductID={p.ProductID}\">More Info<br />" +
+                                   $"<a href=\"../ProductInformation.aspx?ProductID={p.ProductID}\">More Info<br />" +
                                      $"{number}SEK" +
                                    $"</a>" +
                                  $"</div>" +

@@ -24,7 +24,7 @@
                 </li>
                 <li>
                     <a href="MaleClothes/MaleJackets.aspx">Jacket</a>
-                  <%--<a href="Jackets.aspx">Jacket</a>--%>
+                    <%--<a href="Jackets.aspx">Jacket</a>--%>
                 </li>
             </ul>
         </div>
@@ -32,22 +32,27 @@
             <div class="row">
                 <p class="lead">Products</p>
                 <div>
-                    <div id="InsertedProducts" runat="server" >
-
+                    <div id="InsertedProducts" runat="server">
                     </div>
-                </div>
-                <div>
+                    <div class="btn">                       
+                       <a href="ProductInformation.aspx?ProductID=<%#:Item.ProductID%>">More Info<br /></a>              
+                          </div>        
+                        <div class="btn">
+                            <a href="AddToCart.aspx?ProductID=<%#:Item.ProductID%>">Buy<br />
+                            </a>
+                        </div>
+                        <%--<div>
                     <br />
                 </div>
                 <div>
                     
-                </div>
-            </div>
-            <div class="row1">
-            
+                </div>--%>
+                    </div>
+                    <div class="row1">
 
-            
-           <%--<div class="col-md-3 box">
+
+
+                        <%--<div class="col-md-3 box">
                 <div class="cover left">
                     <h2 class="title">Tommy Hilfiger</h2>
                     <p class="intro">
@@ -350,14 +355,13 @@
                     </div>
                 </div>
             </div>--%>
-            <hr />
-            <div style="margin-right: 5px; margin-top: 326px">
-                        
+                        <hr />
+                        <%-- <div style="margin-right: 5px; margin-top: 326px">--%>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
-   
+    
 </asp:Content>
 
 

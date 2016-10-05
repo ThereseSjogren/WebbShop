@@ -10,6 +10,7 @@ using WebShopDAL.ConnectedLayer;
 using WebShopDAL.Models;
 using System.Data;
 using System.Web.ModelBinding;
+using System.Web.Routing;
 
 
 
@@ -36,15 +37,14 @@ namespace Webprojekt1
                 markupHTML += $"<div class=\"col-md-3 box\">" +
                                  $"<div class =\"thumbnail\" >" +
                                     $"<img src =\"/Images/{p.ImageURL}\" alt =\"Generic placeholder thumbnail\">" +
-                                 $"</div>" +                                
-                                 $"<div class=\"cover left\">" +
+                                 $"</div>" +
+                                 //$"<div class=\"cover left\">" +
                                  $"<div class = \"caption\">" +
                                     $"<h3>{p.ProductBrand}</h3>" +
-                                    $"<h2 class=\"title\">{p.ProductBrand}</h2>" +
+                                    //$"<h2 class=\"title\">{p.ProductBrand}</h2>" +
                                  $"</div>" +
-                                 $"<div class=\"btn\">" +
-                                   $"<a href=\"ProductInformation.aspx?ProductID<%:Item.ProductID%>\">More Info<br />" +
-                                     $"{number}SEK" +
+                                
+                                     $"Price: {number} SEK" +
                                    $"</a>" +
                                  $"</div>" +
                                $"</div>" +
@@ -52,78 +52,71 @@ namespace Webprojekt1
             }
             InsertedProducts.InnerHtml = markupHTML;
         }
-        //public IQueryable<Products> GetProducts([QueryString("id")] int? ProductID)
+        //public IQueryable<Product> GetProducts([QueryString("id")] int? ProductID)
         //{
-           
         //    WbsDAL wbs = new WbsDAL();
         //    wbs.OpenConnection("Data Source=.;Initial Catalog=WebbShop;Integrated Security=True");
-        //    string
-        //    using (resource)
-        //    {
 
-        //    }
-        //    IQueryable query = (IQueryable)wbs.GetListOfAllProducts();
+        //    IQueryable<Product> getProductWithID = (IQueryable<Product>)wbs.GetListOfAllProducts();
         //    if (ProductID.HasValue && ProductID > 0)
         //    {
-                
-        //        foreach (Product p in query)
-        //        {
-                    
-        //        }
+        //        getProductWithID.Where(x => x.ProductID == ProductID).AsQueryable();
         //    }
-        //    return query;
+        //    else
+        //    {
+        //        getProductWithID = null;
+        //    }
+        //    return getProductWithID;
 
         //}
 
     }
-
 }
 #region MyRegion
-        //protected void CreateFilter_Click(object sender, EventArgs e)
-        //{
+//protected void CreateFilter_Click(object sender, EventArgs e)
+//{
 
-        //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
-        //    con.Open();
+//    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
+//    con.Open();
 
-        //    //string sql = @"select count(*) from tblProduct AS p 
-        //    //                INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID 
-        //    //                Where CategoryName = 'T-Shirt' AND Color = '@Color' AND Size = '@Size'";
-        //    //using (SqlCommand _sqlCommand = new SqlCommand(sql, con))
-        //    //{
-        //    string sql = @"select p.ProductID from tblProduct AS p 
-        //                    INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID 
-        //                    Where  Color = '@Color' AND Size = '@Size'";
-        //    using (SqlCommand _sqlCommand = new SqlCommand(sql, con))
-        //    {
-        //        _sqlCommand.Parameters.AddWithValue("@Size", _dropDownSize.SelectedValue);
-        //        _sqlCommand.Parameters.AddWithValue("@Color", _dropDownColor.SelectedValue);
+//    //string sql = @"select count(*) from tblProduct AS p 
+//    //                INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID 
+//    //                Where CategoryName = 'T-Shirt' AND Color = '@Color' AND Size = '@Size'";
+//    //using (SqlCommand _sqlCommand = new SqlCommand(sql, con))
+//    //{
+//    string sql = @"select p.ProductID from tblProduct AS p 
+//                    INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID 
+//                    Where  Color = '@Color' AND Size = '@Size'";
+//    using (SqlCommand _sqlCommand = new SqlCommand(sql, con))
+//    {
+//        _sqlCommand.Parameters.AddWithValue("@Size", _dropDownSize.SelectedValue);
+//        _sqlCommand.Parameters.AddWithValue("@Color", _dropDownColor.SelectedValue);
 
 
-        //        List<Product> filt = new List<Product>();
-        //        SqlDataReader reader = _sqlCommand.ExecuteReader();
-        //        while (reader.Read())
-        //        {
+//        List<Product> filt = new List<Product>();
+//        SqlDataReader reader = _sqlCommand.ExecuteReader();
+//        while (reader.Read())
+//        {
 
-        //            try
-        //            {
-        //                int productID = (int)reader["ProductID"];
-        //                string color = (string)reader["Color"];
-        //                string size = (string)reader["Size"];
-        //                Product p = new Product(productID, color, size);
-        //                filt.Add(p);
-        //                GridView1.DataSource = filt;
-        //                GridView1.DataBind();
-        //            }
-        //            catch (SqlException ex)
-        //            {
+//            try
+//            {
+//                int productID = (int)reader["ProductID"];
+//                string color = (string)reader["Color"];
+//                string size = (string)reader["Size"];
+//                Product p = new Product(productID, color, size);
+//                filt.Add(p);
+//                GridView1.DataSource = filt;
+//                GridView1.DataBind();
+//            }
+//            catch (SqlException ex)
+//            {
 
-        //                Response.Write(ex.Message);
-        //            }
-        //        }
-        //      }
+//                Response.Write(ex.Message);
+//            }
+//        }
+//      }
 
-        //    }
-        //} 
-        #endregion
+//    }
+//} 
+#endregion
 
-    

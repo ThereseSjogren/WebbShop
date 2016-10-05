@@ -74,8 +74,8 @@ namespace Webprojekt1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Product> _productList = new List<Product>();
-            _productList = (List<Product>)Session["AddToChartCart"];
+            List<CartItem> _productList = new List<CartItem>();
+            _productList = (List<CartItem>)Session["AddToChartCart"];
 
             _listViewChart.DataSource = _productList;
             _listViewChart.DataBind();

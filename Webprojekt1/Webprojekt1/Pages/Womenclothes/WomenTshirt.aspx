@@ -28,8 +28,9 @@
         </div>
         <div class="container">
             <div class="row">
+                <p class="lead">Women T-Shirt</p>
               <div id="InsertedProductsTs" runat="server" >
-                  <p class="lead">Women T-Shirt</p>
+                  
             </div>
                 <%--<div class="btn-group show-on-hover">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">

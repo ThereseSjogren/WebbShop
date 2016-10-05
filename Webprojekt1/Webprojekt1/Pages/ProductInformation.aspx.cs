@@ -10,12 +10,14 @@ using WebShopDAL.Models;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using System.Collections.Specialized;
 
 namespace Webprojekt1.Pages
 {
     public partial class ProductInformation : Page
     {
         protected List<ProductOrderInfoChartCart> listChart;
+        public int ProductID { get; set; }
 
         public void AddToChartCart(Product p)
         {
@@ -57,44 +59,54 @@ namespace Webprojekt1.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             ////////////////////////
-            //  LOAD Product //
+            //      Retrieve ProductID 
             ////////////////////////
+            NameValueCollection qscoll = HttpUtility.ParseQueryString(Page.ClientQueryString);
+            string productToList = HttpUtility.ParseQueryString(Page.ClientQueryString).Get("ProductID");
+            int productID;
+            Int32.TryParse(productToList, out productID);
+            //      productToDisplay.category = qscoll.Get("field1");
 
+            List<Product> listOfProduct;
             int number;
             //string markupHTML = "";
-            Product p = new Product();
+            
             WbsDAL wbs = new WbsDAL();
             wbs.OpenConnection(ConfigurationManager.ConnectionStrings["WebbShopConnectionString"].ConnectionString);
+            listOfProduct = wbs.GetListOfAllProducts();
 
-            number = Decimal.ToInt32(p.PriceUnit);
+            ////////////////////////
+            //  LOAD Product //
+            ////////////////////////
             StringBuilder markupHTML = new StringBuilder("");
-            markupHTML.Append("<div class=\"product group\">");
+            foreach (Product p  in listOfProduct)
+            {
+                number = Decimal.ToInt32(p.PriceUnit);
+                
+                markupHTML.Append("<div class=\"product group\">");
                 markupHTML.Append("<div class =\"thumbnail\" >");
-                    markupHTML.Append("<img src =\"/Images/" + p.ImageURL + "\" alt=\"Generic placeholder thumbnail\">");
+                markupHTML.Append("<img src =\"/Images/" + p.ImageURL + "\" alt=\"Generic placeholder thumbnail\">");
                 markupHTML.Append("</div>");
                 markupHTML.Append("<div class = \"caption\">");
-                    markupHTML.Append("<h3></h3>");
-                    markupHTML.Append("<span>"+ p.Size +"</span");
-                    markupHTML.Append("<h2 class=\"title\">" + p.ProductBrand  + "</h2>");
+                markupHTML.Append("<h3></h3>");
+                markupHTML.Append("<span>" + p.Size + "</span");
+                markupHTML.Append("<h2 class=\"title\">" + p.ProductBrand + "</h2>");
                 markupHTML.Append("</div>");
                 markupHTML.Append("<div class=\"col-1-2 product-info\">");
-                    markupHTML.Append("<h1>" + p.ProductBrand + "</h1>");
-                    markupHTML.Append("<br />");
-                    markupHTML.Append("" + p.ProductDescription + "");
-                    markupHTML.Append("<br />");
-                    markupHTML.Append("<h3>" + number + "SEK</h3>");
-                    markupHTML.Append("<asp:DropDownList ID=\"_dropDownQuantity\" runat=\"server\" Width=\"180px\">");
-                    markupHTML.Append("<asp:ListItem>Quantity</asp:ListItem>");
-                    markupHTML.Append("<asp:ListItem>1</asp:ListItem>");
-                    markupHTML.Append("<asp:ListItem>2</asp:ListItem>");
-                    markupHTML.Append("<asp:ListItem>3</asp:ListItem>");
-                    markupHTML.Append("<asp:ListItem>4</asp:ListItem>");
-                    markupHTML.Append("<asp:ListItem>5</asp:ListItem>");
-                    markupHTML.Append("</asp:DropDownList>");
-                    markupHTML.Append("<br />");
+                markupHTML.Append("<h1>" + p.ProductID + "</h1>");
+                markupHTML.Append("<br />");
+                markupHTML.Append("" + p.ProductDescription + "");
+                markupHTML.Append("<br />");
+                markupHTML.Append("<h3>" + number + "SEK</h3>");
+
+                markupHTML.Append("<br />");
                 markupHTML.Append("<div class=\"add-btn\"  Text=\"Add to cart\"  OnClick=\"_btnAddToChart_Click\" runat=\"server\">");
+
+
                 markupHTML.Append("</div>");
-            markupHTML.Append("</div>");
+                markupHTML.Append("</div>");
+                 
+            }
 
 
             InsertedProduct.InnerHtml = markupHTML.ToString();

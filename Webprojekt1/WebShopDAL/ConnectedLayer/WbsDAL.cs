@@ -16,6 +16,7 @@ namespace WebShopDAL.ConnectedLayer
         private SqlConnection _sqlConnection = null;
         public List<Product> ProductList { get; set; }
         public List<Category> CategoryList { get; set; }
+        List<CartItem> ShoppinCartItems { get; set; }
 
         public WbsDAL()
         {
@@ -86,7 +87,7 @@ namespace WebShopDAL.ConnectedLayer
         }
         #endregion
         #region 2_ProductInformationRequest(request for ProductInformation.aspx)
-        public Product GetProductForProdIformation(int productID)
+        public Product GetProductForShoppingCart(int productID)
         {
             Product p = new Product();
             string sql = $"Select * From tblProduct Where ProductID = {productID}";
@@ -222,7 +223,7 @@ namespace WebShopDAL.ConnectedLayer
         public List<Product> GetJacketsWoman()
         {
             List<Product> productJacketsWomanList = new List<Product>();
-            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Female' AND c.CategoryName = 'Jeans'";
+            string sql = $"Select * From tblProduct AS p INNER JOIN tblCategory AS c ON p.CategoryID = c.CategoryID Where c.Gender = 'Female' AND c.CategoryName = 'Jacket'";
             using (SqlCommand cmd = new SqlCommand(sql,_sqlConnection))
             {
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -616,7 +617,9 @@ namespace WebShopDAL.ConnectedLayer
             return productJacketsList;
         }
         #endregion
-
+        #region ShoppingCart
+        
+        #endregion
 
         #region ChartQueries
         public List<ProductOrderInfoChartCart> GetProductInfo(int productID, string category, string gender, string color, string size, int quantity, int rabattID)
