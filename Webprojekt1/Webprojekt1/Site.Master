@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> ETEA Clothes</title>
 
     <asp:PlaceHolder runat="server">
         <%:Scripts.Render("~/bundles/modernizr") %>
@@ -107,7 +107,10 @@
                     </ul>
                     <div class="box1">
                         <div class="container-1">
-                            <input type="search" id="search" placeholder="Search..." />
+                        
+                            <asp:TextBox ID="txtSearchbox" runat="server" CssClass="buttonsearch" ></asp:TextBox>
+                                <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="buttonsearch"  />
+                            <%--<input type="search" id="search" placeholder="Search..." />--%>
                         </div>
                     </div>
 
@@ -330,6 +333,7 @@
                                             </span>
                                         </span>
                                     </span>
+                                        </span>
                                    
 
                                     <li class="divider"></li>

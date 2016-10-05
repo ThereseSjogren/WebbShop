@@ -270,6 +270,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CartDropDown.css" />
     <Content Include="Content\Childstyle.css" />
+    <Content Include="Content\ConFirmOrderStyle.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\OrderRec.css" />
@@ -297,6 +298,7 @@
     <Content Include="Pages\ChildClothes\ChildJeans.aspx" />
     <Content Include="Pages\ChildClothes\ChildSweatshirt.aspx" />
     <Content Include="Pages\ChildClothes\ChildTshirt.aspx" />
+    <Content Include="Pages\ConfirmOrder.aspx" />
     <Content Include="Pages\Male.aspx" />
     <Content Include="Pages\MaleClothes\MaleJackets.aspx" />
     <Content Include="Pages\MaleClothes\MaleJeans.aspx" />
@@ -357,7 +359,11 @@
     <Content Include="Pages\Tests\Login.aspx" />
     <Content Include="Pages\Tests\Registration.aspx" />
     <Content Include="Pages\Tests\ProceedOrder.aspx" />
+<<<<<<< HEAD
     <Content Include="Pages\AddToCart.aspx" />
+=======
+    <Content Include="SearchResult.aspx" />
+>>>>>>> 0b2811b59a773a6745ac4d6fc346f1d0e0c86142
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\ProductInformation.aspx" />
     <Content Include="Pages\Tests\TestProductFiltering.aspx" />
@@ -654,6 +660,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ShoppingCartActions.cs" />
     <Compile Include="Pages\Child.aspx.cs">
@@ -690,6 +697,13 @@
     </Compile>
     <Compile Include="Pages\ChildClothes\ChildTshirt.aspx.designer.cs">
       <DependentUpon>ChildTshirt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ConfirmOrder.aspx.cs">
+      <DependentUpon>ConfirmOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ConfirmOrder.aspx.designer.cs">
+      <DependentUpon>ConfirmOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Male.aspx.cs">
       <DependentUpon>Male.aspx</DependentUpon>
@@ -1204,12 +1218,21 @@
     <Compile Include="Pages\Tests\ProceedOrder.aspx.designer.cs">
       <DependentUpon>ProceedOrder.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Pages\AddToCart.aspx.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\AddToCart.aspx.designer.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>
+=======
+    <Compile Include="SearchResult.aspx.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResult.aspx.designer.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+>>>>>>> 0b2811b59a773a6745ac4d6fc346f1d0e0c86142
     </Compile>
   </ItemGroup>
   <ItemGroup>

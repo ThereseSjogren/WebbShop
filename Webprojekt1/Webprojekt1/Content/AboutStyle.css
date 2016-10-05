@@ -2,6 +2,8 @@
 .image_w_text {
     width: 400px;
     text-align: center;
+     margin-left: 387px;
+    margin-top: 30px;
 }
 
     .image_w_text img {
@@ -18,7 +20,3 @@
         color:black;
     }
 
-.image_w_text {
-    margin-left: 387px;
-    margin-top: 30px;
-}
