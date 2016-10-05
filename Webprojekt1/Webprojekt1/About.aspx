@@ -6,9 +6,9 @@
 
 
 
-
     <div class="image_w_text">
        
+        <h2>&nbsp;</h2>
         <h2>About our company</h2>
         <p>
             Our company was founded in Sweden in a city called Helsingborg in 2016 by four students.
@@ -16,7 +16,7 @@
             they like and that matches their lifestyle. We shortened down our selection to provide clothes
             with high quality, fast delivery and good prices.
         </p>
-         <img src="Pictures/Company/company.png" />
+        <img src="Images/company.png" />
     </div>
 
 
